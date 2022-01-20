@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Descripción de la página" />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./main.css" />
+    <title>laverzatti - Red de CEAs</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header" id="header">
+        <div class="wrapper">
+          <a class="home-link" href="/">
+            <img src="./images/transparent_logo.png" alt="lazarovttac's logo" />
+            <!-- <svg
+              width="28"
+              height="23"
+              viewBox="0 0 28 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="7.23047"
+                y="21.2805"
+                width="22.9516"
+                height="4.59032"
+                transform="rotate(-68 7.23047 21.2805)"
+                fill="white"
+              />
+              <rect
+                y="22.9517"
+                width="22.9516"
+                height="4.59032"
+                transform="rotate(-90 0 22.9517)"
+                fill="white"
+              />
+              <rect y="18.3612" width="11.4758" height="4.59032" fill="white" />
+              <rect
+                x="22.7217"
+                y="22.9516"
+                width="22.9516"
+                height="4.59032"
+                transform="rotate(-90 22.7217 22.9516)"
+                fill="white"
+              />
+              <rect
+                x="15.8369"
+                y="4.76837e-05"
+                width="11.4758"
+                height="4.59032"
+                fill="white"
+              />
+              <rect
+                x="15.8359"
+                y="18.3611"
+                width="11.4758"
+                height="4.59032"
+                fill="white"
+              />
+            </svg> -->
+          </a>
+          <div class="burger" id="burger" onclick="ToogleSideBar()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </header>
+      <aside class="side-bar" id="side-bar">
+        <nav class="nav-bar">
+          <a href="/#landing" class="link" onclick="ToogleSideBar()">Home</a>
+          <a href="/#work" class="link" onclick="ToogleSideBar()"
+            >My projects</a
+          >
+          <a href="/#about" class="link" onclick="ToogleSideBar()">About me</a>
+          <a href="/#skills" class="link" onclick="ToogleSideBar()"
+            >My skills</a
+          >
+          <a href="/#contact" class="link" onclick="ToogleSideBar()"
+            >Contact me</a
+          >
+        </nav>
+      </aside>
+      <main class="project">
+        <h1 class="project-title">Red de CEAs</h1>
+        <p class="project-description">
+          El objetivo de este proyecto es construir la plataforma definitiva
+          para la administración de un Centro de Educación Agraria (CEA).
+          <br />
+          <br />
+          Los Centros de Educación Agraria (CEAs) son instituciones públicas,
+          dependientes de la Dirección Provincial de Educación Técnico
+          Profesional y de la Dirección de Educación Agraria. Ofrecen formación
+          profesional inicial y capacitación laboral para jóvenes y adultos
+          mediante itinerarios formativos, como cursos, charlas y jornadas
+          técnicas.
+          <br />
+        </p>
+        <div class="images-grid">
+          <div class="image">
+            <img
+              src="/images/CEA-19/1.jpg"
+              alt="A group of students of CEA 19"
+              class="image"
+            />
+          </div>
+          <div class="image">
+            <img
+              src="/images/CEA-5/1.jpg"
+              alt="A group of students of CEA 5"
+              class="image"
+            />
+          </div>
+          <div class="image">
+            <img
+              src="/images/CEA-5/2.jpg"
+              alt="A group of students of CEA 5"
+              class="image"
+            />
+          </div>
+        </div>
+        <p class="project-description">
+          Existen alrededor de 30 CEAs en la actualidad en la provincia de
+          Buenos Aires.
+        </p>
+        <p class="project-subtitle">Sitios de acceso público</p>
+        <p class="project-description">
+          Cada CEA que forma parte de la "red" posee su propio sitio web
+          dinámico, donde se dispone información actualizada de las
+          capacitaciones vigentes, y donde las personas interesadas en
+          capacitarce, pueden crearse una cuenta con su correo electrónico y
+          proveer a la administración con todos sus datos personales necesarios,
+          una única vez.
+          <br />
+          Esto les permite inscribirse a múltiples capacitaciones, acceder a las
+          aulas virtuales y recibir una constancia de participación, una vez las
+          hayan finalizado.
+        </p>
+        <div class="images-grid">
+          <div class="image">
+            <img
+              src="/images/CEA-5/home.png"
+              alt="A screenshot of ceabragado.com"
+            />
+            <div class="image-footer">
+              <a href="https://ceabragado.com" target="blank" class="link"
+                >ceabragado.com</a
+              >
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="/images/CEA-19/home.png"
+              alt="A screenshot of ceadiecinueve.com"
+            />
+            <div class="image-footer">
+              <a href="https://ceadiecinueve.com" target="blank" class="link"
+                >ceadiecinueve.com</a
+              >
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="/images/CEA-5/courses.png"
+              alt="Courses page at ceabragado.com"
+            />
+            <div class="image-footer">
+              <p class="description">Listado de capacitaciones</p>
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="/images/CEA-5/course-details.png"
+              alt="Course page at ceabragado.com"
+            />
+            <div class="image-footer">
+              <p class="description">Detalles de una capacitación</p>
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="/images/CEA-5/create-profile.png"
+              alt="Profile creation page at ceabragado.com"
+            />
+            <div class="image-footer">
+              <p class="description">Creación de perfil de usuario</p>
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="/images/CEA-5/user-profile.png"
+              alt="User profile page at ceabragado.com"
+            />
+            <div class="image-footer">
+              <p class="description">Perfil de usuario</p>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">
+          Las capacitaciones cumplen un "ciclo de vida" que transcurre en varios
+          estados configurados por la administración.
+        </p>
+        <div class="images-grid square">
+          <div class="image square">
+            <img
+              src="/images/CEA-5/states/prox.png"
+              alt="The card of a course which inscription will be open soon"
+            />
+            <div class="image-footer">
+              <p class="description">Inscripción aún no disponible</p>
+            </div>
+          </div>
+          <div class="image square">
+            <img
+              src="/images/CEA-5/states/open.png"
+              alt="The card of a course which inscription is opened"
+            />
+            <div class="image-footer">
+              <p class="description">Inscripción disponible</p>
+            </div>
+          </div>
+          <div class="image square">
+            <img
+              src="/images/CEA-5/states/soon.png"
+              alt="The card of a course which inscription is closed, but has not started yet"
+            />
+            <div class="image-footer">
+              <p class="description">Comenzará a dictarse</p>
+            </div>
+          </div>
+          <div class="image square">
+            <img
+              src="/images/CEA-5/states/going.png"
+              alt="The card of a course that has already started"
+            />
+            <div class="image-footer">
+              <p class="description">Comenzó a dictarse</p>
+            </div>
+          </div>
+          <div class="image square">
+            <img
+              src="/images/CEA-5/states/ended.png"
+              alt="The card of a course that has already ended"
+            />
+            <div class="image-footer">
+              <p class="description">Finalizó el dictado</p>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">
+          Una capacitación puede estar creada, pero su inscripión aún no
+          disponible.
+          <br />
+          La inscripión puede estar abierta durante cierto período de tiempo,
+          durante el cual las personas interesadas pueden registrar su
+          participación.
+          <br />
+          La inscripión puede cerrar o no, y la capacitación puede, o no
+          comenzar según las fechas definidas para los encuentros. Cuando lo
+          hace, se le provee a las personas inscriptas con la información
+          necesaria para acceder al aula virtual correspondiente.
+          <br />
+          Cuando una capacitación finaliza, se notifica a los inscriptos y es
+          posible proveerles con una constancia de participación.
+          <br />
+        </p>
+        <p class="project-subtitle">Sitio administrativo</p>
+        <p class="project-description">
+          Por otro lado, existe el sitio
+          <a href="https://red-cea.web.app" target="blank">Red de CEAs</a>, al
+          cuál acceden únicamente los administradores.
+          <br />
+          Esta aplicación, le brinda a la administración de un CEA, una interfaz
+          para crear, editar y administrar toda la información referida a las
+          diferentes capacitaciones. Atravéz de ella, es posible poner a
+          disposición del público interesado, toda la información necesaria de
+          forma ordenada y sencilla, en los sitios mencionados anteriormente.
+          <br />
+          También es posible verificar la información personal de las personas
+          inscriptas y exportar dicha información en los formatos solicitados
+          por los órganos públicos encargados de proveer las certificaciones.
+
+          <br />
+          <br />
+        </p>
+        <div class="images-grid">
+          <div class="image">
+            <img
+              src="/images/red/1.png"
+              alt="A screenshot of red-cea.web.app"
+            />
+            <div class="image-footer">
+              <a href="https://red-cea.web.app" target="blank" class="link"
+                >Red de CEAs</a
+              >
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="/images/red/2.png"
+              alt="A screenshot of the managing courses page at red-cea.web.app"
+            />
+            <div class="image-footer">
+              <p class="description">Administración de capacitaciones</p>
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="/images/red/3.png"
+              alt="A screenshot of the managing users page at red-cea.web.app"
+            />
+            <div class="image-footer">
+              <p class="description">Administración de usuarios</p>
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="/images/red/4.png"
+              alt="A screenshot of the managing images page at red-cea.web.app"
+            />
+            <div class="image-footer">
+              <p class="description">Administración de imágenes</p>
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="/images/red/5.png"
+              alt="A screenshot of the page of course creation at red-cea.web.app"
+            />
+            <div class="image-footer">
+              <p class="description">Creación de capacitaciones</p>
+            </div>
+          </div>
+          <div class="image">
+            <img
+              src="/images/red/6.png"
+              alt="A screenshot of the user profile page at red-cea.web.app"
+            />
+            <div class="image-footer">
+              <p class="description">Perfiles de usuario</p>
+            </div>
+          </div>
+        </div>
+        <p class="project-description">
+          Actualmente, el CEA N°5 de Bragado y el CEA N°19 de General Rodríguez,
+          están incorporados a Red de CEAs.
+          <br />
+          El CEA de Bragado tiene su sitio web en:
+          <a href="https://ceabragado.com" target="blank">ceabragado.com</a>
+          <br />
+
+          El CEA de General Rodríguez tiene su sitio web en:
+          <a href="https://ceadiecinueve.com" target="blank"
+            >ceadiecinueve.com</a
+          >
+          <br />
+          Los directivos de ambas instituciones ingresan a
+          <a href="https://red-cea.web.app" target="blank">Red de CEAs</a> para
+          administrar su correspondiente institución.
+        </p>
+      </main>
+    </div>
+    <div class="background-shadow"></div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
