@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="My games" />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./main.css" />
+    <title>laverzatti - Home</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header" id="header">
+        <div class="wrapper">
+          <a class="home-link" href="/">
+            <img src="./images/transparent_logo.png" alt="lazarovttac's logo" />
+          </a>
+          <div class="burger" id="burger" onclick="ToogleSideBar()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </header>
+      <aside class="side-bar" id="side-bar">
+        <nav class="nav-bar">
+          <a href="/#landing" class="link" onclick="ToogleSideBar()">Home</a>
+          <a href="/#work" class="link" onclick="ToogleSideBar()"
+            >My projects</a
+          >
+          <a href="/#about" class="link" onclick="ToogleSideBar()">About me</a>
+          <a href="/#skills" class="link" onclick="ToogleSideBar()"
+            >My skills</a
+          >
+          <a href="/#contact" class="link" onclick="ToogleSideBar()"
+            >Contact me</a
+          >
+        </nav>
+      </aside>
+      <main class="project">
+        <div class="small-items-bar tech-stack">
+          <div class="item small">
+            <img src="./images/unity.png" alt="" />
+          </div>
+          <div class="item small">
+            <img src="./images/c-sharp.png" alt="" />
+          </div>
+          <div class="item small">
+            <img src="./images/figma.png" alt="" />
+          </div>
+          <div class="item small">
+            <img src="./images/blender.png" alt="" />
+          </div>
+        </div>
+        <h1 class="project-title">A-void</h1>
+        <p class="project-description">
+          A-void was my first commercial release as a game developer. <br />
+          It's a simple game about dodging incoming missiles with a plane.
+        </p>
+        <p class="project-subtitle">Features:</p>
+        <p class="project-description">
+          Two game modes (Classic and Hard). <br />
+          12 different vehicles. <br />
+          Powerups. <br />
+          Upgrades for powerups. <br />
+          Daily rewards. <br />
+        </p>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.DecayGames.Avoid"
+          class="link"
+          >It's available on Google Play Store for free.</a
+        >
+        <div class="images-grid">
+          <div class="image">
+            <img src="./images/A-void/1.png" alt="" />
+          </div>
+          <div class="image">
+            <img src="./images/A-void/2.png" alt="" />
+          </div>
+          <div class="image">
+            <img src="./images/A-void/3.png" alt="" />
+          </div>
+        </div>
+        <!-- Try-angle -->
+        <h1 class="project-title">Try-angle</h1>
+        <p class="project-description">
+          Try-angle it's a small game I made in under 12 hours. <br />
+        </p>
+        <p class="project-subtitle">Features:</p>
+        <p class="project-description">
+          Two game modes (Classic and Crazy). <br />
+          Infinite level generation. <br />
+        </p>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.DecayGames.TryAngle"
+          class="link"
+          >It's available on Google Play Store for free.</a
+        >
+        <div class="images-grid">
+          <div class="image">
+            <img src="./images/Try-angle/1.png" alt="" />
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div class="background-shadow"></div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
