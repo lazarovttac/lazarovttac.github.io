@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="My games" />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./main.css" />
+    <title>Lazarovttac - Home</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header" id="header">
+        <div class="wrapper">
+          <a class="home-link" href="/">
+            <img src="./images/transparent_logo.png" alt="lazarovttac's logo" />
+          </a>
+          <div class="burger" id="burger" onclick="ToogleSideBar()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </header>
+      <aside class="side-bar" id="side-bar">
+        <nav class="nav-bar">
+          <a href="/#landing" class="link" onclick="ToogleSideBar()">Home</a>
+          <a href="/#work" class="link" onclick="ToogleSideBar()"
+            >My projects</a
+          >
+          <a href="/#about" class="link" onclick="ToogleSideBar()">About me</a>
+          <a href="/#skills" class="link" onclick="ToogleSideBar()"
+            >My skills</a
+          >
+          <a href="/#contact" class="link" onclick="ToogleSideBar()"
+            >Contact me</a
+          >
+        </nav>
+      </aside>
+      <main class="project">
+        <div class="small-items-bar tech-stack">
+          <div class="item small">
+            <img src="./images/www.png" alt="" />
+          </div>
+          <div class="item small">
+            <img src="./images/sass.png" alt="" />
+          </div>
+          <div class="item small">
+            <img src="./images/React.png" alt="" />
+          </div>
+          <div class="item small">
+            <img src="./images/firebase.png" alt="" />
+          </div>
+          <div class="item small">
+            <img src="./images/figma.png" alt="" />
+          </div>
+          <div class="item small">
+            <img src="./images/git.png" alt="" />
+          </div>
+        </div>
+
+        <!-- A - void -->
+
+        <h1 class="project-title">my-automata</h1>
+        <p class="project-description">
+          "my-automata" is an online tool for creating and sharing deterministic and non-deterministic finite automata. 
+        </p>
+        <a
+          href="https://my-automata.web.app/"
+          class="link"
+          target="_blank"
+          >Visit the website</a
+        >
+        <div class="images-grid">
+          <div class="image">
+            <img src="./images/automata/1.jpeg" alt="" />
+          </div>
+          <div class="image">
+            <img src="./images/automata/2.jpeg" alt="" />
+          </div>
+          <div class="image">
+            <img src="./images/automata/3.jpeg" alt="" />
+          </div>
+          <div class="image">
+            <img src="./images/automata/4.jpeg" alt="" />
+          </div>
+        </div>
+      </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
