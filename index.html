@@ -25,14 +25,14 @@
     />
 
     <link rel="stylesheet" href="./main.css" />
-    <title>Lazarovttac - Home</title>
+    <title>lazarovttac - Home</title>
   </head>
   <body>
     <div class="page-wrapper">
       <header class="header" id="header">
         <div class="wrapper">
           <a class="home-link" href="/">
-            <img src="./images/transparent_logo.png" alt="lazarovttac's logo" />
+            <img src="./images/header_logo.png" alt="lazarovttac's logo" />
           </a>
           <div class="burger" id="burger" onclick="ToogleSideBar()">
             <div class="line"></div>
@@ -43,36 +43,51 @@
       </header>
       <aside class="side-bar" id="side-bar">
         <nav class="nav-bar">
-          <a href="/#landing" class="link" onclick="ToogleSideBar()">Home</a>
-          <a href="/#work" class="link" onclick="ToogleSideBar()"
-            >My projects</a
+          <a href="/#landing" class="link" onclick="ToogleSideBar()"
+            >👋 Landing: About me</a
           >
-          <a href="/#about" class="link" onclick="ToogleSideBar()">About me</a>
+          <a href="/#work" class="link" onclick="ToogleSideBar()"
+            >🛠️ My projects</a
+          >
           <a href="/#skills" class="link" onclick="ToogleSideBar()"
-            >My skills</a
+            >🎓 My skills</a
           >
           <a href="/#contact" class="link" onclick="ToogleSideBar()"
-            >Contact me</a
+            >📩 Contact me</a
           >
         </nav>
       </aside>
-      <section class="section-100vh landing" id="landing">
-        <div class="section-content">
-          <div class="presentation">
-            <p class="name">Lázaro V.C.</p>
-            <h1 class="description">
-              Web developer, <br />game creator and overall <br />tech
-              enthusiast
-            </h1>
+      <section class="section landing" id="landing">
+        <div class="hero-section">
+          <div class="hero">
+            <div class="hero-name-title">
+              <p class="name">Lázaro V.C.</p>
+              <h1 class="title">
+                Systems Engineering student, <br />web developer and game
+                creator
+              </h1>
+            </div>
+            <div class="image-wrapper">
+              <img src="./images/me.jpg" alt="" />
+            </div>
           </div>
-          <div class="navigation">
+          <p class="description">
+            I'm a Systems Engineering student from Argentina. I enjoy designing
+            and developing solutions, new apps, and digital experiences. I've
+            plenty of experience working with Sass, React, and Firebase. I've
+            developed many games for fun using Unity, some of which are
+            published on the Google Play Store. I also have some experience
+            working with Python and I've taken a few courses on data science and
+            AI.
+          </p>
+          <!-- <div class="navigation">
             <a href="/#work" class="link">My projects</a>
             <a href="/#about" class="link">About me</a>
             <a href="/#skills" class="link">My skills</a>
             <a href="/#contact" class="link">Contact me</a>
-          </div>
+          </div> -->
         </div>
-        <div class="landing__background">
+        <!-- <div class="landing__background">
           <div class="illustration">
             <div class="row">
               <div class="item">
@@ -204,154 +219,100 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </section>
-      <section class="section-100vh about" id="about">
-        <p class="section-title">About me</p>
-        <div class="section-content">
-          <div class="information">
-            <p class="description">
-              Hi!, I’m Lázaro. <br />
-              I'm a Systems Engineering student from Argentina.<br />
-              I'm a web developer, game creator, and tech enthusiast.<br />
-              I enjoy designing and developing solutions, new apps, and digital
-              experiences.<br />
-              <br />
-              I've worked with HTML, CSS, Sass, JavaScript, React, Webpack, and
-              Firebase to bring my most ambitious projects to life.
-              <br />
-              I've developed many games for fun using Unity, with three of them
-              been published on the Google Play Store.
-              <br />
-              I also have some experience working with Python and I've taken a
-              few courses on data science and AI.
-            </p>
-          </div>
-          <div class="graphics">
-            <svg
-              class="my-logo"
-              width="28"
-              height="23"
-              viewBox="0 0 28 23"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M12 8C12 4.13401 15.134 1 19 1H20C23.866 1 27 4.13401 27 8V22H23V14H16V15C16 18.866 12.866 22 9 22H8C4.13401 22 1 18.866 1 15V2H5V15C5 16.6569 6.34315 18 8 18H9C10.6569 18 12 16.6569 12 15V8ZM16 10H23V8C23 6.34315 21.6569 5 20 5H19C17.3431 5 16 6.34315 16 8V10Z"
-                stroke="white"
-              />
-            </svg>
-
-            <div class="my-image">
-              <div class="image-wrapper">
-                <img src="./images/me.jpg" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section-100vh work" id="work">
+      <section class="section work" id="work">
         <p class="section-title">My projects</p>
         <div class="projects">
+          <a class="project-card" href="semillero.html">
+            <div class="project-card__background-image">
+              <img src="./images/Semillero/main.png" alt="" />
+            </div>
+            <div class="project-card__content">
+              <p class="title">Semillero</p>
+              <p class="description">
+                A web site for a team of professionals specialized in HR
+              </p>
+            </div>
+          </a>
           <a class="project-card" href="ceapp.html">
+            <div class="project-card__background-image">
+              <img src="./images/CEA-5/main.png" alt="" />
+            </div>
             <div class="project-card__content">
               <p class="title">CEApp</p>
               <p class="description">
                 A web application, design to help administer educational
                 institutions
               </p>
-              <div class="icon">
-                <img src="./icons/web.svg" alt="" />
-              </div>
-            </div>
-            <div class="project-card__background-overlay"></div>
-            <div class="project-card__background-image">
-              <img src="./images/red/1.png" alt="" />
             </div>
           </a>
           <a class="project-card" href="automaton_disigner.html">
+            <div class="project-card__background-image">
+              <img src="./images/automata/main.png" alt="" />
+            </div>
             <div class="project-card__content">
               <p class="title">My Automata</p>
               <p class="description">
                 Online tool for designing deterministic and non-deterministic
                 finite automata
               </p>
-              <div class="icon">
-                <img src="./icons/web.svg" alt="" />
-              </div>
-            </div>
-            <div class="project-card__background-overlay"></div>
-            <div class="project-card__background-image">
-              <img src="./images/automata/1.jfif" alt="" />
             </div>
           </a>
           <a class="project-card" href="my-games.html">
+            <div class="project-card__background-image">
+              <img src="./images/Games/main.png" alt="" />
+            </div>
             <div class="project-card__content">
               <p class="title">My games</p>
               <p class="description">
-                Three games I have published on Google Play Store and other
-                prototypes, simulations and experiments
+                Games I published on Google Play Store and other prototypes,
+                simulations and experiments
               </p>
-              <div class="icon">
-                <img src="./icons/game.svg" alt="" />
-              </div>
-            </div>
-            <div class="project-card__background-overlay"></div>
-            <div class="project-card__background-image">
-              <img src="./images/games.png" alt="" />
             </div>
           </a>
         </div>
       </section>
       <section class="section skills" id="skills">
         <div class="section-title">My skills and tools</div>
-        <div class="section-content">
-          <div class="grid-wrapper">
-            <div class="grid">
-              <div class="item bigger">
-                <img src="./images/www.png" alt="" />
-                <span class="name">HTML, CSS & JavaScript</span>
-              </div>
-              <div class="item">
-                <img src="./images/React.png" alt="" />
-                <span class="name">React.js</span>
-              </div>
-              <div class="item">
-                <img src="./images/sass.png" alt="" />
-                <span class="name">Sass</span>
-              </div>
-              <div class="item">
-                <img src="./images/git.png" alt="" />
-                <span class="name">Git & GitHub</span>
-              </div>
-              <div class="item">
-                <img src="./images/firebase.png" alt="" />
-                <span class="name">Firebase</span>
-              </div>
-              <div class="item">
-                <img src="./images/python.png" alt="" />
-                <span class="name">Python</span>
-              </div>
-              <div class="item smaller">
-                <img src="./images/figma.png" alt="" />
-                <span class="name">Figma</span>
-              </div>
-              <div class="item smaller">
-                <img src="./images/unity.png" alt="" />
-                <span class="name">Unity</span>
-              </div>
-              <div class="item smaller">
-                <img src="./images/code.png" alt="" />
-                <span class="name">VS Code</span>
-              </div>
+        <div class="grid-wrapper">
+          <div class="grid">
+            <div class="item bigger">
+              <img src="./images/www.png" alt="" />
+              <span class="name">HTML, CSS & JavaScript</span>
+            </div>
+            <div class="item">
+              <img src="./images/React.png" alt="" />
+              <span class="name">React.js</span>
+            </div>
+            <div class="item">
+              <img src="./images/sass.png" alt="" />
+              <span class="name">Sass</span>
+            </div>
+            <div class="item">
+              <img src="./images/git.png" alt="" />
+              <span class="name">Git & GitHub</span>
+            </div>
+            <div class="item">
+              <img src="./images/firebase.png" alt="" />
+              <span class="name">Firebase</span>
+            </div>
+            <div class="item">
+              <img src="./images/python.png" alt="" />
+              <span class="name">Python</span>
+            </div>
+            <div class="item smaller">
+              <img src="./images/figma.png" alt="" />
+              <span class="name">Figma</span>
+            </div>
+            <div class="item">
+              <img src="./images/unity.png" alt="" />
+              <span class="name">Unity</span>
             </div>
           </div>
         </div>
       </section>
-      <section class="section contact" id="contact">
-        <p class="section-title">Find more about me</p>
+      <footer class="section footer" id="contact">
         <div class="small-items-bar">
           <a
             href="mailto:lazarovttac@gmail.com"
@@ -452,7 +413,7 @@
             </svg>
           </a>
         </div>
-      </section>
+      </footer>
     </div>
     <div class="background-shadow"></div>
     <script src="./js/index.js"></script>
