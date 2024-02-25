@@ -732,6 +732,65 @@ p {
   width: 30px;
 }
 
+.education .educations {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr)) [auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.education .education-card {
+  width: 100%;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.education .education-card__content {
+}
+.education .education-card__footer {
+  margin-top: 20px;
+  padding: 5px;
+  border-top: 2px solid #101214;
+
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.education .education-card__footer .link {
+  text-decoration: none;
+  font-size: 1.25rem;
+  padding: 0;
+}
+
+.education .education-card__content .title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 125%;
+
+  margin-bottom: 10px;
+}
+
+.education .education-card__content .subtitle {
+  font-weight: medium;
+  font-size: 1.5rem;
+  line-height: 125%;
+
+  margin-bottom: 10px;
+}
+
+.education .education-card__content .description {
+  font-size: 1.5rem;
+  line-height: 125%;
+
+  text-align: justify;
+}
+
 .contact__form form {
   width: 100%;
   max-width: 400px;
