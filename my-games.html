@@ -23,12 +23,23 @@
     <link rel="stylesheet" href="./main.css" />
     <title>Lazarovttac - Home</title>
   </head>
-  <body>
+  <body class="dark-theme">
     <div class="page-wrapper">
       <header class="header" id="header">
         <div class="wrapper">
           <a class="home-link" href="/">
-            <img src="./images/header_logo.png" alt="lazarovttac's logo" />
+            <svg
+              viewBox="0 0 281 227"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M216.786 45.4716C228.879 50.2447 237.439 62.0035 237.439 75.5997V151.199C237.439 169.093 222.933 183.599 205.039 183.599H157.26C149.917 202.037 136.614 217.095 120 226.799H205.039C244.182 226.799 276.377 197.051 280.249 158.929C280.507 156.387 280.639 153.809 280.639 151.199V75.5997C280.639 42.62 259.42 14.6981 230.071 4.32158C225.879 2.83924 221.52 1.71506 217.034 0.985262C213.443 0.40113 209.268 0.060152 205.5 0.00012207C205.362 0.00012207 205.638 -0.00062545 205.5 0.00012207C205.304 -0.00196859 205.696 0.000731497 205.5 0.00012207C170.921 0.453466 139.758 24.3759 131.779 58.2876L108.17 158.624C104.747 173.171 91.5675 183.603 76.4407 183.603C58.4215 183.603 43.8001 168.972 43.8001 151.203V32.403C43.8001 20.4737 34.1294 10.803 22.2001 10.803C10.2708 10.803 0.600098 20.4737 0.600098 32.403V151.203C0.600098 193.08 34.8132 226.803 76.4407 226.803C111.431 226.803 142.166 202.757 150.222 168.518L173.83 68.1821C177.235 53.7115 190.295 43.3123 205.322 43.2039C209.364 43.2675 213.229 44.067 216.786 45.4716Z"
+                fill="white"
+              />
+            </svg>
           </a>
           <div class="burger" id="burger" onclick="ToogleSideBar()">
             <div class="line"></div>
@@ -40,7 +51,7 @@
       <aside class="side-bar" id="side-bar">
         <nav class="nav-bar">
           <a href="/#landing" class="link" onclick="ToogleSideBar()"
-            >👋 Landing: About me</a
+            >👋 About me</a
           >
           <a href="/#work" class="link" onclick="ToogleSideBar()"
             >🛠️ Projects</a
