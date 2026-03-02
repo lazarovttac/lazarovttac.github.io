@@ -1,466 +1,592 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="La plataforma definitiva
-          para la administración de un Centro de Educación Agraria (CEA)."
+      content="Multi-tenant platform for Agricultural Training Centers. Public sites, centralized admin panel, registration management and government data exports."
     />
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-
     <link rel="stylesheet" href="./main.css" />
-    <title>lazarovttac - CEApp</title>
+    <title>lazarovttac · CEApp</title>
   </head>
-  <body class="dark-theme">
+  <body class="light-theme">
     <div class="page-wrapper">
-      <header class="header" id="header">
-        <div class="wrapper">
-          <a class="home-link" href="/">
-            <svg
-              viewBox="0 0 281 227"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+      <nav class="floating-dock">
+        <div class="dock-topbar">
+          <a href="/" class="dock-brand">@lazarovttac</a>
+          <button
+            class="burger-btn"
+            id="burger-btn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="dock-links">
+          <a href="/#projects" class="dock-link" data-i18n="nav_projects">Projects</a>
+          <a href="/#education" class="dock-link" data-i18n="nav_education">Education</a>
+          <a href="/#about" class="dock-link" data-i18n="nav_about">About</a>
+          <div class="dock-separator"></div>
+          <a href="#contact" class="dock-cta" data-i18n="nav_cta">Let's talk</a>
+        </div>
+      </nav>
+
+      <main class="case-study">
+        <!-- Back -->
+        <a href="/#projects" class="case-back" data-i18n="ceapp_back">← All Projects</a>
+
+        <!-- Hero -->
+        <header class="case-header">
+          <div class="case-header__meta">
+            <span class="case-tag">Web App</span>
+            <span class="case-tag" data-i18n="ceapp_tag_production">Production</span>
+            <span class="case-tag">Multi-tenant</span>
+          </div>
+          <h1 class="case-title">CEApp — Red de CEAs</h1>
+          <p class="case-subtitle" data-i18n="ceapp_subtitle">
+            La plataforma definitiva para la administración de Centros de
+            Educación Agraria. Sitios públicos dinámicos + panel de control
+            centralizado para gestión de inscripciones, ciclo de vida de
+            capacitaciones y exportación de datos para organismos
+            gubernamentales.
+          </p>
+          <div class="case-ctas">
+            <a
+              href="https://red-cea.web.app"
+              target="_blank"
+              class="btn-primary"
+              data-i18n="ceapp_cta_main"
+              >Página principal de CEApp</a
             >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M216.786 45.4716C228.879 50.2447 237.439 62.0035 237.439 75.5997V151.199C237.439 169.093 222.933 183.599 205.039 183.599H157.26C149.917 202.037 136.614 217.095 120 226.799H205.039C244.182 226.799 276.377 197.051 280.249 158.929C280.507 156.387 280.639 153.809 280.639 151.199V75.5997C280.639 42.62 259.42 14.6981 230.071 4.32158C225.879 2.83924 221.52 1.71506 217.034 0.985262C213.443 0.40113 209.268 0.060152 205.5 0.00012207C205.362 0.00012207 205.638 -0.00062545 205.5 0.00012207C205.304 -0.00196859 205.696 0.000731497 205.5 0.00012207C170.921 0.453466 139.758 24.3759 131.779 58.2876L108.17 158.624C104.747 173.171 91.5675 183.603 76.4407 183.603C58.4215 183.603 43.8001 168.972 43.8001 151.203V32.403C43.8001 20.4737 34.1294 10.803 22.2001 10.803C10.2708 10.803 0.600098 20.4737 0.600098 32.403V151.203C0.600098 193.08 34.8132 226.803 76.4407 226.803C111.431 226.803 142.166 202.757 150.222 168.518L173.83 68.1821C177.235 53.7115 190.295 43.3123 205.322 43.2039C209.364 43.2675 213.229 44.067 216.786 45.4716Z"
-                fill="white"
+            <a
+              href="https://ceabragado.com"
+              target="_blank"
+              class="btn-secondary"
+              >ceabragado.com</a
+            >
+            <a
+              href="https://ceadiecinueve.com"
+              target="_blank"
+              class="btn-secondary"
+              >ceadiecinueve.com</a
+            >
+          </div>
+          <div class="case-stack">
+            <div class="case-stack__item">
+              <img src="./images/React.png" alt="React" />
+              <span>React</span>
+            </div>
+            <div class="case-stack__item">
+              <img src="./images/sass.png" alt="Sass" />
+              <span>Sass</span>
+            </div>
+            <div class="case-stack__item">
+              <img src="./images/firebase.png" alt="Firebase" />
+              <span>Firebase</span>
+            </div>
+            <div class="case-stack__item">
+              <img src="./images/figma.png" alt="Figma" />
+              <span>Figma</span>
+            </div>
+            <div class="case-stack__item">
+              <img src="./images/git.png" alt="Git" />
+              <span>Git</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Photos of the CEA institutions -->
+        <section class="case-section">
+          <div class="case-gallery">
+            <div class="case-gallery__item">
+              <img
+                src="/images/CEA-19/1.jpg"
+                alt="Grupo de alumnos del CEA 19"
               />
-            </svg>
-          </a>
-          <div class="burger" id="burger" onclick="ToogleSideBar()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-        </div>
-      </header>
-      <aside class="side-bar" id="side-bar">
-        <nav class="nav-bar">
-          <a href="/#landing" class="link" onclick="ToogleSideBar()"
-            >👋 About me</a
-          >
-          <a href="/#work" class="link" onclick="ToogleSideBar()"
-            >🛠️ Projects</a
-          >
-          <a href="/#education" class="link" onclick="ToogleSideBar()"
-            >🎓 Education</a
-          >
-          <a href="/#contact" class="link" onclick="ToogleSideBar()"
-            >📩 Contact me</a
-          >
-        </nav>
-      </aside>
-      <main class="project">
-        <div class="small-items-bar tech-stack">
-          <div class="item small">
-            <img src="./images/www.png" alt="" />
-          </div>
-          <div class="item small">
-            <img src="./images/sass.png" alt="" />
-          </div>
-          <div class="item small">
-            <img src="./images/React.png" alt="" />
-          </div>
-          <div class="item small">
-            <img src="./images/firebase.png" alt="" />
-          </div>
-          <div class="item small">
-            <img src="./images/figma.png" alt="" />
-          </div>
-          <div class="item small">
-            <img src="./images/git.png" alt="" />
-          </div>
-        </div>
-        <h1 class="project-title">CEApp</h1>
-        <p class="description">
-          El objetivo de este proyecto es construir la plataforma definitiva
-          para la administración de un Centro de Educación Agraria (CEA).
-          <br />
-          <br />
-          Los Centros de Educación Agraria (CEAs) son instituciones públicas,
-          dependientes de la Dirección Provincial de Educación Técnico
-          Profesional y de la Dirección de Educación Agraria. Ofrecen formación
-          profesional inicial y capacitación laboral para jóvenes y adultos
-          mediante itinerarios formativos, como cursos, charlas y jornadas
-          técnicas.
-          <br />
-        </p>
-        <div class="images-grid">
-          <div class="image">
-            <img
-              src="/images/CEA-19/1.jpg"
-              alt="A group of students of CEA 19"
-              class="image"
-            />
-          </div>
-          <div class="image">
-            <img
-              src="/images/CEA-5/1.jpg"
-              alt="A group of students of CEA 5"
-              class="image"
-            />
-          </div>
-          <div class="image">
-            <img
-              src="/images/CEA-5/2.jpg"
-              alt="A group of students of CEA 5"
-              class="image"
-            />
-          </div>
-        </div>
-        <p class="description">
-          Existen alrededor de 30 CEAs en la actualidad en la provincia de
-          Buenos Aires.
-        </p>
-        <p class="project-subtitle">Sitios de acceso público</p>
-        <p class="description">
-          Cada CEA que forma parte de la "red" posee su propio sitio web
-          dinámico, donde se dispone información actualizada de las
-          capacitaciones vigentes, y donde las personas interesadas en
-          capacitarce, pueden crearse una cuenta con su correo electrónico y
-          proveer a la administración con todos sus datos personales necesarios,
-          una única vez.
-          <br />
-          Esto les permite inscribirse a múltiples capacitaciones, acceder a las
-          aulas virtuales y recibir una constancia de participación, una vez las
-          hayan finalizado.
-        </p>
-        <div class="images-grid">
-          <div class="image">
-            <img
-              src="/images/CEA-5/home.png"
-              alt="A screenshot of ceabragado.com"
-            />
-            <div class="image-footer">
-              <a href="https://ceabragado.com" target="blank" class="link"
-                >ceabragado.com</a
-              >
+            </div>
+            <div class="case-gallery__item">
+              <img
+                src="/images/CEA-5/1.jpg"
+                alt="Grupo de alumnos del CEA 5, foto 1"
+              />
+            </div>
+            <div class="case-gallery__item">
+              <img
+                src="/images/CEA-5/2.jpg"
+                alt="Grupo de alumnos del CEA 5, foto 2"
+              />
             </div>
           </div>
-          <div class="image">
-            <img
-              src="/images/CEA-19/home.png"
-              alt="A screenshot of ceadiecinueve.com"
-            />
-            <div class="image-footer">
-              <a href="https://ceadiecinueve.com" target="blank" class="link"
-                >ceadiecinueve.com</a
-              >
-            </div>
-          </div>
-          <div class="image">
-            <img
-              src="/images/CEA-5/courses.png"
-              alt="Courses page at ceabragado.com"
-            />
-            <div class="image-footer">
-              <p class="description">Listado de capacitaciones</p>
-            </div>
-          </div>
-          <div class="image">
-            <img
-              src="/images/CEA-5/course-details.png"
-              alt="Course page at ceabragado.com"
-            />
-            <div class="image-footer">
-              <p class="description">Detalles de una capacitación</p>
-            </div>
-          </div>
-          <div class="image">
-            <img
-              src="/images/CEA-5/create-profile.png"
-              alt="Profile creation page at ceabragado.com"
-            />
-            <div class="image-footer">
-              <p class="description">Creación de perfil de usuario</p>
-            </div>
-          </div>
-          <div class="image">
-            <img
-              src="/images/CEA-5/user-profile.png"
-              alt="User profile page at ceabragado.com"
-            />
-            <div class="image-footer">
-              <p class="description">Perfil de usuario</p>
-            </div>
-          </div>
-        </div>
-        <p class="description">Ciclo de vida de las capacitaciones</p>
-        <div class="images-grid square">
-          <div class="image square">
-            <img
-              src="/images/CEA-5/states/prox.png"
-              alt="The card of a course which inscription will be open soon"
-            />
-            <div class="image-footer">
-              <p class="description">Inscripción aún no disponible</p>
-            </div>
-          </div>
-          <div class="image square">
-            <img
-              src="/images/CEA-5/states/open.png"
-              alt="The card of a course which inscription is opened"
-            />
-            <div class="image-footer">
-              <p class="description">Inscripción disponible</p>
-            </div>
-          </div>
-          <div class="image square">
-            <img
-              src="/images/CEA-5/states/soon.png"
-              alt="The card of a course which inscription is closed, but has not started yet"
-            />
-            <div class="image-footer">
-              <p class="description">Comenzará a dictarse</p>
-            </div>
-          </div>
-          <div class="image square">
-            <img
-              src="/images/CEA-5/states/going.png"
-              alt="The card of a course that has already started"
-            />
-            <div class="image-footer">
-              <p class="description">Comenzó a dictarse</p>
-            </div>
-          </div>
-          <div class="image square">
-            <img
-              src="/images/CEA-5/states/ended.png"
-              alt="The card of a course that has already ended"
-            />
-            <div class="image-footer">
-              <p class="description">Finalizó el dictado</p>
-            </div>
-          </div>
-        </div>
-        <!-- <p class="description">
-          Una capacitación puede estar creada, pero su inscripión aún no
-          disponible. La inscripión puede estar abierta durante cierto período
-          de tiempo, durante el cual las personas interesadas pueden registrar
-          su participación. La inscripión puede cerrar o no, y la capacitación
-          puede, o no comenzar según las fechas definidas para los encuentros.
-          Cuando lo hace, se le provee a las personas inscriptas con la
-          información necesaria para acceder al aula virtual correspondiente.
-          Cuando una capacitación finaliza, se notifica a los inscriptos y es
-          posible proveerles con una constancia de participación.
-        </p> -->
-        <p class="project-subtitle">Sitio administrativo</p>
-        <p class="description">
-          Por otro lado, existe el sitio
-          <a href="https://red-cea.web.app" target="blank">red-cea.web.app</a>,
-          al cuál acceden únicamente los administradores.
-          <br />
-          Esta aplicación, le brinda a la administración de un CEA, una interfaz
-          para crear, editar y administrar toda la información referida a las
-          diferentes capacitaciones. Através de ella, es posible poner a
-          disposición del público interesado, toda la información necesaria de
-          forma ordenada y sencilla, en los sitios mencionados anteriormente.
-          <br />
-          También es posible verificar la información personal de las personas
-          inscriptas y exportar dicha información en los formatos solicitados
-          por los órganos públicos encargados de proveer las certificaciones.
+        </section>
 
-          <br />
-          <br />
-        </p>
-        <div class="images-grid">
-          <div class="image">
-            <img
-              src="/images/CEApp/1.png"
-              alt="A screenshot of red-cea.web.app"
-            />
-            <div class="image-footer">
-              <a href="https://red-cea.web.app" target="blank" class="link"
-                >Red de CEAs</a
-              >
+        <!-- Stats -->
+        <section class="case-section">
+          <div class="case-stats">
+            <div class="case-stat">
+              <span class="case-stat__value">6</span>
+              <span class="case-stat__label" data-i18n="ceapp_stat_institutions">Instituciones</span>
+            </div>
+            <div class="case-stat">
+              <span class="case-stat__value">6000+</span>
+              <span class="case-stat__label" data-i18n="ceapp_stat_students">Estudiantes registrados</span>
+            </div>
+            <div class="case-stat">
+              <span class="case-stat__value">4000+</span>
+              <span class="case-stat__label" data-i18n="ceapp_stat_certificates">Certificados emitidos</span>
+            </div>
+            <div class="case-stat">
+              <span class="case-stat__value">350+</span>
+              <span class="case-stat__label" data-i18n="ceapp_stat_trainings">Capacitaciones creadas</span>
             </div>
           </div>
-          <div class="image">
-            <img
-              src="/images/CEApp/2.png"
-              alt="A screenshot of the managing courses page at red-cea.web.app"
-            />
-            <div class="image-footer">
-              <p class="description">Administración de capacitaciones</p>
-            </div>
-          </div>
-          <div class="image">
-            <img
-              src="/images/CEApp/3.png"
-              alt="A screenshot of the managing users page at red-cea.web.app"
-            />
-            <div class="image-footer">
-              <p class="description">Administración de usuarios</p>
-            </div>
-          </div>
-          <div class="image">
-            <img
-              src="/images/CEApp/4.png"
-              alt="A screenshot of the managing images page at red-cea.web.app"
-            />
-            <div class="image-footer">
-              <p class="description">Administración de imágenes</p>
-            </div>
-          </div>
-          <div class="image">
-            <img
-              src="/images/CEApp/5.png"
-              alt="A screenshot of the page of course creation at red-cea.web.app"
-            />
-            <div class="image-footer">
-              <p class="description">Creación de capacitaciones</p>
-            </div>
-          </div>
-          <div class="image">
-            <img
-              src="/images/CEApp/6.png"
-              alt="A screenshot of the user profile page at red-cea.web.app"
-            />
-            <div class="image-footer">
-              <p class="description">Perfiles de usuario</p>
-            </div>
-          </div>
-        </div>
-        <p class="description">
-          Actualmente, el CEA N°5 de Bragado y el CEA N°19 de General Rodríguez,
-          están incorporados a Red de CEAs.
-          <br />
-          El CEA de Bragado tiene su sitio web en:
-          <a href="https://ceabragado.com" target="blank">ceabragado.com</a>
-          <br />
+        </section>
 
-          El CEA de General Rodríguez tiene su sitio web en:
-          <a href="https://ceadiecinueve.com" target="blank"
-            >ceadiecinueve.com</a
-          >
-          <br />
-          Los directivos de ambas instituciones ingresan a
-          <a href="https://red-cea.web.app" target="blank">Red de CEAs</a> para
-          administrar su institución correspondiente.
-        </p>
+        <!-- Overview -->
+        <section class="case-section">
+          <div class="case-two-col">
+            <div class="case-two-col__content">
+              <p class="case-label" data-i18n="ceapp_label_context">Contexto</p>
+              <h2 class="case-section-title" data-i18n="ceapp_what_are_ceas">¿Qué son los CEAs?</h2>
+              <p class="case-body" data-i18n="ceapp_context_p1">
+                Los Centros de Educación Agraria (CEAs) son instituciones
+                públicas dependientes de la Dirección Provincial de Educación
+                Técnico Profesional. Ofrecen formación profesional inicial y
+                capacitación laboral para jóvenes y adultos mediante itinerarios
+                formativos: cursos, charlas y jornadas técnicas. Existen
+                alrededor de 30 CEAs en la provincia de Buenos Aires.
+              </p>
+              <p class="case-body" data-i18n="ceapp_context_p2">
+                Antes de CEApp, la gestión era completamente manual — papel,
+                hojas de cálculo, emails — sin visibilidad para el público ni
+                flujo claro para los administradores.
+              </p>
+            </div>
+            <div class="case-two-col__highlights">
+              <div class="case-highlight">
+                <span class="case-highlight__icon">🌐</span>
+                <p class="case-highlight__label" data-i18n="ceapp_hl1_label">Sitios públicos</p>
+                <p class="case-highlight__text" data-i18n="ceapp_hl1_text">
+                  Cada CEA tiene su propio sitio con capacitaciones en tiempo
+                  real e inscripciones online
+                </p>
+              </div>
+              <div class="case-highlight">
+                <span class="case-highlight__icon">🔐</span>
+                <p class="case-highlight__label" data-i18n="ceapp_hl2_label">Panel administrativo</p>
+                <p class="case-highlight__text" data-i18n="ceapp_hl2_text">
+                  Backoffice centralizado para gestionar capacitaciones,
+                  usuarios y exportaciones
+                </p>
+              </div>
+              <div class="case-highlight">
+                <span class="case-highlight__icon">📋</span>
+                <p class="case-highlight__label" data-i18n="ceapp_hl3_label">Datos para el estado</p>
+                <p class="case-highlight__text" data-i18n="ceapp_hl3_text">
+                  Exportación en formatos requeridos por organismos públicos
+                  certificadores
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Public sites -->
+        <section class="case-section">
+          <p class="case-label" data-i18n="ceapp_label_public">Sitios de acceso público</p>
+          <h2 class="case-section-title" data-i18n="ceapp_public_title">Una ventana digital para cada CEA</h2>
+          <p class="case-body case-body--wide" data-i18n="ceapp_public_body">
+            Cada institución incorporada a Red de CEAs obtiene su propio sitio
+            web dinámico con información actualizada de capacitaciones vigentes.
+            Las personas interesadas crean una cuenta única y pueden inscribirse
+            a múltiples capacitaciones, acceder a aulas virtuales y recibir su
+            constancia de participación al finalizarlas.
+          </p>
+          <div class="case-gallery">
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-5/home.png"
+                alt="Captura de ceabragado.com"
+              />
+              <p class="case-gallery__caption">
+                <a href="https://ceabragado.com" target="_blank"
+                  >ceabragado.com ↗</a
+                >
+              </p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-19/home.png"
+                alt="Captura de ceadiecinueve.com"
+              />
+              <p class="case-gallery__caption">
+                <a href="https://ceadiecinueve.com" target="_blank"
+                  >ceadiecinueve.com ↗</a
+                >
+              </p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-5/courses.png"
+                alt="Listado de capacitaciones"
+              />
+              <p class="case-gallery__caption" data-i18n="ceapp_cap_courses">Listado de capacitaciones</p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-5/course-details.png"
+                alt="Detalles de una capacitación"
+              />
+              <p class="case-gallery__caption" data-i18n="ceapp_cap_course_detail">Detalles de una capacitación</p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-5/create-profile.png"
+                alt="Creación de perfil"
+              />
+              <p class="case-gallery__caption" data-i18n="ceapp_cap_create_profile">Creación de perfil de usuario</p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-5/user-profile.png"
+                alt="Perfil de usuario"
+              />
+              <p class="case-gallery__caption" data-i18n="ceapp_cap_user_profile">Perfil de usuario</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lifecycle states -->
+        <section class="case-section">
+          <p class="case-label" data-i18n="ceapp_label_design">Diseño de producto</p>
+          <h2 class="case-section-title" data-i18n="ceapp_lifecycle_title">
+            Ciclo de vida de las capacitaciones
+          </h2>
+          <p class="case-body case-body--wide" data-i18n="ceapp_lifecycle_body">
+            Las capacitaciones atraviesan estados claramente definidos — desde
+            su creación hasta el cierre y emisión de constancias. Este modelo de
+            estados guía tanto la experiencia del usuario final como las
+            acciones disponibles para el administrador.
+          </p>
+          <div class="case-gallery case-gallery--compact">
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-5/states/prox.png"
+                alt="Inscripción aún no disponible"
+              />
+              <p class="case-gallery__caption" data-i18n="ceapp_state_prox">Inscripción aún no disponible</p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-5/states/open.png"
+                alt="Inscripción disponible"
+              />
+              <p class="case-gallery__caption" data-i18n="ceapp_state_open">Inscripción disponible</p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-5/states/soon.png"
+                alt="Comenzará a dictarse"
+              />
+              <p class="case-gallery__caption" data-i18n="ceapp_state_soon">Comenzará a dictarse</p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-5/states/going.png"
+                alt="Comenzó a dictarse"
+              />
+              <p class="case-gallery__caption" data-i18n="ceapp_state_going">Comenzó a dictarse</p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEA-5/states/ended.png"
+                alt="Finalizó el dictado"
+              />
+              <p class="case-gallery__caption" data-i18n="ceapp_state_ended">Finalizó el dictado</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Admin panel -->
+        <section class="case-section">
+          <p class="case-label">Backoffice</p>
+          <h2 class="case-section-title" data-i18n="ceapp_admin_title">Panel administrativo centralizado</h2>
+          <p class="case-body case-body--wide" data-i18n="ceapp_admin_body">
+            Los directivos acceden a
+            <a href="https://red-cea.web.app" target="_blank"
+              >red-cea.web.app</a
+            >
+            para administrar su institución. Desde allí pueden crear, editar y
+            gestionar capacitaciones, verificar datos personales de inscriptos y
+            exportar la información en los formatos requeridos por los
+            organismos públicos.
+          </p>
+          <div class="case-gallery">
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img src="/images/CEApp/1.png" alt="Captura de red-cea.web.app" />
+              <p class="case-gallery__caption">
+                <a href="https://red-cea.web.app" target="_blank"
+                  >red-cea.web.app ↗</a
+                >
+              </p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img
+                src="/images/CEApp/2.png"
+                alt="Administración de capacitaciones"
+              />
+              <p class="case-gallery__caption" data-i18n="ceapp_cap_admin_trainings">
+                Administración de capacitaciones
+              </p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img src="/images/CEApp/3.png" alt="Administración de usuarios" />
+              <p class="case-gallery__caption" data-i18n="ceapp_cap_admin_users">Administración de usuarios</p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img src="/images/CEApp/4.png" alt="Administración de imágenes" />
+              <p class="case-gallery__caption" data-i18n="ceapp_cap_admin_images">Administración de imágenes</p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img src="/images/CEApp/5.png" alt="Creación de capacitaciones" />
+              <p class="case-gallery__caption" data-i18n="ceapp_cap_create_trainings">Creación de capacitaciones</p>
+            </div>
+            <div class="case-gallery__item case-gallery__item--captioned">
+              <img src="/images/CEApp/6.png" alt="Perfiles de usuario" />
+              <p class="case-gallery__caption" data-i18n="ceapp_cap_user_profiles">Perfiles de usuario</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- New features: Certificates, Forms, Exports -->
+        <section class="case-section">
+          <p class="case-label" data-i18n="ceapp_label_features">Nuevas funcionalidades</p>
+          <h2 class="case-section-title" data-i18n="ceapp_features_title">Más herramientas para los CEAs</h2>
+          <p class="case-body case-body--wide" data-i18n="ceapp_features_body">
+            CEApp incorporó nuevos módulos que complementan el flujo
+            administrativo: desde la gestión de docentes hasta la generación
+            masiva de certificados con plantillas personalizadas y exportaciones
+            en formatos oficiales para la Dirección de Educación Agraria y el
+            Ministerio de Desarrollo Agrario.
+          </p>
+
+          <div class="case-features-grid">
+            <div class="case-feature">
+              <span class="case-feature__icon">📝</span>
+              <h3 class="case-feature__title" data-i18n="ceapp_feat1_title">Formularios</h3>
+              <p class="case-feature__text" data-i18n="ceapp_feat1_text">
+                Crear formularios personalizados, visualizar respuestas y
+                exportar resultados. Ideal para encuestas, relevamientos y
+                solicitudes internas.
+              </p>
+            </div>
+
+            <div class="case-feature">
+              <span class="case-feature__icon">🎓</span>
+              <h3 class="case-feature__title" data-i18n="ceapp_feat2_title">Plantillas de certificados</h3>
+              <p class="case-feature__text" data-i18n="ceapp_feat2_text">
+                Diseño visual de plantillas reutilizables con campos dinámicos.
+                Generación masiva de certificados en PNG o PDF desde el panel
+                administrativo.
+              </p>
+            </div>
+
+            <div class="case-feature">
+              <span class="case-feature__icon">👨‍🏫</span>
+              <h3 class="case-feature__title" data-i18n="ceapp_feat3_title">Docentes</h3>
+              <p class="case-feature__text" data-i18n="ceapp_feat3_text">
+                Gestión de docentes asignados a capacitaciones, con perfil
+                independiente por institución.
+              </p>
+            </div>
+
+            <div class="case-feature">
+              <span class="case-feature__icon">📊</span>
+              <h3 class="case-feature__title" data-i18n="ceapp_feat4_title">Estadísticas</h3>
+              <p class="case-feature__text" data-i18n="ceapp_feat4_text">
+                Métricas de inscripciones y uso por capacitación. Visibilidad
+                real del impacto de cada institución.
+              </p>
+            </div>
+
+            <div class="case-feature">
+              <span class="case-feature__icon">📤</span>
+              <h3 class="case-feature__title" data-i18n="ceapp_feat5_title">Exportación de datos</h3>
+              <p class="case-feature__text" data-i18n="ceapp_feat5_text">
+                Listados en formatos DEA, BPM y MDA. Imágenes de DNI (frente,
+                reverso, foto carnet) exportables en ZIP o PDF con un clic.
+              </p>
+            </div>
+
+            <div class="case-feature">
+              <span class="case-feature__icon">🖼️</span>
+              <h3 class="case-feature__title" data-i18n="ceapp_feat6_title">Galería de imágenes</h3>
+              <p class="case-feature__text" data-i18n="ceapp_feat6_text">
+                Biblioteca de imágenes institucionales para uso en cursos y
+                publicaciones. Almacenamiento en Firebase Storage.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Institutions -->
+        <section class="case-section">
+          <p class="case-label" data-i18n="ceapp_label_network">Red de instituciones</p>
+          <h2 class="case-section-title" data-i18n="ceapp_network_title">Los CEAs que ya usan CEApp</h2>
+          <p class="case-body case-body--wide" data-i18n="ceapp_network_body">
+            Cada institución tiene su propio proyecto Firebase, su sitio público
+            y acceso al panel administrativo. La app detecta el CEA activo por
+            la ruta y carga la configuración correspondiente de forma
+            automática.
+          </p>
+          <div class="case-institutions">
+            <!-- CEA N°3 — Cañuelas -->
+            <div class="case-institution">
+              <!-- SCREENSHOT: Logo del CEA 3 Cañuelas (cea3Logo) -->
+              <div class="case-institution__logo-placeholder">CEA 3</div>
+              <div class="case-institution__info">
+                <p class="case-institution__id">CEA N°3</p>
+                <p class="case-institution__city">Cañuelas</p>
+                <a
+                  href="https://cea3canuelas.web.app"
+                  target="_blank"
+                  class="case-institution__link"
+                  >cea3canuelas.web.app ↗</a
+                >
+              </div>
+            </div>
+
+            <!-- CEA N°5 — Bragado -->
+            <div class="case-institution">
+              <!-- SCREENSHOT: Logo del CEA 5 Bragado (cea5Logo) -->
+              <div class="case-institution__logo-placeholder">CEA 5</div>
+              <div class="case-institution__info">
+                <p class="case-institution__id">CEA N°5</p>
+                <p class="case-institution__city">Bragado</p>
+                <a
+                  href="https://ceabragado.com"
+                  target="_blank"
+                  class="case-institution__link"
+                  >ceabragado.com ↗</a
+                >
+              </div>
+            </div>
+
+            <!-- CEA N°7 — Olavarría -->
+            <div class="case-institution">
+              <!-- SCREENSHOT: Logo del CEA 7 Olavarría (cea7Logo) -->
+              <div class="case-institution__logo-placeholder">CEA 7</div>
+              <div class="case-institution__info">
+                <p class="case-institution__id">CEA N°7</p>
+                <p class="case-institution__city">Olavarría</p>
+                <a
+                  href="https://ceaolavarria.web.app"
+                  target="_blank"
+                  class="case-institution__link"
+                  >ceaolavarria.web.app ↗</a
+                >
+              </div>
+            </div>
+
+            <!-- CEA N°9 — Mercedes -->
+            <div class="case-institution">
+              <!-- SCREENSHOT: Logo del CEA 9 Mercedes (cea9Logo) -->
+              <div class="case-institution__logo-placeholder">CEA 9</div>
+              <div class="case-institution__info">
+                <p class="case-institution__id">CEA N°9</p>
+                <p class="case-institution__city">Mercedes</p>
+                <a
+                  href="https://ceamercedes.web.app"
+                  target="_blank"
+                  class="case-institution__link"
+                  >ceamercedes.web.app ↗</a
+                >
+              </div>
+            </div>
+
+            <!-- CEA N°19 — General Rodríguez -->
+            <div class="case-institution">
+              <!-- SCREENSHOT: Logo del CEA 19 General Rodríguez (cea19Logo) -->
+              <div class="case-institution__logo-placeholder">CEA 19</div>
+              <div class="case-institution__info">
+                <p class="case-institution__id">CEA N°19</p>
+                <p class="case-institution__city">General Rodríguez</p>
+                <a
+                  href="https://ceadiecinueve.com"
+                  target="_blank"
+                  class="case-institution__link"
+                  >ceadiecinueve.com ↗</a
+                >
+              </div>
+            </div>
+
+            <!-- CEA N°24 — Suipacha -->
+            <div class="case-institution">
+              <!-- SCREENSHOT: Logo del CEA 24 Suipacha (cea24Logo) -->
+              <div class="case-institution__logo-placeholder">CEA 24</div>
+              <div class="case-institution__info">
+                <p class="case-institution__id">CEA N°24</p>
+                <p class="case-institution__city">Suipacha</p>
+                <a
+                  href="https://ceasuipacha.web.app"
+                  target="_blank"
+                  class="case-institution__link"
+                  >ceasuipacha.web.app ↗</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer class="section footer" id="contact">
-        <div class="small-items-bar">
-          <a
-            href="mailto:lazarovttac@gmail.com"
-            class="item small"
-            target="blank"
-          >
-            <svg
-              width="20"
-              height="16"
-              viewBox="0 0 20 16"
-              xmlns="http://www.w3.org/2000/svg"
+
+      <!-- Contact -->
+      <section class="section contact" id="contact">
+        <div class="contact-content">
+          <h2 class="title" data-i18n="section_contact_title">Let's talk.</h2>
+          <p class="contact-text" data-i18n="contact_text">
+            If you're working on something that sits at the edge of engineering
+            and real-world impact — whether that's a product, a research
+            problem, or something in between — I'd like to hear about it.
+          </p>
+          <div class="social-links">
+            <a href="mailto:lazarovttac@gmail.com" class="social-btn">
+              <img src="./images/social/mail.svg" alt="Email" />
+              Email
+            </a>
+            <a
+              href="https://github.com/lazarovttac"
+              target="_blank"
+              class="social-btn"
             >
-              <path
-                d="M19.2862 0.857117H0.714844L10.0006 8.50569L19.3912 0.878545C19.3569 0.868501 19.3218 0.861344 19.2862 0.857117Z"
-              />
-              <path
-                d="M10.4507 9.98281C10.1875 10.1983 9.80888 10.1983 9.54571 9.98281L0 2.11853V14.4285C0 14.823 0.319796 15.1428 0.714299 15.1428H19.2857C19.6802 15.1428 20 14.823 20 14.4285V2.22425L10.4507 9.98281Z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/lazarovttac"
-            class="item small"
-            target="blank"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
+              <img src="./images/social/GitHub.svg" alt="GitHub" />
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/lazarovttac"
+              target="_blank"
+              class="social-btn"
             >
-              <path
-                d="M10 0C4.478 0 0 4.478 0 10C0 15.522 4.478 20 10 20C15.522 20 20 15.522 20 10C20 4.478 15.522 0 10 0ZM7.09412 15.1172H4.65866V7.79007H7.09412V15.1172ZM5.87646 6.78955H5.8606C5.04333 6.78955 4.51477 6.22696 4.51477 5.52383C4.51477 4.80484 5.05951 4.25781 5.89264 4.25781C6.72577 4.25781 7.23846 4.80484 7.25433 5.52383C7.25433 6.22696 6.72577 6.78955 5.87646 6.78955ZM15.8759 15.1172H13.4407V11.1974C13.4407 10.2122 13.0881 9.54041 12.2069 9.54041C11.5341 9.54041 11.1334 9.99359 10.9573 10.4311C10.8929 10.5876 10.8772 10.8064 10.8772 11.0254V15.1172H8.44193C8.44193 15.1172 8.47382 8.47748 8.44193 7.79007H10.8772V8.82751C11.2009 8.32825 11.7799 7.6181 13.0721 7.6181C14.6744 7.6181 15.8759 8.66531 15.8759 10.9158V15.1172Z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://www.instagram.com/laverzatti/"
-            class="item small"
-            target="blank"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0)">
-                <path
-                  d="M19.9804 5.88005C19.9336 4.81738 19.7617 4.0868 19.5156 3.45374C19.2616 2.78176 18.8709 2.18014 18.359 1.68002C17.8589 1.1721 17.2533 0.777435 16.5891 0.527447C15.9524 0.281274 15.2256 0.109427 14.163 0.0625732C13.0924 0.0117516 12.7525 0 10.0371 0C7.32173 0 6.98185 0.0117516 5.91521 0.0586052C4.85253 0.105459 4.12195 0.277459 3.48905 0.523479C2.81692 0.777435 2.2153 1.16814 1.71517 1.68002C1.20726 2.18014 0.812743 2.78573 0.562603 3.44992C0.316431 4.0868 0.144583 4.81341 0.0977295 5.87609C0.0469078 6.9467 0.0351562 7.28658 0.0351562 10.002C0.0351562 12.7173 0.0469078 13.0572 0.0937614 14.1239C0.140615 15.1865 0.312615 15.9171 0.558787 16.5502C0.812743 17.2221 1.20726 17.8238 1.71517 18.3239C2.2153 18.8318 2.82089 19.2265 3.48508 19.4765C4.12195 19.7226 4.84856 19.8945 5.91139 19.9413C6.97788 19.9883 7.31792 19.9999 10.0333 19.9999C12.7487 19.9999 13.0885 19.9883 14.1552 19.9413C15.2179 19.8945 15.9484 19.7226 16.5813 19.4765C17.9255 18.9568 18.9881 17.8941 19.5078 16.5502C19.7538 15.9133 19.9258 15.1865 19.9727 14.1239C20.0195 13.0572 20.0313 12.7173 20.0313 10.002C20.0313 7.28658 20.0273 6.9467 19.9804 5.88005ZM18.1794 14.0457C18.1364 15.0225 17.9723 15.5499 17.8356 15.9015C17.4995 16.7728 16.808 17.4643 15.9367 17.8004C15.5851 17.9372 15.0538 18.1012 14.0809 18.1441C13.026 18.1911 12.7096 18.2027 10.0411 18.2027C7.37255 18.2027 7.05221 18.1911 6.00113 18.1441C5.02438 18.1012 4.49693 17.9372 4.1453 17.8004C3.71171 17.6402 3.31705 17.3862 2.9967 17.0541C2.66461 16.7298 2.41065 16.3391 2.2504 15.9055C2.11366 15.5539 1.94959 15.0225 1.90671 14.0497C1.8597 12.9948 1.8481 12.6783 1.8481 10.0097C1.8481 7.34122 1.8597 7.02087 1.90671 5.96995C1.94959 4.99319 2.11366 4.46575 2.2504 4.11412C2.41065 3.68038 2.66461 3.28586 3.00067 2.96536C3.32483 2.63327 3.71553 2.37931 4.14927 2.21921C4.5009 2.08247 5.03231 1.9184 6.0051 1.87537C7.05999 1.82851 7.37652 1.81676 10.0449 1.81676C12.7174 1.81676 13.0338 1.82851 14.0848 1.87537C15.0616 1.9184 15.589 2.08247 15.9407 2.21921C16.3742 2.37931 16.7689 2.63327 17.0893 2.96536C17.4214 3.28967 17.6753 3.68038 17.8356 4.11412C17.9723 4.46575 18.1364 4.99701 18.1794 5.96995C18.2263 7.02484 18.238 7.34122 18.238 10.0097C18.238 12.6783 18.2263 12.9908 18.1794 14.0457Z"
-                />
-                <path
-                  d="M10.0371 4.8642C7.20074 4.8642 4.89941 7.16537 4.89941 10.0019C4.89941 12.8385 7.20074 15.1396 10.0371 15.1396C12.8737 15.1396 15.1749 12.8385 15.1749 10.0019C15.1749 7.16537 12.8737 4.8642 10.0371 4.8642ZM10.0371 13.3346C8.19703 13.3346 6.70442 11.8422 6.70442 10.0019C6.70442 8.16166 8.19703 6.66921 10.0371 6.66921C11.8774 6.66921 13.3699 8.16166 13.3699 10.0019C13.3699 11.8422 11.8774 13.3346 10.0371 13.3346Z"
-                />
-                <path
-                  d="M16.5777 4.66109C16.5777 5.32346 16.0407 5.86052 15.3781 5.86052C14.7158 5.86052 14.1787 5.32346 14.1787 4.66109C14.1787 3.99858 14.7158 3.46167 15.3781 3.46167C16.0407 3.46167 16.5777 3.99858 16.5777 4.66109Z"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0">
-                  <rect width="20" height="20" />
-                </clipPath>
-              </defs>
-            </svg>
-          </a>
-          <a
-            href="https://github.com/lazarovttac"
-            class="item small"
-            target="blank"
-          >
-            <svg
-              width="41"
-              height="39"
-              viewBox="0 0 41 39"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20.5 0C9.17375 0 0 8.95291 0 19.9948C0 28.8307 5.87325 36.3237 14.0169 38.9655C15.0419 39.1537 15.4177 38.5348 15.4177 38.0041C15.4177 37.5293 15.4006 36.2712 15.3921 34.6044C9.68967 35.8099 8.487 31.9219 8.487 31.9219C7.55425 29.6141 6.20638 28.9969 6.20638 28.9969C4.34942 27.7574 6.34987 27.7828 6.34987 27.7828C8.40842 27.9219 9.48979 29.843 9.48979 29.843C11.3177 32.9002 14.2885 32.0168 15.4604 31.5064C15.6449 30.2127 16.1728 29.3326 16.7588 28.8324C12.206 28.3322 7.421 26.6129 7.421 18.952C7.421 16.7698 8.21537 14.9859 9.53079 13.5871C9.30017 13.0818 8.60829 11.0487 9.71017 8.29501C9.71017 8.29501 11.427 7.75919 15.3477 10.345C16.9877 9.90076 18.7302 9.68033 20.4727 9.67016C22.2152 9.68033 23.9577 9.90076 25.5977 10.345C29.4927 7.75919 31.2095 8.29501 31.2095 8.29501C32.3114 11.0487 31.6195 13.0818 31.4145 13.5871C32.7214 14.9859 33.5158 16.7698 33.5158 18.952C33.5158 26.6332 28.7239 28.3237 24.1627 28.8155C24.8802 29.4157 25.5464 30.6417 25.5464 32.5153C25.5464 35.191 25.5208 37.3411 25.5208 37.9905C25.5208 38.5145 25.8795 39.1402 26.9302 38.9401C35.1319 36.3152 41 28.8172 41 19.9948C41 8.95291 31.8211 0 20.5 0Z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://platzi.com/p/lazarovttac/"
-            class="item small"
-            target="blank"
-          >
-            <svg
-              width="18"
-              height="20"
-              viewBox="0 0 18 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M12.3071 14.5433L16.7729 10.091C18.0029 8.86474 18.0029 6.87656 16.7729 5.6503L12.3295 1.22035C11.0995 -0.00591362 9.10525 -0.00591397 7.87525 1.22035L1.19596 7.87939C-0.0218076 9.09346 -0.0356783 11.0576 1.16482 12.2886L7.75823 19.0498C8.99773 20.3209 11.0462 20.3177 12.2816 19.0427L14.4344 16.8211C14.4774 16.7768 14.4768 16.7064 14.4331 16.6628L12.5433 14.7788L12.3071 14.5433ZM12.3071 14.5433L9.97348 12.2943C9.95521 12.2767 9.94488 12.2524 9.94488 12.227C9.94488 12.2022 9.95476 12.1784 9.97235 12.1608L14.0394 8.10616C14.1697 7.97621 14.1697 7.7651 14.0394 7.63515L10.1024 3.71008C10.0153 3.62329 9.87445 3.62329 9.7874 3.71008L3.80315 9.67618C3.58591 9.89276 3.58591 10.2446 3.80315 10.4612L9.96786 16.6072C10.0036 16.6428 10.0519 16.6628 10.1024 16.6628C10.1528 16.6628 10.2012 16.6428 10.2369 16.6072L12.3071 14.5433Z"
-              />
-            </svg>
-          </a>
+              <img src="./images/social/linkedIn.svg" alt="LinkedIn" />
+              LinkedIn
+            </a>
+          </div>
         </div>
-      </footer>
+      </section>
     </div>
-    <div class="background-shadow"></div>
+
+    <button id="lang-toggle-btn">
+      <span class="lang-icon">🇪🇸</span> ES
+    </button>
+    <script src="./js/translations.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
