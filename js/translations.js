@@ -141,11 +141,13 @@ const TRANSLATIONS = {
     ceapp_admin_body:
       "Directors log in to red-cea.web.app to manage their institution. From there they can create, edit, and manage trainings, verify personal data of enrollees, and export information in the formats required by public agencies.",
 
+    ceapp_cap_main_hub: "Main hub",
     ceapp_cap_admin_trainings: "Training management",
     ceapp_cap_admin_users: "User management",
     ceapp_cap_admin_images: "Image management",
     ceapp_cap_create_trainings: "Training creation",
     ceapp_cap_user_profiles: "User profiles",
+    ceapp_cap_stats: "Usage statistics",
 
     ceapp_label_features: "New features",
     ceapp_features_title: "More tools for the CEAs",
@@ -412,11 +414,13 @@ const TRANSLATIONS = {
     ceapp_admin_body:
       "Los directivos acceden a red-cea.web.app para administrar su institución. Desde allí pueden crear, editar y gestionar capacitaciones, verificar datos personales de inscriptos y exportar la información en los formatos requeridos por los organismos públicos.",
 
+    ceapp_cap_main_hub: "Panel principal",
     ceapp_cap_admin_trainings: "Administración de capacitaciones",
     ceapp_cap_admin_users: "Administración de usuarios",
     ceapp_cap_admin_images: "Administración de imágenes",
     ceapp_cap_create_trainings: "Creación de capacitaciones",
     ceapp_cap_user_profiles: "Perfiles de usuario",
+    ceapp_cap_stats: "Estadísticas de uso",
 
     ceapp_label_features: "Nuevas funcionalidades",
     ceapp_features_title: "Más herramientas para los CEAs",
