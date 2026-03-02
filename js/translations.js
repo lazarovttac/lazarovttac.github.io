@@ -282,7 +282,7 @@ const TRANSLATIONS = {
     nav_cta: "Hablemos",
 
     /* ── Hero ── */
-    hero_title: "Ingeniero en Sistemas · \nDesarrollador Web e IA",
+    hero_title: "Ingeniero en Sistemas · \nDesarrollador Web y de IA",
     hero_subtitle:
       "Construyo productos web y sistemas de machine learning para producción. Actualmente trabajo en TradeSpark, desarrollando trading algorítmico impulsado por IA.",
     hero_btn_projects: "Ver Proyectos",
