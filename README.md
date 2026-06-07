@@ -1,6 +1,6 @@
-# lazarovttac.github.io
+# lazaro.vc
 
-Personal portfolio and project showcase — deployed via **GitHub Pages** at [lazarovttac.github.io](https://lazarovttac.github.io).
+Personal portfolio and project showcase — deployed via **GitHub Pages** on the custom domain [lazaro.vc](https://lazaro.vc).
 
 ---
 
@@ -26,12 +26,17 @@ The site is fully bilingual (English / Spanish) with a language toggle, and adap
 
 ## Tech
 
-- **HTML5** — semantic structure, SEO meta tags
+- **HTML5** — semantic structure, SEO meta tags, per-page canonical URLs
 - **Vanilla CSS** (`main.css`) — custom design system, glassmorphism, animations, responsive layout
-- **Vanilla JS** (`js/index.js`) — nav behavior, terminal animation, scroll effects
+- **Vanilla JS** (`js/index.js`) — nav behavior, terminal animation, scroll effects, email obfuscation
 - **i18n** (`js/translations.js`) — bilingual EN/ES toggle via `data-i18n` attributes
 - **Fonts** — Geist, Inter, JetBrains Mono (Google Fonts)
-- **Deployed** — GitHub Pages (no CI/CD needed)
+- **SEO** — `sitemap.xml` + `robots.txt` for crawler discovery (Google Search Console)
+- **Deployed** — GitHub Pages on a custom domain (`CNAME` → `lazaro.vc`), no CI/CD needed
+
+### Email protection
+
+The contact address is never written into the static HTML. It's stored base64-encoded in `js/index.js` and only decoded into a `mailto:` link on the first user interaction (hover, focus, touch, or click) with the Email button, so crawlers and spam harvesters never see it.
 
 ---
 
@@ -49,10 +54,13 @@ Stack: React · Sass · Firebase · Figma
 Online editor for designing, testing, and sharing finite automata (DFA/NFA). Built to turn formal computation theory into an interactive tool.
 Stack: React · Firebase · Figma
 
-### Games (Google Play)
-Three mobile games: **Donut Tunnel**, **Neon Hover**, and **Planet Dance** — featuring procedural generation, orbit simulation, and polished gameplay loops.
-Stack: Unity · C#  
-[View on Google Play ↗](https://play.google.com/store/apps/developer?id=L%C3%A1zaro+V.+C.)
+### [GuessTheClip](https://guesstheclip.com)
+Heardle-style guessing game: identify a YouTube creator's video from a growing audio clip, with multiple reveal mechanics, difficulty modes, and chained runs.
+Stack: React · TypeScript · Firebase
+
+### Games
+Mobile games published on Google Play — **Donut Tunnel**, **Neon Hover**, and **Planet Dance** — featuring procedural generation, orbit simulation, and polished gameplay design.
+Stack: Unity · C#
 
 ### AI Portfolio Rotation (TradeSpark — internal)
 ML system for equity signal generation: sequential neural network trained on 2M+ rows of market data, end-to-end from raw input to walk-forward validated predictions.
@@ -63,7 +71,7 @@ Stack: Python · TensorFlow/Keras · Pandas
 ## Structure
 
 ```
-lazarovttac.github.io/
+lazaro.vc/
 ├── index.html               # Main portfolio page
 ├── ceapp.html               # CEApp case study
 ├── semillero.html           # Semillero case study
@@ -71,11 +79,15 @@ lazarovttac.github.io/
 ├── my-games.html            # Games showcase
 ├── main.css                 # Global stylesheet (design system)
 ├── logo.svg                 # Brand logo
+├── CNAME                    # Custom domain for GitHub Pages (lazaro.vc)
+├── robots.txt               # Crawler directives → sitemap
+├── sitemap.xml              # Page index for search engines
 ├── js/
-│   ├── index.js             # Main scripts (nav, terminal, scroll)
+│   ├── index.js             # Main scripts (nav, terminal, scroll, email)
 │   ├── translations.js      # EN/ES translation strings
 │   └── ascii_image.js       # ASCII art helper
-├── images/                  # Photos, screenshots, skill icons
+├── images/                  # Photos, screenshots, skill + project icons
+│   └── icons/               # Project card icons + favicon
 ├── icons/                   # SVG icon set
 └── ascii/                   # ASCII art assets
 ```
@@ -106,4 +118,4 @@ All **images and screenshots** are personal or client property and are not cover
 
 ---
 
-*Built by [Lázaro Ventancor Cressatti](https://lazarovttac.github.io) — Systems Engineer & AI/Web Developer.*
+*Built by [Lázaro Ventancor Cressatti](https://lazaro.vc) — Systems Engineer & AI/Web Developer.*

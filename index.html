@@ -15,6 +15,10 @@
       rel="stylesheet"
     />
 
+    <link rel="icon" type="image/png" href="./images/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="./images/icons/favicon.png" />
+    <link rel="canonical" href="https://lazaro.vc/" />
+
     <link rel="stylesheet" href="./main.css" />
     <title>Lázaro Ventancor · Engineer &amp; Developer</title>
   </head>
@@ -59,8 +63,8 @@
               </h1>
               <p class="hero-subtitle" data-i18n="hero_subtitle">
                 Building production-grade web products and machine learning
-                systems. Currently at TradeSpark, working on AI-driven
-                algorithmic trading.
+                systems. Currently leading AI at TradeSpark, an Argentine
+                capital-markets fintech.
               </p>
               <div class="hero-ctas">
                 <a
@@ -79,7 +83,7 @@
             </div>
             <div class="hero-visuals">
               <div class="image-wrapper">
-                <img src="./images/me.jpg" alt="Lázaro Ventancor" />
+                <img src="./images/me.png" alt="Lázaro Ventancor" />
               </div>
               <div class="floating-tags">
                 <span class="tag" data-i18n="tag_trading"
@@ -101,6 +105,11 @@
         <div class="projects">
           <div class="project-card">
             <div class="project-card__content">
+              <img
+                class="project-card__icon"
+                src="./images/icons/tradespark.png"
+                alt=""
+              />
               <p class="title">AI Portfolio Rotation (TradeSpark)</p>
               <p class="project-tag" data-i18n="proj1_tag">
                 ML Research · Internship
@@ -129,6 +138,11 @@
             "
           >
             <div class="project-card__content">
+              <img
+                class="project-card__icon"
+                src="./images/icons/ceapp.png"
+                alt=""
+              />
               <p class="title">CEApp (Red de CEAs)</p>
               <p class="project-tag" data-i18n="proj2_tag">
                 Web App · Production
@@ -164,6 +178,71 @@
               </div>
             </div>
           </div>
+
+          <div
+            class="project-card"
+            style="cursor: pointer"
+            onclick="
+              if (!event.target.closest('a'))
+                window.location.href = 'https://guesstheclip.com';
+            "
+          >
+            <div class="project-card__content">
+              <img
+                class="project-card__icon"
+                src="./images/icons/guesstheclip.png"
+                alt=""
+              />
+              <p class="title">GuessTheClip</p>
+              <p class="project-tag" data-i18n="proj6_tag">Game · Web App</p>
+              <p class="description" data-i18n="proj6_desc">
+                Heardle-style guessing game: identify a YouTube creator's video
+                from a growing audio clip. Multiple reveal mechanics, difficulty
+                modes, and chained runs.
+              </p>
+              <div class="card-footer">
+                <span class="stack-badge">React · TypeScript · Firebase</span>
+                <a
+                  href="https://guesstheclip.com"
+                  target="_blank"
+                  class="project-link"
+                  >guesstheclip.com ↗</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="project-card"
+            style="cursor: pointer"
+            onclick="
+              if (!event.target.closest('a'))
+                window.location.href = 'automaton_disigner.html';
+            "
+          >
+            <div class="project-card__content">
+              <img
+                class="project-card__icon"
+                src="./images/icons/my-automata.png"
+                alt=""
+              />
+              <p class="title">My Automata</p>
+              <p class="project-tag" data-i18n="proj4_tag">Web Tool · CS</p>
+              <p class="description" data-i18n="proj4_desc">
+                Online editor for designing, testing, and sharing finite
+                automata (DFA/NFA). Built to translate formal computation theory
+                into an interactive tool.
+              </p>
+              <div class="card-footer">
+                <span class="stack-badge">React · Firebase · Figma</span>
+                <a
+                  href="https://my-automata.web.app"
+                  target="_blank"
+                  class="project-link"
+                  >my-automata.web.app ↗</a
+                >
+              </div>
+            </div>
+          </div>
           <div
             class="project-card"
             style="cursor: pointer"
@@ -173,6 +252,11 @@
             "
           >
             <div class="project-card__content">
+              <img
+                class="project-card__icon"
+                src="./images/icons/semillero.png"
+                alt=""
+              />
               <p class="title">Semillero</p>
               <p class="project-tag" data-i18n="proj3_tag">
                 Web App · Production
@@ -197,38 +281,16 @@
             style="cursor: pointer"
             onclick="
               if (!event.target.closest('a'))
-                window.location.href = 'automaton_disigner.html';
-            "
-          >
-            <div class="project-card__content">
-              <p class="title">My Automata</p>
-              <p class="project-tag" data-i18n="proj4_tag">Web Tool · CS</p>
-              <p class="description" data-i18n="proj4_desc">
-                Online editor for designing, testing, and sharing finite
-                automata (DFA/NFA). Built to translate formal computation theory
-                into an interactive tool.
-              </p>
-              <div class="card-footer">
-                <span class="stack-badge">React · Firebase · Figma</span>
-                <a
-                  href="https://my-automata.web.app"
-                  target="_blank"
-                  class="project-link"
-                  >my-automata.web.app ↗</a
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            class="project-card games-card"
-            style="cursor: pointer"
-            onclick="
-              if (!event.target.closest('a'))
                 window.location.href = 'my-games.html';
             "
           >
             <div class="project-card__content">
-              <p class="title">Games</p>
+              <img
+                class="project-card__icon"
+                src="./images/icons/games.png"
+                alt=""
+              />
+              <p class="title" data-i18n="proj5_title">Games</p>
               <p class="project-tag" data-i18n="proj5_tag">Game Dev</p>
               <p class="description" data-i18n="proj5_desc">
                 Mobile games published on Google Play: Donut Tunnel, Neon Hover,
@@ -237,12 +299,6 @@
               </p>
               <div class="card-footer">
                 <span class="stack-badge">Unity · C#</span>
-                <a
-                  href="https://play.google.com/store/apps/developer?id=L%C3%A1zaro+V.+C."
-                  target="_blank"
-                  class="project-link"
-                  >Google Play Store ↗</a
-                >
               </div>
             </div>
           </div>
@@ -255,6 +311,22 @@
           Work &amp; Education
         </p>
         <div class="educations">
+          <div class="education-card current-role-card">
+            <div class="education-card__content">
+              <p class="title">AI Developer</p>
+              <p class="subtitle" data-i18n="edu_current_subtitle">
+                TradeSpark · Full-time
+              </p>
+              <p class="description" data-i18n="edu_current_meta">
+                Tandil, Buenos Aires Province, Argentina · Hybrid
+              </p>
+            </div>
+            <div class="education-card__footer">
+              <span class="mono-date" data-i18n="edu_current_date">
+                APR 2026 — PRESENT
+              </span>
+            </div>
+          </div>
           <div class="education-card">
             <div class="education-card__content">
               <p class="title" data-i18n="edu1_title">
@@ -276,16 +348,16 @@
             <div class="education-card__content">
               <p class="title" data-i18n="edu2_title">Systems Engineering</p>
               <p class="subtitle" data-i18n="edu2_subtitle">
-                UNICEN | 5th Year
+                UNICEN · Graduate
               </p>
               <p class="description" data-i18n="edu2_desc">
-                Currently pursuing a 5-year licentiate program equivalent to an
-                MSc. Completed rigorous coursework in linear algebra, calculus,
+                5-year licentiate program equivalent to an MSc, completed with a
+                8.93/10 GPA. Rigorous coursework in linear algebra, calculus,
                 discrete math, data structures, and algorithms.
               </p>
             </div>
             <div class="education-card__footer">
-              <span class="mono-date">2021 — PRESENT</span>
+              <span class="mono-date">APR 2021 — APR 2026</span>
             </div>
           </div>
           <div class="education-card">
@@ -355,21 +427,14 @@
         <p class="section-title" data-i18n="section_about">About</p>
         <div class="about-content">
           <p class="prose" data-i18n="about_prose">
-            I'm a Systems Engineering student at UNICEN, Argentina — currently
-            in my 5th year. I build web products end-to-end and research machine
-            learning applied to financial markets.
+            I'm a Systems Engineer, graduated from UNCPBA (Argentina). I build
+            web products and work on AI applied to financial markets.
             <br />
             <br />
-            I also serve as a teaching assistant for Computer Science and
-            Computer Architecture. I believe understanding fundamentals is what
-            separates engineers from coders — and teaching them is the fastest
-            way to really learn them.
-            <br />
-            <br />
-            Right now I'm an AI intern at TradeSpark, working on a system that
-            uses neural networks to predict which assets are worth rotating
-            into. It's the kind of problem that sits at the edge of what's
-            actually solvable.
+            At TradeSpark, I lead and build the AI area as its main engineer. My
+            work is building tools to solve real problems that traders and
+            financial analysts face day to day, bringing in AI where it's
+            genuinely needed and worthwhile.
           </p>
           <!-- Terminal Window Mockup -->
           <div class="terminal-mockup">
@@ -476,7 +541,7 @@
             problem, or something in between — I'd like to hear about it.
           </p>
           <div class="social-links">
-            <a href="mailto:lazarovttac@gmail.com" class="social-btn">
+            <a href="#" class="social-btn" data-email aria-label="Email">
               <img src="./images/social/mail.svg" alt="Email" />
               Email
             </a>
@@ -501,9 +566,7 @@
       </section>
     </div>
 
-    <button id="lang-toggle-btn">
-      <span class="lang-icon">🇪🇸</span> ES
-    </button>
+    <button id="lang-toggle-btn"><span class="lang-icon">🇪🇸</span> ES</button>
     <script src="./js/translations.js"></script>
     <script src="./js/index.js"></script>
   </body>

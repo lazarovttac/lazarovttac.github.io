@@ -211,6 +211,10 @@ p a {
   display: flex;
   align-items: center;
   gap: 8px;
+  /* Keep the pill intact when the dock gets tight: never let the label wrap
+     or the button shrink below its content. */
+  white-space: nowrap;
+  flex-shrink: 0;
   transition:
     transform 0.3s,
     background-color 0.3s;
@@ -298,7 +302,6 @@ p a {
 }
 
 .landing {
-  padding-top: 15vh;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -437,7 +440,7 @@ p a {
 }
 
 .landing .image-wrapper {
-  width: 150px;
+  width: 175px;
   aspect-ratio: 1;
   z-index: 5;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -457,12 +460,14 @@ p a {
 }
 
 .landing .image-wrapper img {
-  width: 100%;
-  height: 100%;
+  width: 105%;
+  height: 105%;
   object-fit: cover;
 
   border-radius: 50%;
   box-shadow: inset 0 0 0 0 4px white;
+
+  filter: brightness(1.05);
 }
 
 /* Floating Tags */
@@ -918,13 +923,12 @@ p a {
   pointer-events: none;
 }
 
-.work .games-card {
-  grid-column: 1 / -1; /* Spans full width */
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(243, 244, 246, 1) 100%
-  );
+.work .project-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  object-fit: contain;
+  margin-bottom: 18px;
 }
 
 /* Skills Section */
@@ -1057,6 +1061,27 @@ p a {
   font-size: 1.3rem;
   color: var(--text-secondary);
   font-weight: 600;
+}
+
+.education .current-role-card {
+  grid-column: 1 / -1; /* Spans full width */
+  background: linear-gradient(135deg, #0057ff 0%, #3377ff 100%);
+  border-color: transparent;
+}
+
+.education .current-role-card .title,
+.education .current-role-card .subtitle,
+.education .current-role-card .description,
+.education .current-role-card .mono-date {
+  color: #ffffff;
+}
+
+.education .current-role-card .description {
+  opacity: 0.85;
+}
+
+.education .current-role-card .education-card__footer {
+  border-top-color: rgba(255, 255, 255, 0.25);
 }
 
 /* Marquee Section */

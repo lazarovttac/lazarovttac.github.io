@@ -137,8 +137,8 @@
     { cmd: "cat current_role.txt" },
     {
       lines: [
-        { text: "AI Intern @ TradeSpark", cls: "" },
-        { text: "Teaching Assistant @ UNICEN", cls: "" },
+        { text: "AI Engineer @ TradeSpark", cls: "" },
+        { text: "building the AI area from scratch", cls: "" },
       ],
     },
 
@@ -146,28 +146,19 @@
     {
       lines: [
         {
-          text: "cea-network/   semillero/   my-automata/   tradespark-ml/   games/",
+          text: "cea-network/   semillero/   my-automata/   tradespark-ai/   games/",
           cls: "",
         },
       ],
     },
 
-    { cmd: "cd tradespark-ml && cat status.txt" },
+    { cmd: "cd tradespark-ai && cat status.txt" },
     {
       lines: [
-        { text: "training on 2,000,000+ rows...", cls: "" },
-        { text: "architecture: Conv1D → LSTM → Dense", cls: "" },
-        { text: "target: S&P 500 portfolio rotation", cls: "" },
-        { text: "status: [PROGRESS:8/10] 80% — ongoing", cls: "" },
-      ],
-    },
-
-    { cmd: "python predict.py --asset AAPL" },
-    {
-      lines: [
-        { text: "loading model weights...", cls: "" },
-        { text: "running walk-forward validation...", cls: "" },
-        { text: "signal: BUY  |  confidence: 0.74", cls: "success" },
+        { text: "leading the AI area", cls: "" },
+        { text: "turning financial-domain problems into ML", cls: "" },
+        { text: "the hard part isn't the model — it's the domain", cls: "" },
+        { text: "status: [PROGRESS:8/10] shipping", cls: "success" },
       ],
     },
 
@@ -394,5 +385,49 @@
     document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
+  }
+})();
+
+/* =========================================================
+   Email protection
+   The address is never written into the static HTML. It lives here
+   base64-encoded and is only decoded into a mailto: link the first time
+   the user actually interacts with a [data-email] button (hover, focus,
+   touch, or click) — so crawlers and email harvesters never see it.
+   ========================================================= */
+(function () {
+  const ENCODED = "bGF6YXJvdnR0YWNAZ21haWwuY29t"; // contact email, base64
+
+  function initEmailButtons() {
+    const buttons = document.querySelectorAll("[data-email]");
+    if (!buttons.length) return;
+
+    buttons.forEach((btn) => {
+      // Build the real mailto once, lazily, on first interaction.
+      const reveal = () => {
+        if (btn.dataset.revealed) return;
+        btn.setAttribute("href", "mailto:" + atob(ENCODED));
+        btn.dataset.revealed = "1";
+      };
+
+      ["pointerenter", "focus", "touchstart"].forEach((evt) =>
+        btn.addEventListener(evt, reveal, { passive: true }),
+      );
+
+      // Fallback: if a click lands before any hover/focus, build and follow it.
+      btn.addEventListener("click", (e) => {
+        if (!btn.dataset.revealed) {
+          e.preventDefault();
+          reveal();
+          window.location.href = "mailto:" + atob(ENCODED);
+        }
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initEmailButtons);
+  } else {
+    initEmailButtons();
   }
 })();
