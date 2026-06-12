@@ -389,6 +389,73 @@
 })();
 
 /* =========================================================
+   Lightbox — Case study galleries
+   Clicking a gallery image opens it full-size over a darkened
+   overlay. Closes on outside click, the × button, or Escape.
+   The CSS lives in main.css under "LIGHTBOX".
+   ========================================================= */
+(function () {
+  function buildLightbox() {
+    const overlay = document.createElement("div");
+    overlay.className = "lightbox";
+    overlay.setAttribute("aria-hidden", "true");
+
+    const img = document.createElement("img");
+    img.className = "lightbox__img";
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "lightbox__close";
+    closeBtn.setAttribute("aria-label", "Close image");
+    closeBtn.textContent = "×";
+
+    overlay.appendChild(img);
+    overlay.appendChild(closeBtn);
+    document.body.appendChild(overlay);
+    return { overlay, img };
+  }
+
+  function initLightbox() {
+    const galleryImages = document.querySelectorAll(".case-gallery__item img");
+    if (!galleryImages.length) return;
+
+    const { overlay, img } = buildLightbox();
+
+    function open(thumb) {
+      img.src = thumb.src;
+      img.alt = thumb.alt;
+      overlay.classList.add("lightbox--open");
+      overlay.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden"; // lock page scroll behind the overlay
+    }
+
+    function close() {
+      overlay.classList.remove("lightbox--open");
+      overlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    galleryImages.forEach((thumb) => {
+      thumb.addEventListener("click", () => open(thumb));
+    });
+
+    // Anything that isn't the image itself counts as "outside" (× included).
+    overlay.addEventListener("click", (e) => {
+      if (e.target !== img) close();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initLightbox);
+  } else {
+    initLightbox();
+  }
+})();
+
+/* =========================================================
    Email protection
    The address is never written into the static HTML. It lives here
    base64-encoded and is only decoded into a mailto: link the first time
