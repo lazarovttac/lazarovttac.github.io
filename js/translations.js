@@ -51,6 +51,10 @@ const TRANSLATIONS = {
     proj6_desc:
       "Heardle-style guessing game: identify a YouTube creator's video from a growing audio clip. Multiple reveal mechanics, difficulty modes, and chained runs.",
 
+    proj7_tag: "Web Tool · Poetry",
+    proj7_desc:
+      "Editor for writing décimas (espinelas): color-codes each verse's rhyme group, highlights the ending it must rhyme with, and counts metric syllables with sinalefa. Built with Claude Fable 5 from a single prompt.",
+
     /* ── Education / Work section ── */
     section_education: "Work & Education",
 
@@ -281,6 +285,34 @@ const TRANSLATIONS = {
     aut_hl2_text: "Step-by-step string evaluation with state highlighting",
     aut_hl3_label: "Shareable links",
     aut_hl3_text: "Save and share automata via Firebase-backed URLs",
+
+    /* ══════════════════════════════════════════════════════════
+       Décimas Editor page
+       ══════════════════════════════════════════════════════════ */
+    dec_back: "← All Projects",
+    dec_tag_webtool: "Web Tool",
+    dec_tag_opensource: "Open Source",
+    dec_tag_ai: "Built with AI",
+    dec_subtitle:
+      "A web editor for writing décimas — ten-verse Spanish stanzas with the espinela rhyme scheme (abbaaccddc). It color-codes each verse's rhyme group, highlights the ending it must rhyme with, and counts metric syllables in real time.",
+    dec_cta: "View on GitHub",
+
+    dec_label_overview: "Overview",
+    dec_overview_title: "One prompt, one editor",
+    dec_overview_p1:
+      "The idea came after watching Jorge Drexler's famous talk about the décima. I got hooked trying to write my own and realized a normal text editor doesn't tell you which verse you're on, how many syllables you've written, or what each line must rhyme with. This one does: a Spanish syllabification engine handles diphthongs, hiatus, silent letters, and sinalefa between words, and rhyme keys account for seseo and yeísmo.",
+    dec_overview_p2:
+      "The project was built with Claude Fable 5 from literally a single prompt — the code, the metrics engine, its test suite, and ten example décimas composed and verified with the engine itself.",
+
+    dec_hl1_label: "Color-coded rhyme",
+    dec_hl1_text:
+      "Each verse gets its scheme letter and the ending it must rhyme with, highlighted in its group's color",
+    dec_hl2_label: "Metric syllables",
+    dec_hl2_text:
+      "Live count with sinalefa, +1 for oxytone endings, −1 for proparoxytones — flagged when a verse isn't 8",
+    dec_hl3_label: "Built with Claude Fable 5",
+    dec_hl3_text:
+      "Vanilla HTML, CSS, and JavaScript — no dependencies, no build step, generated from one prompt",
   },
 
   es: {
@@ -331,6 +363,10 @@ const TRANSLATIONS = {
     proj6_tag: "Juego · Web App",
     proj6_desc:
       "Juego de adivinanzas estilo Heardle: adiviná el video de un creador de YouTube a partir de un fragmento de audio que crece con cada intento. Distintas mecánicas de revelado, niveles de dificultad y partidas encadenadas.",
+
+    proj7_tag: "Herramienta Web · Poesía",
+    proj7_desc:
+      "Editor para escribir décimas (espinelas): colorea cada verso según su grupo de rima, resalta la terminación con la que debe rimar y cuenta las sílabas métricas con sinalefa. Hecho con Claude Fable 5 a partir de un solo prompt.",
 
     /* ── Education / Work section ── */
     section_education: "Trabajo y Educación",
@@ -566,5 +602,33 @@ const TRANSLATIONS = {
     aut_hl3_label: "Enlaces compartibles",
     aut_hl3_text:
       "Guardá y compartí autómatas mediante URLs respaldadas por Firebase",
+
+    /* ══════════════════════════════════════════════════════════
+       Página Editor de Décimas
+       ══════════════════════════════════════════════════════════ */
+    dec_back: "← Todos los proyectos",
+    dec_tag_webtool: "Herramienta Web",
+    dec_tag_opensource: "Código Abierto",
+    dec_tag_ai: "Hecho con IA",
+    dec_subtitle:
+      "Un editor web para escribir décimas — estrofas de diez versos con el esquema de rima de la espinela (abbaaccddc). Colorea cada verso según su grupo de rima, resalta la terminación con la que debe rimar y cuenta las sílabas métricas en tiempo real.",
+    dec_cta: "Ver en GitHub",
+
+    dec_label_overview: "Descripción general",
+    dec_overview_title: "Un prompt, un editor",
+    dec_overview_p1:
+      "La idea nació después de ver la famosa charla de Jorge Drexler sobre la décima. Me entusiasmé tratando de escribir las mías y me di cuenta de que un editor de texto normal no te dice en qué verso vas, cuántas sílabas llevás ni con qué debe rimar cada frase. Este sí: un motor de silabeo español maneja diptongos, hiatos, letras mudas y sinalefas entre palabras, y las claves de rima contemplan el seseo y el yeísmo.",
+    dec_overview_p2:
+      "El proyecto fue hecho con Claude Fable 5 a partir de literalmente un solo prompt — el código, el motor de métrica, sus pruebas y diez décimas de ejemplo compuestas y verificadas con el propio motor.",
+
+    dec_hl1_label: "Rima por colores",
+    dec_hl1_text:
+      "Cada verso recibe su letra del esquema y la terminación con la que debe rimar, resaltada con el color de su grupo",
+    dec_hl2_label: "Sílabas métricas",
+    dec_hl2_text:
+      "Conteo en vivo con sinalefa, +1 si termina en aguda, −1 en esdrújula — avisa cuando un verso no da 8",
+    dec_hl3_label: "Hecho con Claude Fable 5",
+    dec_hl3_text:
+      "HTML, CSS y JavaScript planos — sin dependencias ni build, generado a partir de un prompt",
   },
 };

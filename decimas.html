@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Web editor for writing décimas (espinelas): color-coded rhyme scheme, highlighted rhyme endings, and real-time metric syllable counting with sinalefa."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="./images/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="./images/icons/favicon.png" />
+    <link rel="canonical" href="https://lazaro.vc/decimas.html" />
+
+    <link rel="stylesheet" href="./main.css" />
+    <title>lazarovttac · Editor de Décimas</title>
+  </head>
+  <body class="light-theme">
+    <div class="page-wrapper">
+      <nav class="floating-dock">
+        <div class="dock-topbar">
+          <a href="/" class="dock-brand">@lazarovttac</a>
+          <button
+            class="burger-btn"
+            id="burger-btn"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="dock-links">
+          <a href="/#projects" class="dock-link" data-i18n="nav_projects">Projects</a>
+          <a href="/#education" class="dock-link" data-i18n="nav_education">Education</a>
+          <a href="/#about" class="dock-link" data-i18n="nav_about">About</a>
+          <div class="dock-separator"></div>
+          <a href="#contact" class="dock-cta" data-i18n="nav_cta">Let's talk</a>
+        </div>
+      </nav>
+
+      <main class="case-study">
+        <!-- Back -->
+        <a href="/#projects" class="case-back" data-i18n="dec_back">← All Projects</a>
+
+        <!-- Hero -->
+        <header class="case-header">
+          <div class="case-header__meta">
+            <span class="case-tag" data-i18n="dec_tag_webtool">Web Tool</span>
+            <span class="case-tag" data-i18n="dec_tag_opensource">Open Source</span>
+            <span class="case-tag" data-i18n="dec_tag_ai">Built with AI</span>
+          </div>
+          <h1 class="case-title">Editor de Décimas</h1>
+          <p class="case-subtitle" data-i18n="dec_subtitle">
+            A web editor for writing décimas — ten-verse Spanish stanzas with
+            the espinela rhyme scheme (abbaaccddc). It color-codes each verse's
+            rhyme group, highlights the ending it must rhyme with, and counts
+            metric syllables in real time.
+          </p>
+          <div class="case-ctas">
+            <a
+              href="https://github.com/lazarovttac/decimas"
+              target="_blank"
+              class="btn-primary"
+              data-i18n="dec_cta"
+              >View on GitHub</a
+            >
+          </div>
+        </header>
+
+        <!-- Gallery -->
+        <section class="case-section">
+          <div class="case-gallery">
+            <div class="case-gallery__item case-gallery__item--wide">
+              <img
+                src="./images/decimas/1.png"
+                alt="Décimas editor with rhyme letters, syllable counts, and color-coded endings"
+              />
+            </div>
+            <div class="case-gallery__item">
+              <img
+                src="./images/decimas/2.png"
+                alt="A décima where every verse passes: 8 syllables and consonant rhyme"
+              />
+            </div>
+            <div class="case-gallery__item">
+              <img
+                src="./images/decimas/3.png"
+                alt="Editor flagging syllable-count issues and a merely assonant rhyme"
+              />
+            </div>
+            <div class="case-gallery__item">
+              <img
+                src="./images/decimas/4.png"
+                alt="A décima about programming written in the editor"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="case-section">
+          <div class="case-two-col">
+            <div class="case-two-col__content">
+              <p class="case-label" data-i18n="dec_label_overview">Overview</p>
+              <h2 class="case-section-title" data-i18n="dec_overview_title">
+                One prompt, one editor
+              </h2>
+              <p class="case-body" data-i18n="dec_overview_p1">
+                The idea came after watching Jorge Drexler's famous talk about
+                the décima. I got hooked trying to write my own and realized a
+                normal text editor doesn't tell you which verse you're on, how
+                many syllables you've written, or what each line must rhyme
+                with. This one does: a Spanish syllabification engine handles
+                diphthongs, hiatus, silent letters, and sinalefa between words,
+                and rhyme keys account for seseo and yeísmo.
+              </p>
+              <p class="case-body" data-i18n="dec_overview_p2">
+                The project was built with Claude Fable 5 from literally a
+                single prompt — the code, the metrics engine, its test suite,
+                and ten example décimas composed and verified with the engine
+                itself.
+              </p>
+            </div>
+            <div class="case-two-col__highlights">
+              <div class="case-highlight">
+                <span class="case-highlight__icon">🎨</span>
+                <p class="case-highlight__label" data-i18n="dec_hl1_label">
+                  Color-coded rhyme
+                </p>
+                <p class="case-highlight__text" data-i18n="dec_hl1_text">
+                  Each verse gets its scheme letter and the ending it must rhyme
+                  with, highlighted in its group's color
+                </p>
+              </div>
+              <div class="case-highlight">
+                <span class="case-highlight__icon">🔢</span>
+                <p class="case-highlight__label" data-i18n="dec_hl2_label">
+                  Metric syllables
+                </p>
+                <p class="case-highlight__text" data-i18n="dec_hl2_text">
+                  Live count with sinalefa, +1 for oxytone endings, −1 for
+                  proparoxytones — flagged when a verse isn't 8
+                </p>
+              </div>
+              <div class="case-highlight">
+                <span class="case-highlight__icon">🤖</span>
+                <p class="case-highlight__label" data-i18n="dec_hl3_label">
+                  Built with Claude Fable 5
+                </p>
+                <p class="case-highlight__text" data-i18n="dec_hl3_text">
+                  Vanilla HTML, CSS, and JavaScript — no dependencies, no build
+                  step, generated from one prompt
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Contact -->
+      <section class="section contact" id="contact">
+        <div class="contact-content">
+          <h2 class="title" data-i18n="section_contact_title">Let's talk.</h2>
+          <p class="contact-text" data-i18n="contact_text">
+            If you're working on something that sits at the edge of engineering
+            and real-world impact — whether that's a product, a research
+            problem, or something in between — I'd like to hear about it.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn" data-email aria-label="Email">
+              <img src="./images/social/mail.svg" alt="Email" />
+              Email
+            </a>
+            <a
+              href="https://github.com/lazarovttac"
+              target="_blank"
+              class="social-btn"
+            >
+              <img src="./images/social/GitHub.svg" alt="GitHub" />
+              GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/lazarovttac"
+              target="_blank"
+              class="social-btn"
+            >
+              <img src="./images/social/linkedIn.svg" alt="LinkedIn" />
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <button id="lang-toggle-btn">
+      <span class="lang-icon">🇪🇸</span> ES
+    </button>
+    <script src="./js/translations.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
