@@ -1,0 +1,21 @@
+---
+import About from "../components/home/About.astro";
+import Education from "../components/home/Education.astro";
+import Hero from "../components/home/Hero.astro";
+import Marquee from "../components/home/Marquee.astro";
+import Projects from "../components/home/Projects.astro";
+import Skills from "../components/home/Skills.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Lázaro Ventancor · Engineer & Developer"
+  description="Systems Engineer specializing in web development and machine learning. Building production apps and AI systems for financial markets."
+>
+  <Hero />
+  <Projects />
+  <Education />
+  <About />
+  <Skills />
+  <Marquee />
+</BaseLayout>

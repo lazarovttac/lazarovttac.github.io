@@ -1,0 +1,165 @@
+---
+import { Image } from "astro:assets";
+import type { Project } from "../../data/projects";
+import LabelText from "../LabelText.astro";
+import Translated from "../Translated.astro";
+
+interface Props {
+  project: Project;
+}
+
+const { icon, title, tagKey, descriptionKey, stack, href, links, internalNoteKey } =
+  Astro.props.project;
+---
+
+<div class="project-card" data-href={href}>
+  <div class="project-card__content">
+    <Image class="project-card__icon" src={icon} alt="" width={104} />
+    <LabelText as="p" class="title" label={title} />
+    <Translated as="p" class="project-tag" k={tagKey} />
+    <Translated as="p" class="description" k={descriptionKey} />
+    <div class="card-footer">
+      <span class="stack-badge">{stack}</span>
+      {
+        links.length > 0 && (
+          <div class="links">
+            {links.map((link) => (
+              <a href={link.href} target="_blank" class="project-link">
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )
+      }
+      {
+        internalNoteKey && (
+          <Translated as="span" class="project-link internal" k={internalNoteKey} />
+        )
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  // The whole card navigates, except clicks on the links inside it.
+  document.querySelectorAll<HTMLElement>(".project-card[data-href]").forEach((card) => {
+    card.addEventListener("click", (event) => {
+      if ((event.target as Element).closest("a")) return;
+      window.location.href = card.dataset.href!;
+    });
+  });
+</script>
+
+<style>
+  .project-card {
+    text-decoration: none;
+    background-color: var(--item-background-color);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    cursor: pointer;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow-color) 5%, transparent);
+  }
+
+  .project-card__content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .project-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    object-fit: contain;
+    margin-bottom: 18px;
+  }
+
+  .title {
+    font-family: "Geist", sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+
+  .project-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.25rem;
+
+    font-weight: 600;
+    color: var(--link-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    padding-left: 1px;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    flex-grow: 1;
+  }
+
+  .card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .stack-badge {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    color: var(--text-secondary);
+    background-color: var(--item-hover-color);
+
+    padding: 6px 12px;
+
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .project-link {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .project-link:hover {
+    color: var(--link-color);
+  }
+
+  .project-link.internal {
+    color: var(--text-secondary);
+    pointer-events: none;
+  }
+</style>

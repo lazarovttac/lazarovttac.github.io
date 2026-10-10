@@ -1,0 +1,216 @@
+---
+import SectionTitle from "../SectionTitle.astro";
+import Translated from "../Translated.astro";
+---
+
+<section class="about" id="about">
+  <SectionTitle k="section_about" />
+  <div class="about-content">
+    <Translated as="p" class="prose" k="about_prose" />
+    <div class="terminal-mockup">
+      <div class="terminal-header">
+        <div class="term-btns">
+          <span class="term-btn close"></span>
+          <span class="term-btn min"></span>
+          <span class="term-btn max"></span>
+        </div>
+        <div class="term-title">Terminal</div>
+      </div>
+      <div class="terminal-body" id="terminal-body"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "../../scripts/terminal";
+</script>
+
+<style>
+  .about {
+    width: 100%;
+    position: relative;
+    padding: 50px 0;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+
+  @media (max-width: 900px) {
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .prose {
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  .terminal-mockup {
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+
+    background-color: color-mix(in srgb, var(--item-background-color) 70%, transparent);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 12px 30px -10px color-mix(in srgb, var(--shadow-color) 8%, transparent);
+
+    overflow: hidden;
+    z-index: 4;
+  }
+
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: color-mix(in srgb, var(--item-hover-color) 80%, transparent);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .term-btns {
+    display: flex;
+    gap: 8px;
+  }
+
+  .term-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .term-btn.close {
+    background-color: var(--terminal-close);
+  }
+  .term-btn.min {
+    background-color: var(--terminal-min);
+  }
+  .term-btn.max {
+    background-color: var(--terminal-max);
+  }
+
+  .term-title {
+    flex: 1;
+    text-align: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-left: -40px; /* Offset to center title visually */
+  }
+
+  .terminal-body {
+    padding: 16px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    text-align: left;
+    max-height: 250px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar but keep scroll capability */
+  .terminal-body::-webkit-scrollbar {
+    width: 4px;
+  }
+  .terminal-body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .terminal-body::-webkit-scrollbar-thumb {
+    background: var(--terminal-scrollbar-thumb);
+    border-radius: 4px;
+  }
+
+  /* The rows below are created by the terminal script, so they carry no
+     scope attribute: style them through `:global` under the scoped body. */
+  .terminal-body :global(.term-line) {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 5px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    min-height: 1.5em;
+  }
+
+  .terminal-body :global(.prompt-symbol) {
+    color: var(--link-color);
+    font-weight: bold;
+    flex-shrink: 0;
+    user-select: none;
+  }
+
+  .terminal-body :global(.term-cmd) {
+    color: var(--text-primary);
+  }
+
+  .terminal-body :global(.output-line) {
+    color: var(--text-secondary);
+    padding-left: 2px;
+  }
+
+  .terminal-body :global(.output-line.output-success) {
+    color: var(--success-color);
+  }
+
+  .terminal-body :global(.fade-in) {
+    animation: termFadeIn 0.25s ease forwards;
+  }
+
+  @keyframes termFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(3px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .terminal-body :global(.term-cursor) {
+    display: inline-block;
+    width: 8px;
+    height: 1.1em;
+    background-color: var(--text-primary);
+    border-radius: 1px;
+    vertical-align: text-bottom;
+    margin-left: 1px;
+    animation: cursorBlink 1s step-end infinite;
+  }
+
+  @keyframes cursorBlink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .terminal-body :global(.term-progress-track) {
+    display: inline-block;
+    letter-spacing: 0;
+  }
+
+  .terminal-body :global(.bar-filled) {
+    color: var(--link-color);
+    font-weight: 700;
+  }
+
+  .terminal-body :global(.bar-empty) {
+    color: var(--text-secondary);
+  }
+</style>

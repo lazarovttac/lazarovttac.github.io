@@ -1,0 +1,52 @@
+---
+const MARQUEE_TEXT = "SYSTEMS ENGINEER · ML DEVELOPER · PROBLEM SOLVER · ";
+---
+
+<section class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-text">{MARQUEE_TEXT}</span>
+    <span class="marquee-text" aria-hidden="true">{MARQUEE_TEXT}</span>
+    <span class="marquee-text" aria-hidden="true">{MARQUEE_TEXT}</span>
+  </div>
+</section>
+
+<style>
+  .marquee-section {
+    width: 100%;
+    position: relative;
+    padding: 8vh 0;
+    overflow: hidden;
+    background-color: var(--text-primary);
+    color: var(--background-color);
+    transform: rotate(-2deg) scale(1.05);
+    box-shadow: 0 10px 25px color-mix(in srgb, var(--shadow-color) 7%, transparent);
+    margin: 10vh 0;
+    border-top: 1px solid color-mix(in srgb, var(--background-color) 10%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--background-color) 10%, transparent);
+  }
+
+  .marquee-track {
+    display: flex;
+    white-space: nowrap;
+    animation: scrollMarquee 20s linear infinite;
+    width: max-content;
+  }
+
+  .marquee-text {
+    font-family: "Geist", sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 5vw, 5rem);
+    text-transform: uppercase;
+    padding-right: 30px;
+  }
+
+  /* The text is repeated 3 times, so one third is one full loop. */
+  @keyframes scrollMarquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.33%);
+    }
+  }
+</style>
