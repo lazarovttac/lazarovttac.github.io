@@ -1,0 +1,132 @@
+---
+import Button from "../components/Button.astro";
+import CaseHeader from "../components/case-study/CaseHeader.astro";
+import Gallery from "../components/case-study/Gallery.astro";
+import GalleryItem from "../components/case-study/GalleryItem.astro";
+import Translated from "../components/Translated.astro";
+import CaseStudyLayout from "../layouts/CaseStudyLayout.astro";
+---
+
+<CaseStudyLayout
+  title="lazarovttac · Semillero"
+  description="HR portal with candidate registration, CV upload, and admin backoffice for job postings and application management."
+  backKey="sem_back"
+>
+  <CaseHeader
+    tags={[{ text: "Web App" }, { key: "ceapp_tag_production" }, { text: "RRHH" }]}
+    title={{ text: "Semillero" }}
+    subtitleKey="sem_subtitle"
+    stack={["React", "Sass", "Firebase", "Figma"]}
+  >
+    <Fragment slot="ctas">
+      <Button href="https://semillero-personas.web.app/" variant="primary" k="sem_cta" />
+    </Fragment>
+  </CaseHeader>
+
+  <section class="case-section">
+    <Gallery>
+      <GalleryItem src="Semillero/1.png" alt="Home de Semillero" wide loading="eager" />
+      <GalleryItem src="Semillero/2.png" alt="Listado de ofertas" />
+      <GalleryItem src="Semillero/3.png" alt="Detalle de oferta" />
+    </Gallery>
+  </section>
+
+  <!-- Overview -->
+  <section class="case-section">
+    <div class="case-two-col">
+      <div class="case-two-col__content">
+        <Translated as="p" class="case-label" k="ceapp_label_context" />
+        <Translated as="h2" class="case-section-title" k="sem_who_title" />
+        <Translated as="p" class="case-body" k="sem_context_p1" />
+        <Translated as="p" class="case-body" k="sem_context_p2" />
+      </div>
+      <div class="case-two-col__highlights">
+        <div class="case-highlight">
+          <span class="case-highlight__icon">👤</span>
+          <Translated as="p" class="case-highlight__label" k="sem_hl1_label" />
+          <Translated as="p" class="case-highlight__text" k="sem_hl1_text" />
+        </div>
+        <div class="case-highlight">
+          <span class="case-highlight__icon">🏢</span>
+          <Translated as="p" class="case-highlight__label" k="sem_hl2_label" />
+          <Translated as="p" class="case-highlight__text" k="sem_hl2_text" />
+        </div>
+        <div class="case-highlight">
+          <span class="case-highlight__icon">⚙️</span>
+          <p class="case-highlight__label">Backoffice</p>
+          <Translated as="p" class="case-highlight__text" k="sem_hl3_text" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin view -->
+  <section class="case-section">
+    <p class="case-label">Backoffice administrativo</p>
+    <Translated as="h2" class="case-section-title" k="sem_admin_title" />
+    <Translated as="p" class="case-body case-body--wide" k="sem_admin_body" />
+    <Gallery>
+      <GalleryItem src="Semillero/4.png" alt="Panel administrativo 1" />
+      <GalleryItem src="Semillero/5.png" alt="Panel administrativo 2" />
+      <GalleryItem src="Semillero/6.png" alt="Panel administrativo 3" />
+      <GalleryItem src="Semillero/7.png" alt="Listado de postulantes" />
+      <GalleryItem src="Semillero/8.png" alt="Detalle de postulante" />
+    </Gallery>
+  </section>
+
+  <!-- Status -->
+  <section class="case-section">
+    <div class="case-status-bar">
+      <div class="case-status-item">
+        <Translated as="p" class="case-status-label" k="sem_status_label" />
+        <a href="https://semillero-personas.web.app/" target="_blank" class="case-status-link">
+          semillero-personas.web.app ↗
+        </a>
+      </div>
+    </div>
+  </section>
+</CaseStudyLayout>
+
+<style>
+  .case-status-bar {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 28px 32px;
+    background-color: var(--item-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+  }
+
+  .case-status-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .case-status-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+  }
+
+  .case-status-link {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.25rem;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .case-status-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 700px) {
+    .case-status-bar {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+</style>

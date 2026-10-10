@@ -1,0 +1,63 @@
+---
+import Button from "../components/Button.astro";
+import CaseHeader from "../components/case-study/CaseHeader.astro";
+import Gallery from "../components/case-study/Gallery.astro";
+import GalleryItem from "../components/case-study/GalleryItem.astro";
+import Translated from "../components/Translated.astro";
+import CaseStudyLayout from "../layouts/CaseStudyLayout.astro";
+---
+
+<CaseStudyLayout
+  title="lazarovttac · My Automata"
+  description="Online editor for designing, testing, and sharing finite automata (DFA/NFA). Built to translate formal computation theory into an interactive tool."
+  backKey="aut_back"
+>
+  <CaseHeader
+    tags={[{ key: "aut_tag_webtool" }, { text: "CS" }, { key: "aut_tag_opensource" }]}
+    title={{ text: "My Automata" }}
+    subtitleKey="aut_subtitle"
+    stack={["React", "Firebase", "Figma"]}
+  >
+    <Fragment slot="ctas">
+      <Button href="https://my-automata.web.app/" variant="primary" k="aut_cta" />
+    </Fragment>
+  </CaseHeader>
+
+  <section class="case-section">
+    <Gallery>
+      <GalleryItem src="automata/1.jpeg" alt="Automata editor canvas" wide loading="eager" />
+      <GalleryItem src="automata/2.jpeg" alt="DFA example" />
+      <GalleryItem src="automata/3.jpeg" alt="NFA example" />
+      <GalleryItem src="automata/4.jpeg" alt="Test string panel" />
+    </Gallery>
+  </section>
+
+  <!-- Overview -->
+  <section class="case-section">
+    <div class="case-two-col">
+      <div class="case-two-col__content">
+        <Translated as="p" class="case-label" k="aut_label_overview" />
+        <Translated as="h2" class="case-section-title" k="aut_overview_title" />
+        <Translated as="p" class="case-body" k="aut_overview_p1" />
+        <Translated as="p" class="case-body" k="aut_overview_p2" />
+      </div>
+      <div class="case-two-col__highlights">
+        <div class="case-highlight">
+          <span class="case-highlight__icon">🎨</span>
+          <Translated as="p" class="case-highlight__label" k="aut_hl1_label" />
+          <Translated as="p" class="case-highlight__text" k="aut_hl1_text" />
+        </div>
+        <div class="case-highlight">
+          <span class="case-highlight__icon">⚡</span>
+          <Translated as="p" class="case-highlight__label" k="aut_hl2_label" />
+          <Translated as="p" class="case-highlight__text" k="aut_hl2_text" />
+        </div>
+        <div class="case-highlight">
+          <span class="case-highlight__icon">🔗</span>
+          <Translated as="p" class="case-highlight__label" k="aut_hl3_label" />
+          <Translated as="p" class="case-highlight__text" k="aut_hl3_text" />
+        </div>
+      </div>
+    </div>
+  </section>
+</CaseStudyLayout>

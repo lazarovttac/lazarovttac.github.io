@@ -1,0 +1,120 @@
+---
+import { getImage, Image } from "astro:assets";
+import { image } from "../../assets/images";
+
+interface Props {
+  /** Path under `src/assets/images/`, e.g. "CEApp/0.png". */
+  src: string;
+  alt: string;
+  /** Spans the whole gallery row. */
+  wide?: boolean;
+  loading?: "eager" | "lazy";
+}
+
+const LIGHTBOX_MAX_WIDTH = 2400;
+
+const { src, alt, wide = false, loading = "lazy" } = Astro.props;
+const source = image(src);
+const isCaptioned = Astro.slots.has("default");
+// The lightbox fetches this capped WebP copy on open, never the original upload.
+// Smaller originals are not enlarged. Reading `source.width` here instead would
+// make Astro think the original is used directly and ship it to dist/.
+const full = await getImage({ src: source, width: LIGHTBOX_MAX_WIDTH, format: "webp" });
+---
+
+<div
+  class:list={[
+    "case-gallery__item",
+    { "case-gallery__item--wide": wide, "case-gallery__item--captioned": isCaptioned },
+  ]}
+>
+  <Image
+    src={source}
+    alt={alt}
+    widths={wide ? [800, 1600] : [400, 800]}
+    sizes={wide
+      ? "(max-width: 1230px) calc(100vw - 50px), 1140px"
+      : "(max-width: 700px) calc(100vw - 50px), 400px"}
+    loading={loading}
+    data-full={full.src}
+  />
+  {
+    isCaptioned && (
+      <p class="case-gallery__caption">
+        <slot />
+      </p>
+    )
+  }
+</div>
+
+<style>
+  .case-gallery__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: var(--item-background-color);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .case-gallery__item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow-color) 6%, transparent);
+  }
+
+  .case-gallery__item--wide {
+    grid-column: 1 / -1;
+  }
+
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+  }
+
+  .case-gallery__item--wide img {
+    height: 400px;
+  }
+
+  .case-gallery__item--captioned img {
+    height: 200px;
+  }
+
+  .case-gallery__caption {
+    padding: 10px 14px;
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    border-top: 1px solid var(--border-color);
+  }
+
+  /* Caption links come from the page's slot, outside this component's scope. */
+  .case-gallery__caption :global(a) {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .case-gallery__caption :global(a:hover) {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 700px) {
+    .case-gallery__item--wide {
+      grid-column: 1;
+    }
+
+    img,
+    .case-gallery__item--wide img {
+      height: 200px;
+    }
+  }
+</style>

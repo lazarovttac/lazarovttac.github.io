@@ -1,0 +1,161 @@
+---
+import Lightbox from "../components/case-study/Lightbox.astro";
+import Translated from "../components/Translated.astro";
+import type { TranslationKey } from "../i18n/translations";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  backKey: TranslationKey;
+}
+
+const { title, description, backKey } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="case-study">
+    <Translated as="a" href="/#projects" class="case-back" k={backKey} />
+    <slot />
+  </main>
+  <Lightbox />
+</BaseLayout>
+
+<style>
+  .case-study {
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  .case-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 60px;
+    transition:
+      color 0.2s,
+      gap 0.2s;
+  }
+
+  .case-back:hover {
+    color: var(--text-primary);
+    gap: 10px;
+  }
+
+  /* Building blocks every case study page writes in its own markup. They live
+     in the pages' scope, so they are styled through `:global` under this layout. */
+  .case-study :global(.case-section) {
+    margin-bottom: 80px;
+  }
+
+  .case-study :global(.case-section--disclaimer) {
+    margin-bottom: 60px;
+  }
+
+  .case-study :global(.case-label) {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--link-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+
+  .case-study :global(.case-section-title) {
+    font-family: "Geist", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  .case-study :global(.case-body) {
+    font-size: 1.75rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 16px;
+  }
+
+  .case-study :global(.case-body--wide) {
+    max-width: 900px;
+  }
+
+  .case-study :global(.case-ctas) {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  /* ─── Two column layout ─── */
+  .case-study :global(.case-two-col) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .case-study :global(.case-two-col) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .case-study :global(.case-two-col__highlights) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .case-study :global(.case-highlight) {
+    padding: 22px;
+    background-color: var(--item-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .case-study :global(.case-highlight:hover) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--shadow-color) 5%, transparent);
+  }
+
+  .case-study :global(.case-highlight__icon) {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .case-study :global(.case-highlight__label) {
+    font-family: "Geist", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+
+  .case-study :global(.case-highlight__text) {
+    font-size: 1.45rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 700px) {
+    .case-study {
+      padding-top: 100px;
+    }
+  }
+</style>

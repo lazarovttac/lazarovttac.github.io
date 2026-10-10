@@ -1,0 +1,73 @@
+---
+import Button from "../components/Button.astro";
+import CaseHeader from "../components/case-study/CaseHeader.astro";
+import Gallery from "../components/case-study/Gallery.astro";
+import GalleryItem from "../components/case-study/GalleryItem.astro";
+import Translated from "../components/Translated.astro";
+import CaseStudyLayout from "../layouts/CaseStudyLayout.astro";
+---
+
+<CaseStudyLayout
+  title="lazarovttac · Editor de Décimas"
+  description="Web editor for writing décimas (espinelas): color-coded rhyme scheme, highlighted rhyme endings, and real-time metric syllable counting with sinalefa."
+  backKey="dec_back"
+>
+  <CaseHeader
+    tags={[{ key: "dec_tag_webtool" }, { key: "dec_tag_opensource" }, { key: "dec_tag_ai" }]}
+    title={{ text: "Editor de Décimas" }}
+    subtitleKey="dec_subtitle"
+  >
+    <Fragment slot="ctas">
+      <Button href="https://github.com/lazarovttac/decimas" variant="primary" k="dec_cta" />
+    </Fragment>
+  </CaseHeader>
+
+  <section class="case-section">
+    <Gallery>
+      <GalleryItem
+        src="decimas/1.png"
+        alt="Décimas editor with rhyme letters, syllable counts, and color-coded endings"
+        wide
+        loading="eager"
+      />
+      <GalleryItem
+        src="decimas/2.png"
+        alt="A décima where every verse passes: 8 syllables and consonant rhyme"
+      />
+      <GalleryItem
+        src="decimas/3.png"
+        alt="Editor flagging syllable-count issues and a merely assonant rhyme"
+      />
+      <GalleryItem src="decimas/4.png" alt="A décima about programming written in the editor" />
+    </Gallery>
+  </section>
+
+  <!-- Overview -->
+  <section class="case-section">
+    <div class="case-two-col">
+      <div class="case-two-col__content">
+        <Translated as="p" class="case-label" k="dec_label_overview" />
+        <Translated as="h2" class="case-section-title" k="dec_overview_title" />
+        <Translated as="p" class="case-body" k="dec_overview_p1" />
+        <Translated as="p" class="case-body" k="dec_overview_p2" />
+      </div>
+      <div class="case-two-col__highlights">
+        <div class="case-highlight">
+          <span class="case-highlight__icon">🎨</span>
+          <Translated as="p" class="case-highlight__label" k="dec_hl1_label" />
+          <Translated as="p" class="case-highlight__text" k="dec_hl1_text" />
+        </div>
+        <div class="case-highlight">
+          <span class="case-highlight__icon">🔢</span>
+          <Translated as="p" class="case-highlight__label" k="dec_hl2_label" />
+          <Translated as="p" class="case-highlight__text" k="dec_hl2_text" />
+        </div>
+        <div class="case-highlight">
+          <span class="case-highlight__icon">🤖</span>
+          <Translated as="p" class="case-highlight__label" k="dec_hl3_label" />
+          <Translated as="p" class="case-highlight__text" k="dec_hl3_text" />
+        </div>
+      </div>
+    </div>
+  </section>
+</CaseStudyLayout>

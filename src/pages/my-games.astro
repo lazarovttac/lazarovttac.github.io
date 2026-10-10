@@ -1,0 +1,202 @@
+---
+import Button from "../components/Button.astro";
+import CaseHeader from "../components/case-study/CaseHeader.astro";
+import Gallery from "../components/case-study/Gallery.astro";
+import GalleryItem from "../components/case-study/GalleryItem.astro";
+import Translated from "../components/Translated.astro";
+import type { TranslationKey } from "../i18n/translations";
+import CaseStudyLayout from "../layouts/CaseStudyLayout.astro";
+
+interface Game {
+  name: string;
+  labelKey: TranslationKey;
+  bodyKey: TranslationKey;
+  link?: { href: string; labelKey: TranslationKey };
+  featureKeys?: TranslationKey[];
+  screenshots: { src: string; alt: string; wide?: boolean }[];
+}
+
+const games: Game[] = [
+  {
+    name: "Donut Tunnel (Beta)",
+    labelKey: "games_label_published_gp",
+    bodyKey: "games_donut_body",
+    link: {
+      href: "https://play.google.com/store/apps/details?id=com.laverzatti.donut",
+      labelKey: "games_play_link_gp",
+    },
+    screenshots: [
+      { src: "DonutTunnel/1.png", alt: "Donut Tunnel screenshot 1" },
+      { src: "DonutTunnel/2.png", alt: "Donut Tunnel screenshot 2" },
+      { src: "DonutTunnel/3.png", alt: "Donut Tunnel screenshot 3" },
+    ],
+  },
+  {
+    name: "Neon Hover",
+    labelKey: "games_label_published_gp",
+    bodyKey: "games_neon_body",
+    link: {
+      href: "https://play.google.com/store/apps/details?id=com.laverzatti.NeonHover",
+      labelKey: "games_play_link_gp",
+    },
+    screenshots: [
+      { src: "NeonHover/screenshot_4.png", alt: "Neon Hover screenshot 1" },
+      { src: "NeonHover/screenshot_1.png", alt: "Neon Hover screenshot 2" },
+      { src: "NeonHover/screenshot_2.png", alt: "Neon Hover screenshot 3" },
+    ],
+  },
+  {
+    name: "Planet Dance",
+    labelKey: "games_label_published_itch",
+    bodyKey: "games_planet_body",
+    link: {
+      href: "https://lazarovttac.itch.io/planet-dance",
+      labelKey: "games_play_link_itch",
+    },
+    screenshots: [
+      { src: "PlanetDance/planet_dance_cover.png", alt: "Planet Dance cover", wide: true },
+      { src: "PlanetDance/planet_dance_1.jpeg", alt: "Planet Dance screenshot 1" },
+      { src: "PlanetDance/planet_dance_2.jpeg", alt: "Planet Dance screenshot 2" },
+      { src: "PlanetDance/planet_dance_3.jpeg", alt: "Planet Dance screenshot 3" },
+      { src: "PlanetDance/planet_dance_4.jpeg", alt: "Planet Dance screenshot 4" },
+    ],
+  },
+  {
+    name: "A-void",
+    labelKey: "games_label_avoidarchived",
+    bodyKey: "games_avoid_body",
+    link: {
+      href: "https://www.instagram.com/laverzatti/",
+      labelKey: "games_instagram_link",
+    },
+    featureKeys: [
+      "games_avoid_feat1",
+      "games_avoid_feat2",
+      "games_avoid_feat3",
+      "games_avoid_feat4",
+    ],
+    screenshots: [
+      { src: "A-void/1.png", alt: "A-void screenshot 1" },
+      { src: "A-void/2.png", alt: "A-void screenshot 2" },
+      { src: "A-void/3.png", alt: "A-void screenshot 3" },
+    ],
+  },
+  {
+    name: "Try-angle",
+    labelKey: "games_label_tryarchived",
+    bodyKey: "games_try_body",
+    featureKeys: ["games_try_feat1", "games_try_feat2"],
+    screenshots: [
+      { src: "Try-angle/1.png", alt: "Try-angle screenshot 1" },
+      { src: "Try-angle/2.png", alt: "Try-angle screenshot 2" },
+      { src: "Try-angle/3.png", alt: "Try-angle screenshot 3" },
+    ],
+  },
+];
+---
+
+<CaseStudyLayout
+  title="lazarovttac · Games"
+  description="Mobile games published on Google Play: Donut Tunnel, Neon Hover, Planet Dance. Procedural generation, orbit simulation, gameplay loops."
+  backKey="games_back"
+>
+  <CaseHeader
+    tags={[{ key: "games_tag_gamedev" }, { text: "Unity · C#" }, { text: "Google Play" }]}
+    title={{ key: "games_title" }}
+    subtitleKey="games_subtitle"
+    stack={["Unity", "C#", "Figma", "Blender"]}
+  >
+    <Fragment slot="ctas">
+      <Button
+        href="https://play.google.com/store/apps/developer?id=L%C3%A1zaro+V.+C."
+        variant="primary">Google Play Store</Button
+      >
+    </Fragment>
+  </CaseHeader>
+
+  <section class="case-section case-section--disclaimer">
+    <div class="case-disclaimer-card">
+      <span class="case-disclaimer-icon">⚠️</span>
+      <div>
+        <Translated as="p" class="case-label case-label--red" k="games_label_disclaimer" />
+        <Translated as="p" class="case-body case-body--disclaimer" k="games_disclaimer_body" />
+      </div>
+    </div>
+  </section>
+
+  {
+    games.map((game) => (
+      <section class="case-section">
+        <div class="case-game-header">
+          <div>
+            <Translated as="p" class="case-label" k={game.labelKey} />
+            <h2 class="case-section-title">{game.name}</h2>
+            <Translated as="p" class="case-body" k={game.bodyKey} />
+            {game.link && (
+              <div class="case-ctas">
+                <Button href={game.link.href} variant="secondary" k={game.link.labelKey} />
+              </div>
+            )}
+          </div>
+          {game.featureKeys && (
+            <div class="case-feature-list">
+              <Translated as="p" class="case-feature-list__label" k="games_features_label" />
+              <ul>
+                {game.featureKeys.map((key) => (
+                  <Translated as="li" k={key} />
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+        <Gallery>
+          {game.screenshots.map((screenshot) => (
+            <GalleryItem {...screenshot} />
+          ))}
+        </Gallery>
+      </section>
+    ))
+  }
+</CaseStudyLayout>
+
+<style>
+  .case-disclaimer-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 24px 28px;
+    background-color: color-mix(in srgb, var(--danger-color) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--danger-color) 20%, transparent);
+    border-left: 4px solid var(--danger-color);
+    border-radius: 14px;
+    max-width: 780px;
+  }
+
+  .case-disclaimer-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .case-label--red {
+    color: var(--danger-color);
+  }
+
+  .case-body--disclaimer {
+    color: var(--danger-text);
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .case-feature-list {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .case-feature-list ul {
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+</style>
