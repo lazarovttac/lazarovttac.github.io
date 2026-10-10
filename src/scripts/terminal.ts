@@ -34,7 +34,7 @@ const SCRIPT: ScriptEntry[] = [
     lines: [
       { text: "leading the AI area", cls: "" },
       { text: "turning financial-domain problems into ML", cls: "" },
-      { text: "the hard part isn't the model — it's the domain", cls: "" },
+      { text: "the hard part isn't the model, it's the domain", cls: "" },
       { text: "status: [PROGRESS:8/10] shipping", cls: "success" },
     ],
   },

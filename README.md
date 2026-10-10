@@ -1,6 +1,6 @@
 # lazaro.vc
 
-Personal portfolio and project showcase — deployed via **GitHub Pages** on the custom domain [lazaro.vc](https://lazaro.vc).
+Personal portfolio and project showcase, deployed via **GitHub Pages** on the custom domain [lazaro.vc](https://lazaro.vc).
 
 ---
 
@@ -16,7 +16,7 @@ The site is bilingual (English / Spanish) with a language toggle. It has a light
 
 | Source | Route | Description |
 |---|---|---|
-| `src/pages/index.astro` | `/` | Home — hero, projects, education, skills, contact |
+| `src/pages/index.astro` | `/` | Home: hero, projects, education, skills, contact |
 | `src/pages/ceapp.astro` | `/ceapp.html` | Case study: CEApp (Red de CEAs) |
 | `src/pages/semillero.astro` | `/semillero.html` | Case study: Semillero HR portal |
 | `src/pages/automaton_disigner.astro` | `/automaton_disigner.html` | Case study: My Automata (DFA/NFA editor) |
@@ -45,7 +45,7 @@ The contact address is never written into the static HTML. It's stored base64-en
 
 ## Projects Featured
 
-### [CEApp — Red de CEAs](https://red-cea.web.app)
+### [CEApp · Red de CEAs](https://red-cea.web.app)
 Multi-tenant platform for Agricultural Training Centers (CEAs) in Buenos Aires province. Public websites for each institution + a centralized admin panel managing registrations, training lifecycle states, certificate generation, and government-format data exports.
 Stack: React · Sass · Firebase · Figma
 
@@ -62,10 +62,10 @@ Heardle-style guessing game: identify a YouTube creator's video from a growing a
 Stack: React · TypeScript · Firebase
 
 ### Games
-Mobile games published on Google Play — **Donut Tunnel**, **Neon Hover**, and **Planet Dance** — featuring procedural generation, orbit simulation, and polished gameplay design.
+Mobile games published on Google Play (**Donut Tunnel**, **Neon Hover**, and **Planet Dance**), featuring procedural generation, orbit simulation, and polished gameplay design.
 Stack: Unity · C#
 
-### AI Portfolio Rotation (TradeSpark — internal)
+### AI Portfolio Rotation (TradeSpark, internal)
 ML system for equity signal generation: sequential neural network trained on 2M+ rows of market data, end-to-end from raw input to walk-forward validated predictions.
 Stack: Python · TensorFlow/Keras · Pandas
 
@@ -111,4 +111,4 @@ All **images and screenshots** are personal or client property and are not cover
 
 ---
 
-*Built by [Lázaro Ventancor Cressatti](https://lazaro.vc) — Systems Engineer & AI/Web Developer.*
+*Built by [Lázaro Ventancor Cressatti](https://lazaro.vc), Systems Engineer & AI/Web Developer.*

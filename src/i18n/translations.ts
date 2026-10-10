@@ -1,5 +1,5 @@
 /* =============================================================
-   translations.ts — EN / ES strings for every page.
+   translations.ts: EN / ES strings for every page.
    EN is rendered into the HTML at build time; the language toggle
    swaps in either dictionary on the client.
    ============================================================= */
@@ -28,7 +28,7 @@ const en = {
 
   proj1_tag: "ML Research · Internship",
   proj1_desc:
-    "ML system for equity signal generation — sequential neural network trained on 2M+ rows, from raw market data to walk-forward validated predictions.",
+    "ML system for equity signal generation: sequential neural network trained on 2M+ rows, from raw market data to walk-forward validated predictions.",
   proj1_internal: "(Internal project)",
 
   proj2_tag: "Web App · Production",
@@ -61,7 +61,7 @@ const en = {
 
   edu_current_subtitle: "TradeSpark · Full-time",
   edu_current_meta: "Tandil, Buenos Aires Province, Argentina · Hybrid",
-  edu_current_date: "APR 2026 — PRESENT",
+  edu_current_date: "APR 2026 - PRESENT",
 
   edu1_title: "Machine Learning Engineering Intern",
   edu1_desc:
@@ -77,7 +77,7 @@ const en = {
   edu3_desc:
     'Teaching "Computer Science I", "Introduction to Information Systems" and "Computer Architecture II". Responsible for guiding practical classes, grading midterms, and explaining foundational concepts.',
 
-  edu4_title: "Online Learning — Web, AI & Math Track",
+  edu4_title: "Online Learning · Web, AI & Math Track",
   edu4_desc:
     "35+ courses spanning frontend development, machine learning, and mathematical foundations. Platzi is where I built my initial engineering intuition before university and where I keep learning whenever curiosity beats the syllabus.",
   edu4_link: "View Profile ↗",
@@ -95,7 +95,7 @@ const en = {
   /* ── Contact section ── */
   section_contact_title: "Let's talk.",
   contact_text:
-    "If you're working on something that sits at the edge of engineering and real-world impact — whether that's a product, a research problem, or something in between — I'd like to hear about it.",
+    "If you're working on something that sits at the edge of engineering and real-world impact (whether that's a product, a research problem, or something in between), I'd like to hear about it.",
 
   /* ── Lang toggle (label shows the language you'd switch TO) ── */
   lang_toggle: "ES",
@@ -119,7 +119,7 @@ const en = {
   ceapp_context_p1:
     "Agricultural Training Centers (CEAs) are public institutions under the Provincial Directorate of Technical-Vocational Education. They offer initial professional training and job skills programs for youth and adults through learning itineraries: courses, talks, and technical workshops. There are around 30 CEAs in the province of Buenos Aires.",
   ceapp_context_p2:
-    "Before CEApp, management was entirely manual — paper, spreadsheets, emails — with no visibility for the public and no clear workflow for administrators.",
+    "Before CEApp, management was entirely manual (paper, spreadsheets, emails) with no visibility for the public and no clear workflow for administrators.",
 
   ceapp_hl1_label: "Public sites",
   ceapp_hl1_text:
@@ -143,7 +143,7 @@ const en = {
   ceapp_label_design: "Product design",
   ceapp_lifecycle_title: "Training lifecycle",
   ceapp_lifecycle_body:
-    "Trainings go through clearly defined states — from creation to closure and certificate issuance. This state model guides both the end-user experience and the actions available to the administrator.",
+    "Trainings go through clearly defined states, from creation to closure and certificate issuance. This state model guides both the end-user experience and the actions available to the administrator.",
 
   ceapp_state_prox: "Enrollment not yet available",
   ceapp_state_open: "Enrollment available",
@@ -199,7 +199,7 @@ const en = {
   games_tag_gamedev: "Game Dev",
   games_title: "Games",
   games_subtitle:
-    "Five mobile games published on Google Play and Itch.io — from arcade dodgers to orbit simulators. Each one a different design challenge: procedural generation, physics-based gameplay, and polished game feel.",
+    "Five mobile games published on Google Play and Itch.io, from arcade dodgers to orbit simulators. Each one a different design challenge: procedural generation, physics-based gameplay, and polished game feel.",
 
   games_label_published_gp: "Published · Google Play",
   games_label_published_itch: "Published · Itch.io",
@@ -207,33 +207,33 @@ const en = {
   games_label_tryarchived: "Game jam · Google Play (archived)",
 
   games_donut_body:
-    "My most recent release. Colorful, (bizarrely) entertaining, and dangerously addictive. You're a donut. The tunnel is made of donuts. You need to survive. I donut know how to explain it further — you'll just have to try it.",
+    "My most recent release. Colorful, (bizarrely) entertaining, and dangerously addictive. You're a donut. The tunnel is made of donuts. You need to survive. I donut know how to explain it further. You'll just have to try it.",
   games_play_link_gp: "Available on Google Play Store for free",
 
   games_neon_body:
     "A fast-paced arcade game where you pilot a speeding spaceship through an endless, procedurally generated asteroid field.",
 
   games_planet_body:
-    'A simulation of orbital mechanics that reveals a beautiful hidden pattern — "The Dance of Venus." Eight Earth years are roughly thirteen Venus years, and the ratio of their angular velocities traces a perfect five-petal flower as they orbit the Sun. Planet Dance lets you explore this and create your own orbital harmonies.',
+    'A simulation of orbital mechanics that reveals a beautiful hidden pattern: "The Dance of Venus." Eight Earth years are roughly thirteen Venus years, and the ratio of their angular velocities traces a perfect five-petal flower as they orbit the Sun. Planet Dance lets you explore this and create your own orbital harmonies.',
   games_play_link_itch: "Download for free on Itch.io",
 
   games_avoid_body:
-    "My first commercial release. A game about dodging incoming missiles with a plane. It's no longer available — I didn't know GitHub existed yet, lost the source files, and Google removed it when I couldn't update to the latest SDK. A lesson in version control before I knew what version control was.",
+    "My first commercial release. A game about dodging incoming missiles with a plane. It's no longer available. I didn't know GitHub existed yet, lost the source files, and Google removed it when I couldn't update to the latest SDK. A lesson in version control before I knew what version control was.",
   games_instagram_link: "See more on Instagram",
   games_features_label: "Features",
-  games_avoid_feat1: "Two game modes — Classic & Hard",
+  games_avoid_feat1: "Two game modes: Classic & Hard",
   games_avoid_feat2: "12 different vehicles",
   games_avoid_feat3: "Powerups with upgrades",
   games_avoid_feat4: "Daily rewards system",
 
   games_try_body:
-    "Built in under 12 hours. No longer available — same story as A-void. But the speed of shipping this one taught me something about constraints being a feature, not a bug.",
-  games_try_feat1: "Two game modes — Classic & Crazy",
+    "Built in under 12 hours. No longer available, same story as A-void. But the speed of shipping this one taught me something about constraints being a feature, not a bug.",
+  games_try_feat1: "Two game modes: Classic & Crazy",
   games_try_feat2: "Infinite level generation",
 
   games_label_disclaimer: "Notice",
   games_disclaimer_body:
-    "My Google Play developer account was taken down due to low activity — very few players and downloads across my published games. The store listings are no longer accessible, but the games were real, shipped, and playable. Screenshots and details are preserved below.",
+    "My Google Play developer account was taken down due to low activity (very few players and downloads across my published games). The store listings are no longer accessible, but the games were real, shipped, and playable. Screenshots and details are preserved below.",
 
   /* ══════════════════════════════════════════════════════════
      Semillero page
@@ -245,7 +245,7 @@ const en = {
 
   sem_who_title: "Who is Semillero?",
   sem_context_p1:
-    "Semillero is a team of HR professionals that supports companies, entrepreneurs, and independent workers in the challenges of the professional world — talent selection, training, and onboarding of new hires.",
+    "Semillero is a team of HR professionals that supports companies, entrepreneurs, and independent workers in the challenges of the professional world: talent selection, training, and onboarding of new hires.",
   sem_context_p2:
     "The site replaced a fully manual CV-intake process with a structured digital workflow, both for applicants and for the administrative team.",
 
@@ -259,9 +259,9 @@ const en = {
 
   sem_admin_title: "Job listing & application management",
   sem_admin_body:
-    "The Semillero team accesses a protected section of the site where they can manage available job listings — create, edit, close them — and browse the list of applicants with all their data and attached CV.",
+    "The Semillero team accesses a protected section of the site where they can manage available job listings (create, edit, close them) and browse the list of applicants with all their data and attached CV.",
 
-  sem_status_label: "Semillero Personas — In production",
+  sem_status_label: "Semillero Personas · In production",
 
   /* ══════════════════════════════════════════════════════════
      Automaton Designer page
@@ -276,7 +276,7 @@ const en = {
   aut_label_overview: "Overview",
   aut_overview_title: "From theory to interaction",
   aut_overview_p1:
-    "Finite automata are a fundamental concept in computer science theory — but textbook diagrams are static and hard to reason about. My Automata makes them alive: drag nodes, draw transitions, and instantly test whether an input string is accepted or rejected.",
+    "Finite automata are a fundamental concept in computer science theory, but textbook diagrams are static and hard to reason about. My Automata makes them alive: drag nodes, draw transitions, and instantly test whether an input string is accepted or rejected.",
   aut_overview_p2:
     "The editor supports both Deterministic Finite Automata (DFA) and Non-Deterministic Finite Automata (NFA), letting you toggle ε-transitions and visualize the full state reachability tree.",
 
@@ -295,7 +295,7 @@ const en = {
   dec_tag_opensource: "Open Source",
   dec_tag_ai: "Built with AI",
   dec_subtitle:
-    "A web editor for writing décimas — ten-verse Spanish stanzas with the espinela rhyme scheme (abbaaccddc). It color-codes each verse's rhyme group, highlights the ending it must rhyme with, and counts metric syllables in real time.",
+    "A web editor for writing décimas, ten-verse Spanish stanzas with the espinela rhyme scheme (abbaaccddc). It color-codes each verse's rhyme group, highlights the ending it must rhyme with, and counts metric syllables in real time.",
   dec_cta: "View on GitHub",
 
   dec_label_overview: "Overview",
@@ -303,17 +303,17 @@ const en = {
   dec_overview_p1:
     "The idea came after watching Jorge Drexler's famous talk about the décima. I got hooked trying to write my own and realized a normal text editor doesn't tell you which verse you're on, how many syllables you've written, or what each line must rhyme with. This one does: a Spanish syllabification engine handles diphthongs, hiatus, silent letters, and sinalefa between words, and rhyme keys account for seseo and yeísmo.",
   dec_overview_p2:
-    "The project was built with Claude Fable 5 from literally a single prompt — the code, the metrics engine, its test suite, and ten example décimas composed and verified with the engine itself.",
+    "The project was built with Claude Fable 5 from literally a single prompt: the code, the metrics engine, its test suite, and ten example décimas composed and verified with the engine itself.",
 
   dec_hl1_label: "Color-coded rhyme",
   dec_hl1_text:
     "Each verse gets its scheme letter and the ending it must rhyme with, highlighted in its group's color",
   dec_hl2_label: "Metric syllables",
   dec_hl2_text:
-    "Live count with sinalefa, +1 for oxytone endings, −1 for proparoxytones — flagged when a verse isn't 8",
+    "Live count with sinalefa, +1 for oxytone endings, −1 for proparoxytones (flagged when a verse isn't 8)",
   dec_hl3_label: "Built with Claude Fable 5",
   dec_hl3_text:
-    "Vanilla HTML, CSS, and JavaScript — no dependencies, no build step, generated from one prompt",
+    "Vanilla HTML, CSS, and JavaScript. No dependencies, no build step, generated from one prompt",
 };
 
 export type TranslationKey = keyof typeof en;
@@ -347,7 +347,7 @@ const es: Record<TranslationKey, string> = {
 
   proj1_tag: "Investigación en ML · Pasantía",
   proj1_desc:
-    "Sistema de ML para generación de señales de renta variable — red neuronal secuencial entrenada con más de 2M de filas, desde datos crudos de mercado hasta predicciones validadas con walk-forward.",
+    "Sistema de ML para generación de señales de renta variable: red neuronal secuencial entrenada con más de 2M de filas, desde datos crudos de mercado hasta predicciones validadas con walk-forward.",
   proj1_internal: "(Proyecto interno)",
 
   proj2_tag: "Aplicación Web · Producción",
@@ -380,7 +380,7 @@ const es: Record<TranslationKey, string> = {
 
   edu_current_subtitle: "TradeSpark · Jornada completa",
   edu_current_meta: "Tandil, Provincia de Buenos Aires, Argentina · Híbrido",
-  edu_current_date: "ABR 2026 — ACTUALIDAD",
+  edu_current_date: "ABR 2026 - ACTUALIDAD",
 
   edu1_title: "Pasante de Ingeniería en Machine Learning",
   edu1_desc:
@@ -396,7 +396,7 @@ const es: Record<TranslationKey, string> = {
   edu3_desc:
     'Ayudante en "Introducción a los Sistemas Informáticos", "Ciencias de la Computación I" y "Arquitectura de Computadoras II". A cargo de las clases prácticas, la corrección de parciales y la explicación de los conceptos fundamentales.',
 
-  edu4_title: "Formación Online — Web, IA y Matemáticas",
+  edu4_title: "Formación Online · Web, IA y Matemáticas",
   edu4_desc:
     "Más de 35 cursos de desarrollo frontend, machine learning y fundamentos matemáticos. En Platzi formé mi intuición como ingeniero antes de la universidad, y sigo aprendiendo ahí cada vez que la curiosidad le gana al plan de estudios.",
   edu4_link: "Ver Perfil ↗",
@@ -414,7 +414,7 @@ const es: Record<TranslationKey, string> = {
   /* ── Contact section ── */
   section_contact_title: "Hablemos.",
   contact_text:
-    "Si estás trabajando en algo que vive en el cruce entre la ingeniería y el impacto real —ya sea un producto, un problema de investigación o algo intermedio—, me encantaría que me lo cuentes.",
+    "Si estás trabajando en algo que vive en el cruce entre la ingeniería y el impacto real (ya sea un producto, un problema de investigación o algo intermedio), me encantaría que me lo cuentes.",
 
   /* ── Lang toggle (label shows the language you'd switch TO) ── */
   lang_toggle: "EN",
@@ -438,7 +438,7 @@ const es: Record<TranslationKey, string> = {
   ceapp_context_p1:
     "Los Centros de Educación Agraria (CEAs) son instituciones públicas dependientes de la Dirección Provincial de Educación Técnico Profesional. Ofrecen formación profesional inicial y capacitación laboral para jóvenes y adultos mediante itinerarios formativos: cursos, charlas y jornadas técnicas. Existen alrededor de 30 CEAs en la provincia de Buenos Aires.",
   ceapp_context_p2:
-    "Antes de CEApp, la gestión era completamente manual —papel, planillas y correos— sin visibilidad para el público ni un flujo claro para los administradores.",
+    "Antes de CEApp, la gestión era completamente manual (papel, planillas y correos), sin visibilidad para el público ni un flujo claro para los administradores.",
 
   ceapp_hl1_label: "Sitios públicos",
   ceapp_hl1_text:
@@ -463,7 +463,7 @@ const es: Record<TranslationKey, string> = {
   ceapp_label_design: "Diseño de producto",
   ceapp_lifecycle_title: "Ciclo de vida de las capacitaciones",
   ceapp_lifecycle_body:
-    "Las capacitaciones atraviesan estados claramente definidos — desde su creación hasta el cierre y emisión de constancias. Este modelo de estados guía tanto la experiencia del usuario final como las acciones disponibles para el administrador.",
+    "Las capacitaciones atraviesan estados claramente definidos, desde su creación hasta el cierre y emisión de constancias. Este modelo de estados guía tanto la experiencia del usuario final como las acciones disponibles para el administrador.",
 
   ceapp_state_prox: "Inscripción aún no disponible",
   ceapp_state_open: "Inscripción disponible",
@@ -519,7 +519,7 @@ const es: Record<TranslationKey, string> = {
   games_tag_gamedev: "Desarrollo de Videojuegos",
   games_title: "Juegos",
   games_subtitle:
-    "Cinco juegos móviles publicados en Google Play e Itch.io — desde arcades de esquiva hasta simuladores orbitales. Cada uno, un desafío de diseño distinto: generación procedural, mecánicas físicas y experiencia de juego pulida.",
+    "Cinco juegos móviles publicados en Google Play e Itch.io, desde arcades de esquiva hasta simuladores orbitales. Cada uno, un desafío de diseño distinto: generación procedural, mecánicas físicas y experiencia de juego pulida.",
 
   games_label_published_gp: "Publicado · Google Play",
   games_label_published_itch: "Publicado · Itch.io",
@@ -534,26 +534,26 @@ const es: Record<TranslationKey, string> = {
     "Un juego de arcade a alta velocidad donde piloteás una nave espacial a través de un campo de asteroides infinito generado de forma procedural.",
 
   games_planet_body:
-    "Una simulación de mecánica orbital que revela un hermoso patrón oculto — «La Danza de Venus». Ocho años terrestres equivalen aproximadamente a trece años venusianos, y la relación de sus velocidades angulares traza una flor de cinco pétalos perfecta alrededor del Sol. Planet Dance te permite explorar esto y crear tus propias armonías orbitales.",
+    "Una simulación de mecánica orbital que revela un hermoso patrón oculto: «La Danza de Venus». Ocho años terrestres equivalen aproximadamente a trece años venusianos, y la relación de sus velocidades angulares traza una flor de cinco pétalos perfecta alrededor del Sol. Planet Dance te permite explorar esto y crear tus propias armonías orbitales.",
   games_play_link_itch: "Descargá gratis en Itch.io",
 
   games_avoid_body:
-    "Mi primer lanzamiento comercial. Un juego de esquivar misiles con un avión. Ya no está disponible — en ese momento no sabía que existía GitHub, perdí los archivos fuente y Google lo eliminó cuando no pude actualizar al SDK más reciente. Una lección de control de versiones antes de saber qué era el control de versiones.",
+    "Mi primer lanzamiento comercial. Un juego de esquivar misiles con un avión. Ya no está disponible. En ese momento no sabía que existía GitHub, perdí los archivos fuente y Google lo eliminó cuando no pude actualizar al SDK más reciente. Una lección de control de versiones antes de saber qué era el control de versiones.",
   games_instagram_link: "Ver más en Instagram",
   games_features_label: "Características",
-  games_avoid_feat1: "Dos modos de juego — Clásico y Difícil",
+  games_avoid_feat1: "Dos modos de juego: Clásico y Difícil",
   games_avoid_feat2: "12 vehículos diferentes",
   games_avoid_feat3: "Potenciadores con mejoras",
   games_avoid_feat4: "Sistema de recompensas diarias",
 
   games_try_body:
-    "Hecho en menos de 12 horas. Ya no está disponible — misma historia que A-void. Pero lo rápido que salió me enseñó algo: las restricciones son una ventaja, no un obstáculo.",
-  games_try_feat1: "Dos modos de juego — Clásico y Loco",
+    "Hecho en menos de 12 horas. Ya no está disponible, misma historia que A-void. Pero lo rápido que salió me enseñó algo: las restricciones son una ventaja, no un obstáculo.",
+  games_try_feat1: "Dos modos de juego: Clásico y Loco",
   games_try_feat2: "Generación infinita de niveles",
 
   games_label_disclaimer: "Aviso",
   games_disclaimer_body:
-    "Mi cuenta de desarrollador en Google Play fue dada de baja por baja actividad — muy pocos jugadores y descargas en los juegos publicados. Los listados en la tienda ya no están disponibles, pero los juegos fueron reales, publicados y jugables. Las capturas de pantalla y los detalles se conservan a continuación.",
+    "Mi cuenta de desarrollador en Google Play fue dada de baja por baja actividad (muy pocos jugadores y descargas en los juegos publicados). Los listados en la tienda ya no están disponibles, pero los juegos fueron reales, publicados y jugables. Las capturas de pantalla y los detalles se conservan a continuación.",
 
   /* ══════════════════════════════════════════════════════════
      Página Semillero
@@ -565,7 +565,7 @@ const es: Record<TranslationKey, string> = {
 
   sem_who_title: "¿Qué es Semillero?",
   sem_context_p1:
-    "Semillero es un equipo de profesionales especializados en RRHH que acompaña a empresas, emprendedores y trabajadores independientes en los desafíos del mundo profesional — selección de personal, capacitación e inserción de nuevos talentos.",
+    "Semillero es un equipo de profesionales especializados en RRHH que acompaña a empresas, emprendedores y trabajadores independientes en los desafíos del mundo profesional: selección de personal, capacitación e inserción de nuevos talentos.",
   sem_context_p2:
     "El sitio reemplazó un proceso completamente manual de recepción de CVs por un flujo digital estructurado, tanto para los postulantes como para el equipo administrativo.",
 
@@ -580,9 +580,9 @@ const es: Record<TranslationKey, string> = {
 
   sem_admin_title: "Gestión de ofertas y postulaciones",
   sem_admin_body:
-    "El equipo de Semillero accede a una sección protegida del sitio donde puede administrar las ofertas disponibles — crearlas, editarlas, cerrarlas — y consultar el listado de postulantes con todos sus datos y CV adjunto.",
+    "El equipo de Semillero accede a una sección protegida del sitio donde puede administrar las ofertas disponibles (crearlas, editarlas, cerrarlas) y consultar el listado de postulantes con todos sus datos y CV adjunto.",
 
-  sem_status_label: "Semillero Personas — En producción",
+  sem_status_label: "Semillero Personas · En producción",
 
   /* ══════════════════════════════════════════════════════════
      Página Diseñador de Autómatas
@@ -618,7 +618,7 @@ const es: Record<TranslationKey, string> = {
   dec_tag_opensource: "Código Abierto",
   dec_tag_ai: "Hecho con IA",
   dec_subtitle:
-    "Un editor web para escribir décimas — estrofas de diez versos con el esquema de rima de la espinela (abbaaccddc). Colorea cada verso según su grupo de rima, resalta la terminación con la que debe rimar y cuenta las sílabas métricas en tiempo real.",
+    "Un editor web para escribir décimas, estrofas de diez versos con el esquema de rima de la espinela (abbaaccddc). Colorea cada verso según su grupo de rima, resalta la terminación con la que debe rimar y cuenta las sílabas métricas en tiempo real.",
   dec_cta: "Ver en GitHub",
 
   dec_label_overview: "Descripción general",
@@ -626,17 +626,17 @@ const es: Record<TranslationKey, string> = {
   dec_overview_p1:
     "La idea nació después de ver la famosa charla de Jorge Drexler sobre la décima. Me entusiasmé tratando de escribir las mías y me di cuenta de que un editor de texto normal no te dice en qué verso vas, cuántas sílabas llevás ni con qué debe rimar cada frase. Este sí: un motor de silabeo español maneja diptongos, hiatos, letras mudas y sinalefas entre palabras, y las claves de rima contemplan el seseo y el yeísmo.",
   dec_overview_p2:
-    "El proyecto fue hecho con Claude Fable 5 a partir de literalmente un solo prompt — el código, el motor de métrica, sus pruebas y diez décimas de ejemplo compuestas y verificadas con el propio motor.",
+    "El proyecto fue hecho con Claude Fable 5 a partir de literalmente un solo prompt: el código, el motor de métrica, sus pruebas y diez décimas de ejemplo compuestas y verificadas con el propio motor.",
 
   dec_hl1_label: "Rima por colores",
   dec_hl1_text:
     "Cada verso recibe su letra del esquema y la terminación con la que debe rimar, resaltada con el color de su grupo",
   dec_hl2_label: "Sílabas métricas",
   dec_hl2_text:
-    "Conteo en vivo con sinalefa, +1 si termina en aguda, −1 en esdrújula — avisa cuando un verso no da 8",
+    "Conteo en vivo con sinalefa, +1 si termina en aguda, −1 en esdrújula (avisa cuando un verso no da 8)",
   dec_hl3_label: "Hecho con Claude Fable 5",
   dec_hl3_text:
-    "HTML, CSS y JavaScript planos — sin dependencias ni build, generado a partir de un prompt",
+    "HTML, CSS y JavaScript planos. Sin dependencias ni build, generado a partir de un prompt",
 };
 
 export const translations: Record<Language, Record<TranslationKey, string>> = {

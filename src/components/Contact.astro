@@ -31,7 +31,7 @@ import mailIcon from "../assets/images/social/mail.svg";
   /* The address is never written into the static HTML. It lives here
      base64-encoded and is only decoded into a mailto: link the first time
      the user actually interacts with a [data-email] button (hover, focus,
-     touch, or click) — so crawlers and email harvesters never see it. */
+     touch, or click), so crawlers and email harvesters never see it. */
   const ENCODED = "bGF6YXJvdnR0YWNAZ21haWwuY29t"; // contact email, base64
 
   document.querySelectorAll<HTMLAnchorElement>("[data-email]").forEach((button) => {
