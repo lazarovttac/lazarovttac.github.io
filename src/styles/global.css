@@ -1,0 +1,143 @@
+/* Reset, theme tokens and document-level defaults. Component styles live in
+   their components; every color they use comes from the tokens below. */
+
+* {
+  font-family:
+    "Geist",
+    "Inter",
+    -apple-system,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+
+  --background-color: #ffffff;
+  --grid-line: rgba(0, 0, 0, 0.05);
+  --border-color: #e5e7eb;
+
+  --item-hover-color: #f3f4f6;
+  --item-background-color: #ffffff;
+
+  --text-primary: #000000;
+  --text-secondary: #4b5563;
+
+  --link-color: #2563eb;
+
+  --cta-hover-color: #222222;
+  --linkedin-color: #0077b5;
+  --success-color: #10b981;
+  --danger-color: #dc2626;
+  --danger-text: #b91c1c;
+  --accent-gradient-start: #0057ff;
+  --accent-gradient-end: #3377ff;
+  /* Text on the accent gradient, on brand-colored hovers and on the lightbox. */
+  --on-accent: #ffffff;
+  --shadow-color: #000000;
+  --overlay-color: rgba(0, 0, 0, 0.85);
+  --scrollbar-thumb: rgba(97, 96, 96, 0.4);
+  --terminal-scrollbar-thumb: rgba(100, 100, 100, 0.25);
+  --tag-border: rgba(0, 0, 0, 0.05);
+
+  --terminal-close: #ff5f56;
+  --terminal-min: #ffbd2e;
+  --terminal-max: #27c93f;
+
+  /* Monochrome SVG/PNG icons are drawn black: keep them on light surfaces,
+     invert them on dark ones (`--icon-filter-inverse` is for inverted hovers). */
+  --icon-filter: none;
+  --icon-filter-inverse: invert(1) brightness(2);
+
+  /* Tags colors */
+  --tag-1-bg: #fdf4ff;
+  --tag-1-text: #a21caf;
+  --tag-2-bg: #fefce8;
+  --tag-2-text: #854d0e;
+  --tag-3-bg: #fdf8f0;
+  --tag-3-text: #652b16;
+  --tag-4-bg: #f0fdf4;
+  --tag-4-text: #166534;
+  --tag-5-bg: #fff1f2;
+  --tag-5-text: #be123c;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --background-color: #0a0a0a;
+  --grid-line: rgba(255, 255, 255, 0.05);
+  --border-color: #262626;
+
+  --item-hover-color: #1f1f1f;
+  --item-background-color: #141414;
+
+  --text-primary: #ededed;
+  --text-secondary: #a3a3a3;
+
+  --link-color: #60a5fa;
+
+  --cta-hover-color: #d4d4d4;
+  --danger-color: #f87171;
+  --danger-text: #fca5a5;
+  --scrollbar-thumb: rgba(160, 160, 160, 0.4);
+  --tag-border: rgba(255, 255, 255, 0.08);
+
+  --icon-filter: invert(1) brightness(2);
+  --icon-filter-inverse: none;
+
+  --tag-1-bg: #2e0a33;
+  --tag-1-text: #f0abfc;
+  --tag-2-bg: #2a2205;
+  --tag-2-text: #fde68a;
+  --tag-3-bg: #2b1d14;
+  --tag-3-text: #e7b48f;
+  --tag-4-bg: #052e16;
+  --tag-4-text: #86efac;
+  --tag-5-bg: #3b0a14;
+  --tag-5-text: #fda4af;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  /* Grid background */
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center top;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  height: 20px;
+  border-radius: 10px;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-padding-top: 100px;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+p a {
+  color: var(--link-color);
+}

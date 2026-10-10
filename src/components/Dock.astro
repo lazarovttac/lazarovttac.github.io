@@ -1,0 +1,295 @@
+---
+import Translated from "./Translated.astro";
+
+interface Props {
+  /** On the home page the links scroll in place; elsewhere they lead back home. */
+  isHome: boolean;
+}
+
+const { isHome } = Astro.props;
+const home = isHome ? "" : "/";
+---
+
+<nav class="floating-dock">
+  <div class="dock-topbar">
+    <a href={isHome ? "#landing" : "/"} class="dock-brand">@lazarovttac</a>
+    <button
+      class="burger-btn"
+      id="burger-btn"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="dock-links">
+    <Translated as="a" href={`${home}#projects`} class="dock-link" k="nav_projects" />
+    <Translated as="a" href={`${home}#education`} class="dock-link" k="nav_education" />
+    <Translated as="a" href={`${home}#about`} class="dock-link" k="nav_about" />
+    <div class="dock-separator"></div>
+    <Translated as="a" href="#contact" class="dock-cta" k="nav_cta" />
+  </div>
+</nav>
+
+<script>
+  const button = document.getElementById("burger-btn")!;
+  const dock = button.closest(".floating-dock")!;
+
+  function setOpen(isOpen: boolean) {
+    dock.classList.toggle("nav-open", isOpen);
+    button.classList.toggle("open", isOpen);
+    button.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  button.addEventListener("click", () => setOpen(!dock.classList.contains("nav-open")));
+  dock.querySelectorAll(".dock-link, .dock-cta").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+</script>
+
+<style>
+  .floating-dock {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    width: auto;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 10px 10px 10px 35px;
+
+    background-color: color-mix(in srgb, var(--item-background-color) 75%, transparent);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--shadow-color) 10%, transparent);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-radius 0.3s ease;
+  }
+
+  .dock-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  /* Burger button — hidden on desktop */
+  .burger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .burger-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  /* Burger → X animation */
+  .burger-btn.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .burger-btn.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .burger-btn.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .floating-dock:hover {
+    box-shadow: 0 10px 25px -8px color-mix(in srgb, var(--shadow-color) 10%, transparent);
+    transform: translateX(-50%) translateY(-2px);
+  }
+
+  .dock-topbar {
+    display: none;
+  }
+
+  .floating-dock .dock-link {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .floating-dock .dock-link:hover {
+    color: var(--text-primary);
+  }
+
+  .dock-separator {
+    width: 1px;
+    height: 20px;
+    background-color: var(--border-color);
+    margin: 0 5px;
+  }
+
+  .floating-dock .dock-cta {
+    background-color: var(--text-primary);
+    color: var(--background-color);
+    padding: 10px 20px;
+    border-radius: 9999px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Keep the pill intact when the dock gets tight: never let the label wrap
+       or the button shrink below its content. */
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition:
+      transform 0.3s,
+      background-color 0.3s;
+  }
+
+  .floating-dock .dock-cta::after {
+    content: "→";
+    font-family: inherit;
+    transition: transform 0.3s;
+  }
+
+  .floating-dock .dock-cta:hover {
+    background-color: var(--cta-hover-color);
+  }
+
+  .floating-dock .dock-cta:hover::after {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 700px) {
+    /* ── Burger / top header navbar ── */
+    .burger-btn {
+      display: flex;
+    }
+
+    /* Dock becomes a top sticky header */
+    .floating-dock {
+      top: 0;
+      bottom: auto;
+      left: 0;
+      right: 0;
+      transform: none;
+
+      width: 100%;
+      max-width: 100%;
+
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      border-bottom: 1px solid var(--border-color);
+
+      background-color: color-mix(in srgb, var(--item-background-color) 88%, transparent);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      box-shadow: 0 2px 12px -2px color-mix(in srgb, var(--shadow-color) 7%, transparent);
+    }
+
+    .floating-dock:hover {
+      transform: none;
+    }
+
+    /* Topbar row: brand left · burger right */
+    .dock-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 5px 25px;
+      min-height: 60px;
+    }
+
+    .dock-brand {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    /* Collapsed state: dock-links hidden */
+    .dock-links {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      width: 100%;
+
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition:
+        max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.25s ease;
+    }
+
+    /* Open state */
+    .floating-dock.nav-open .dock-links {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    /* Vertical link styles */
+    .floating-dock .dock-link {
+      font-size: 1.6rem;
+      font-weight: 500;
+      padding: 16px 20px;
+      border-top: 1px solid var(--border-color);
+      display: block;
+      width: 100%;
+      color: var(--text-secondary);
+    }
+
+    .floating-dock .dock-link:hover {
+      background-color: var(--item-hover-color);
+      color: var(--text-primary);
+    }
+
+    /* Hide the separator in vertical mode */
+    .dock-links .dock-separator {
+      display: none;
+    }
+
+    /* CTA at the bottom of the dropdown */
+    .dock-links .dock-cta {
+      margin: 16px 20px;
+      justify-content: center;
+      border-radius: 9999px;
+    }
+  }
+</style>

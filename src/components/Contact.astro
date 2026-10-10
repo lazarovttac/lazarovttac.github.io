@@ -1,0 +1,135 @@
+---
+import { Image } from "astro:assets";
+import Translated from "./Translated.astro";
+import githubIcon from "../assets/images/social/GitHub.svg";
+import linkedInIcon from "../assets/images/social/linkedIn.svg";
+import mailIcon from "../assets/images/social/mail.svg";
+---
+
+<section class="contact" id="contact">
+  <div class="contact-content">
+    <Translated as="h2" class="title" k="section_contact_title" />
+    <Translated as="p" class="contact-text" k="contact_text" />
+    <div class="social-links">
+      <a href="#" class="social-btn" data-email aria-label="Email">
+        <Image src={mailIcon} alt="Email" />
+        Email
+      </a>
+      <a href="https://github.com/lazarovttac" target="_blank" class="social-btn">
+        <Image src={githubIcon} alt="GitHub" />
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/lazarovttac" target="_blank" class="social-btn">
+        <Image src={linkedInIcon} alt="LinkedIn" />
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  /* The address is never written into the static HTML. It lives here
+     base64-encoded and is only decoded into a mailto: link the first time
+     the user actually interacts with a [data-email] button (hover, focus,
+     touch, or click) — so crawlers and email harvesters never see it. */
+  const ENCODED = "bGF6YXJvdnR0YWNAZ21haWwuY29t"; // contact email, base64
+
+  document.querySelectorAll<HTMLAnchorElement>("[data-email]").forEach((button) => {
+    const reveal = () => {
+      if (button.dataset.revealed) return;
+      button.href = "mailto:" + atob(ENCODED);
+      button.dataset.revealed = "1";
+    };
+
+    ["pointerenter", "focus", "touchstart"].forEach((eventName) =>
+      button.addEventListener(eventName, reveal, { passive: true }),
+    );
+
+    // Fallback: if a click lands before any hover/focus, build and follow it.
+    button.addEventListener("click", (event) => {
+      if (button.dataset.revealed) return;
+      event.preventDefault();
+      reveal();
+      window.location.href = button.href;
+    });
+  });
+</script>
+
+<style>
+  .contact {
+    width: 100%;
+    position: relative;
+    padding-top: 5vh;
+    padding-bottom: 25vh; /* Extra padding for floating dock */
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact-content {
+    text-align: center;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact .title {
+    font-family: "Geist", sans-serif;
+    font-weight: 800;
+    font-size: clamp(4rem, 8vw, 8rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+  }
+
+  .contact-text {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-btn {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 12px 24px;
+    background-color: var(--item-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    transition: all 0.3s;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .social-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: var(--icon-filter);
+    transition: filter 0.3s;
+  }
+
+  .social-btn:hover {
+    background-color: var(--text-primary);
+    color: var(--background-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px color-mix(in srgb, var(--shadow-color) 8%, transparent);
+  }
+
+  .social-btn:hover img {
+    filter: var(--icon-filter-inverse);
+  }
+</style>
