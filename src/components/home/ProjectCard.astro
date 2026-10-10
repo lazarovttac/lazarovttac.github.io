@@ -13,6 +13,13 @@ const { icon, title, tagKey, descriptionKey, stack, href, links, internalNoteKey
 ---
 
 <div class="project-card" data-href={href}>
+  {
+    href && (
+      <svg class="project-card__arrow" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 17 17 7M8 7h9v9" />
+      </svg>
+    )
+  }
   <div class="project-card__content">
     <Image class="project-card__icon" src={icon} alt="" width={104} />
     <LabelText as="p" class="title" label={title} />
@@ -52,6 +59,7 @@ const { icon, title, tagKey, descriptionKey, stack, href, links, internalNoteKey
 
 <style>
   .project-card {
+    position: relative;
     text-decoration: none;
     background-color: var(--item-background-color);
     border-radius: 20px;
@@ -72,6 +80,47 @@ const { icon, title, tagKey, descriptionKey, stack, href, links, internalNoteKey
   .project-card[data-href]:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow-color) 5%, transparent);
+  }
+
+  /* Slides in along its own 45° line toward the corner, so the card reads as "there's more inside". */
+  .project-card__arrow {
+    position: absolute;
+    top: 26px;
+    right: 26px;
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+    stroke: var(--text-primary);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    opacity: 0;
+    transform: translate(-8px, 8px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .project-card:hover .project-card__arrow {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Touch screens never hover: keep the hint visible. */
+  @media (hover: none) {
+    .project-card__arrow {
+      opacity: 0.6;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card__arrow {
+      transform: none;
+    }
   }
 
   .project-card__content {
