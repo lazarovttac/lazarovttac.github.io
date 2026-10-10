@@ -1,1 +1,5 @@
 .vscode
+.lvc/
+node_modules/
+dist/
+.astro/

@@ -1,0 +1,134 @@
+---
+import { Image } from "astro:assets";
+import { techs, type Tech } from "../../data/tech";
+import type { Label, TranslationKey } from "../../i18n/translations";
+import LabelText from "../LabelText.astro";
+import Translated from "../Translated.astro";
+
+interface Props {
+  tags: Label[];
+  title: Label;
+  subtitleKey: TranslationKey;
+  stack?: Tech[];
+}
+
+const { tags, title, subtitleKey, stack = [] } = Astro.props;
+---
+
+<header class="case-header">
+  <div class="case-header__meta">
+    {tags.map((tag) => <LabelText as="span" class="case-tag" label={tag} />)}
+  </div>
+  <LabelText as="h1" class="case-title" label={title} />
+  <Translated as="p" class="case-subtitle" k={subtitleKey} />
+  <div class="case-ctas">
+    <slot name="ctas" />
+  </div>
+  {
+    stack.length > 0 && (
+      <div class="case-stack">
+        {stack.map((tech) => (
+          <div class="case-stack__item">
+            <Image
+              src={techs[tech].image}
+              alt={tech}
+              width={40}
+              loading="eager"
+              class={techs[tech].monochrome ? "monochrome" : undefined}
+            />
+            <span>{tech}</span>
+          </div>
+        ))}
+      </div>
+    )
+  }
+</header>
+
+<style>
+  .case-header {
+    max-width: 780px;
+    margin-bottom: 70px;
+  }
+
+  .case-header__meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .case-tag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--link-color);
+    background-color: color-mix(in srgb, var(--link-color) 7%, transparent);
+    border: 1px solid color-mix(in srgb, var(--link-color) 15%, transparent);
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+  }
+
+  .case-title {
+    font-family: "Geist", sans-serif;
+    font-weight: 800;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  .case-subtitle {
+    font-size: 1.85rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin-bottom: 30px;
+  }
+
+  .case-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .case-stack__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: var(--item-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: all 0.25s;
+  }
+
+  .case-stack__item:hover {
+    background-color: var(--item-hover-color);
+    transform: translateY(-1px);
+  }
+
+  .case-stack__item img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  .monochrome {
+    filter: var(--icon-filter);
+  }
+
+  @media (max-width: 700px) {
+    .case-title {
+      font-size: 3.5rem;
+    }
+
+    .case-subtitle {
+      font-size: 1.6rem;
+    }
+  }
+</style>

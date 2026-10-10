@@ -1,0 +1,114 @@
+---
+import { Image } from "astro:assets";
+import type { TranslationKey } from "../../i18n/translations";
+import { techs, type Tech } from "../../data/tech";
+import SectionTitle from "../SectionTitle.astro";
+import Translated from "../Translated.astro";
+
+const groups: { labelKey: TranslationKey; skills: Tech[] }[] = [
+  {
+    labelKey: "skills_group1",
+    skills: ["React", "Sass", "Firebase", "Git", "Figma", "Python"],
+  },
+  {
+    labelKey: "skills_group2",
+    skills: ["TensorFlow", "Keras", "C#", "Unity", "PostgreSQL"],
+  },
+];
+---
+
+<section class="skills" id="skills">
+  <SectionTitle k="section_skills" />
+  <div class="skills-groups">
+    {
+      groups.map(({ labelKey, skills }) => (
+        <div class="skills-group">
+          <Translated as="p" class="group-label" k={labelKey} />
+          <div class="skills-grid">
+            {skills.map((skill) => (
+              <div class="skill-item">
+                <Image
+                  src={techs[skill].image}
+                  alt={skill}
+                  width={44}
+                  class={techs[skill].monochrome ? "monochrome" : undefined}
+                />
+                <span class="skill-name">{skill}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .skills {
+    width: 100%;
+    position: relative;
+    padding: 5vh 0;
+  }
+
+  .skills-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .group-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+
+    padding-left: 20px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .skill-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 18px;
+
+    background-color: var(--item-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+
+    transition: all 0.3s;
+  }
+
+  .skill-item:hover {
+    background-color: var(--item-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px color-mix(in srgb, var(--shadow-color) 4%, transparent);
+  }
+
+  .skill-item img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+
+  .monochrome {
+    filter: var(--icon-filter);
+  }
+
+  .skill-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+</style>

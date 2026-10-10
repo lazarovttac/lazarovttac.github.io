@@ -1,0 +1,25 @@
+---
+import type { TranslationKey } from "../i18n/translations";
+import Translated from "./Translated.astro";
+
+interface Props {
+  k: TranslationKey;
+}
+---
+
+<Translated as="p" class="section-title" k={Astro.props.k} />
+
+<style>
+  .section-title {
+    width: 100%;
+    font-family: "Geist", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 3.5rem;
+    line-height: 2.9rem;
+    color: var(--text-primary);
+
+    padding: 10px;
+    margin-bottom: 40px;
+  }
+</style>

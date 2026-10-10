@@ -1,0 +1,32 @@
+---
+import { projects } from "../../data/projects";
+import SectionTitle from "../SectionTitle.astro";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section class="work" id="projects">
+  <SectionTitle k="section_projects" />
+  <div class="projects">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+</section>
+
+<style>
+  .work {
+    width: 100%;
+    position: relative;
+    padding: 5vh 0;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @media (max-width: 900px) {
+    .projects {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,111 @@
+<div class="floating-controls">
+  <button id="theme-toggle-btn" class="control-btn" aria-label="Toggle dark mode">
+    <span class="theme-icon theme-icon--to-dark">🌙</span>
+    <span class="theme-icon theme-icon--to-light">☀️</span>
+  </button>
+  <button id="lang-toggle-btn" class="control-btn">
+    <span class="lang-icon">🇪🇸</span>
+    <span class="lang-label">ES</span>
+  </button>
+</div>
+
+<script>
+  import "../scripts/i18n";
+  import { THEME_STORAGE_KEY, type Theme } from "../theme";
+
+  const root = document.documentElement;
+  const osPrefersDark = matchMedia("(prefers-color-scheme: dark)");
+
+  function applyTheme(theme: Theme) {
+    root.dataset.theme = theme;
+  }
+
+  document.getElementById("theme-toggle-btn")!.addEventListener("click", () => {
+    const next: Theme = root.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(next);
+    localStorage.setItem(THEME_STORAGE_KEY, next);
+  });
+
+  // Until the visitor picks a theme, keep following the OS.
+  osPrefersDark.addEventListener("change", (event) => {
+    if (!localStorage.getItem(THEME_STORAGE_KEY)) {
+      applyTheme(event.matches ? "dark" : "light");
+    }
+  });
+</script>
+
+<style>
+  .floating-controls {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .control-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+
+    background-color: color-mix(in srgb, var(--item-background-color) 75%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 9999px;
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--shadow-color) 8%, transparent);
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1;
+  }
+
+  .control-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow-color) 12%, transparent);
+    background-color: var(--item-background-color);
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+  }
+
+  .control-btn span {
+    font-family: inherit;
+  }
+
+  .lang-icon,
+  .theme-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .theme-icon--to-light {
+    display: none;
+  }
+
+  :global([data-theme="dark"]) .theme-icon--to-light {
+    display: inline;
+  }
+
+  :global([data-theme="dark"]) .theme-icon--to-dark {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .floating-controls {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .control-btn {
+      padding: 6px 12px;
+    }
+  }
+</style>

@@ -1,0 +1,17 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+import type { Label } from "../i18n/translations";
+import Translated from "./Translated.astro";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & { label: Label };
+
+const { as: Tag = "span", label, ...attributes } = Astro.props;
+---
+
+{
+  "key" in label ? (
+    <Translated as={Tag} {...attributes} k={label.key} />
+  ) : (
+    <Tag {...attributes}>{label.text}</Tag>
+  )
+}

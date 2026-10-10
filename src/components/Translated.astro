@@ -1,0 +1,32 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+import {
+  splitParagraphs,
+  translations,
+  type TranslationKey,
+} from "../i18n/translations";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+  k: TranslationKey;
+};
+
+const { as: Tag = "span", k, ...attributes } = Astro.props;
+// Renders English at build time; `data-i18n` lets the toggle swap the language.
+const paragraphs = splitParagraphs(translations.en[k]);
+---
+
+<Tag {...attributes} data-i18n={k}
+  >{
+    paragraphs.map((paragraph, index) => (
+      <>
+        {index > 0 && (
+          <>
+            <br />
+            <br />
+          </>
+        )}
+        {paragraph}
+      </>
+    ))
+  }</Tag
+>

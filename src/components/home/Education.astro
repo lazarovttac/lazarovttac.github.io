@@ -1,0 +1,193 @@
+---
+import SectionTitle from "../SectionTitle.astro";
+import Translated from "../Translated.astro";
+---
+
+<section class="education" id="education">
+  <SectionTitle k="section_education" />
+  <div class="educations">
+    <div class="education-card current-role-card">
+      <div class="education-card__content">
+        <p class="title">AI Developer</p>
+        <Translated as="p" class="subtitle" k="edu_current_subtitle" />
+        <Translated as="p" class="description" k="edu_current_meta" />
+      </div>
+      <div class="education-card__footer">
+        <Translated as="span" class="mono-date" k="edu_current_date" />
+      </div>
+    </div>
+    <div class="education-card">
+      <div class="education-card__content">
+        <Translated as="p" class="title" k="edu1_title" />
+        <p class="subtitle">TradeSpark | 2025</p>
+        <Translated as="p" class="description" k="edu1_desc" />
+      </div>
+      <div class="education-card__footer">
+        <span class="mono-date">2025</span>
+      </div>
+    </div>
+    <div class="education-card">
+      <div class="education-card__content">
+        <Translated as="p" class="title" k="edu2_title" />
+        <Translated as="p" class="subtitle" k="edu2_subtitle" />
+        <Translated as="p" class="description" k="edu2_desc" />
+      </div>
+      <div class="education-card__footer">
+        <span class="mono-date">APR 2021 - APR 2026</span>
+      </div>
+    </div>
+    <div class="education-card">
+      <div class="education-card__content">
+        <Translated as="p" class="title" k="edu3_title" />
+        <Translated as="p" class="subtitle" k="edu3_subtitle" />
+        <Translated as="p" class="description" k="edu3_desc" />
+      </div>
+      <div class="education-card__footer">
+        <span class="mono-date">2022 - 2024</span>
+      </div>
+    </div>
+    <!-- <div class="education-card">
+      <div class="education-card__content">
+        <p class="title">English Proficiency</p>
+        <p class="subtitle">EF SET Certificate</p>
+        <p class="description">
+          Scored 82/100 (C2 Proficient) on the EF Standard English Test,
+          demonstrating native or bilingual proficiency in reading and
+          listening comprehension.
+        </p>
+      </div>
+      <div class="education-card__footer">
+        <a
+          class="project-link"
+          href="https://cert.efset.org/ptB9qW"
+          target="_blank"
+          >View Certificate ↗</a
+        >
+      </div>
+    </div> -->
+    <div class="education-card">
+      <div class="education-card__content">
+        <Translated as="p" class="title" k="edu4_title" />
+        <p class="subtitle">Platzi | 2020 - Present</p>
+        <Translated as="p" class="description" k="edu4_desc" />
+      </div>
+      <div class="education-card__footer">
+        <Translated
+          as="a"
+          class="project-link"
+          href="https://platzi.com/p/lazarovttac/"
+          target="_blank"
+          k="edu4_link"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .education {
+    width: 100%;
+    position: relative;
+    padding: 5vh 0;
+  }
+
+  .educations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  @media (max-width: 900px) {
+    .educations {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .education-card {
+    background-color: var(--item-background-color);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .education-card__content {
+    flex-grow: 1;
+  }
+
+  .title {
+    font-family: "Geist", sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--link-color);
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .education-card__footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+  }
+
+  .mono-date {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  .project-link {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .project-link:hover {
+    color: var(--link-color);
+  }
+
+  .current-role-card {
+    grid-column: 1 / -1; /* Spans full width */
+    background: linear-gradient(
+      135deg,
+      var(--accent-gradient-start) 0%,
+      var(--accent-gradient-end) 100%
+    );
+    border-color: transparent;
+  }
+
+  .current-role-card .title,
+  .current-role-card .subtitle,
+  .current-role-card .description,
+  .current-role-card .mono-date {
+    color: var(--on-accent);
+  }
+
+  .current-role-card .description {
+    opacity: 0.85;
+  }
+
+  .current-role-card .education-card__footer {
+    border-top-color: color-mix(in srgb, var(--on-accent) 25%, transparent);
+  }
+</style>

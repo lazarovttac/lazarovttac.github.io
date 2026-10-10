@@ -1,0 +1,412 @@
+---
+import Button from "../components/Button.astro";
+import CaseHeader from "../components/case-study/CaseHeader.astro";
+import Gallery from "../components/case-study/Gallery.astro";
+import GalleryItem from "../components/case-study/GalleryItem.astro";
+import Translated from "../components/Translated.astro";
+import type { TranslationKey } from "../i18n/translations";
+import CaseStudyLayout from "../layouts/CaseStudyLayout.astro";
+
+const stats: { value: string; labelKey: TranslationKey }[] = [
+  { value: "6", labelKey: "ceapp_stat_institutions" },
+  { value: "6000+", labelKey: "ceapp_stat_students" },
+  { value: "4000+", labelKey: "ceapp_stat_certificates" },
+  { value: "350+", labelKey: "ceapp_stat_trainings" },
+];
+
+const features: { icon: string; titleKey: TranslationKey; textKey: TranslationKey }[] = [
+  { icon: "📝", titleKey: "ceapp_feat1_title", textKey: "ceapp_feat1_text" },
+  { icon: "🎓", titleKey: "ceapp_feat2_title", textKey: "ceapp_feat2_text" },
+  { icon: "👨‍🏫", titleKey: "ceapp_feat3_title", textKey: "ceapp_feat3_text" },
+  { icon: "📊", titleKey: "ceapp_feat4_title", textKey: "ceapp_feat4_text" },
+  { icon: "📤", titleKey: "ceapp_feat5_title", textKey: "ceapp_feat5_text" },
+  { icon: "🖼️", titleKey: "ceapp_feat6_title", textKey: "ceapp_feat6_text" },
+];
+
+const institutions = [
+  { number: 3, city: "Cañuelas", site: "cea3canuelas.web.app" },
+  { number: 5, city: "Bragado", site: "ceabragado.com" },
+  { number: 7, city: "Olavarría", site: "ceaolavarria.web.app" },
+  { number: 9, city: "Mercedes", site: "ceamercedes.web.app" },
+  { number: 19, city: "General Rodríguez", site: "ceadiecinueve.com" },
+  { number: 24, city: "Suipacha", site: "ceasuipacha.web.app" },
+];
+---
+
+<CaseStudyLayout
+  title="lazarovttac · CEApp"
+  description="Multi-tenant platform for Agricultural Training Centers. Public sites, centralized admin panel, registration management and government data exports."
+  backKey="ceapp_back"
+>
+  <CaseHeader
+    tags={[{ text: "Web App" }, { key: "ceapp_tag_production" }, { text: "Multi-tenant" }]}
+    title={{ text: "CEApp · Red de CEAs" }}
+    subtitleKey="ceapp_subtitle"
+    stack={["React", "Sass", "Firebase", "Figma", "Git"]}
+  >
+    <Fragment slot="ctas">
+      <Button href="https://red-cea.web.app" variant="primary" k="ceapp_cta_main" />
+      <Button href="https://ceabragado.com" variant="secondary">ceabragado.com</Button>
+      <Button href="https://ceadiecinueve.com" variant="secondary">ceadiecinueve.com</Button>
+    </Fragment>
+  </CaseHeader>
+
+  <!-- Photos of the CEA institutions -->
+  <section class="case-section">
+    <Gallery>
+      <GalleryItem src="CEApp/1.1.png" alt="Instituciones que usan CEApp" loading="eager" />
+      <GalleryItem src="CEA-5/1.jpg" alt="Grupo de alumnos del CEA 5, foto 1" loading="eager" />
+      <GalleryItem src="CEA-5/2.jpg" alt="Grupo de alumnos del CEA 5, foto 2" loading="eager" />
+    </Gallery>
+  </section>
+
+  <section class="case-section">
+    <div class="case-stats">
+      {
+        stats.map(({ value, labelKey }) => (
+          <div class="case-stat">
+            <span class="case-stat__value">{value}</span>
+            <Translated as="span" class="case-stat__label" k={labelKey} />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="case-section">
+    <div class="case-two-col">
+      <div class="case-two-col__content">
+        <Translated as="p" class="case-label" k="ceapp_label_context" />
+        <Translated as="h2" class="case-section-title" k="ceapp_what_are_ceas" />
+        <Translated as="p" class="case-body" k="ceapp_context_p1" />
+        <Translated as="p" class="case-body" k="ceapp_context_p2" />
+      </div>
+      <div class="case-two-col__highlights">
+        <div class="case-highlight">
+          <span class="case-highlight__icon">🌐</span>
+          <Translated as="p" class="case-highlight__label" k="ceapp_hl1_label" />
+          <Translated as="p" class="case-highlight__text" k="ceapp_hl1_text" />
+        </div>
+        <div class="case-highlight">
+          <span class="case-highlight__icon">🔐</span>
+          <Translated as="p" class="case-highlight__label" k="ceapp_hl2_label" />
+          <Translated as="p" class="case-highlight__text" k="ceapp_hl2_text" />
+        </div>
+        <div class="case-highlight">
+          <span class="case-highlight__icon">📋</span>
+          <Translated as="p" class="case-highlight__label" k="ceapp_hl3_label" />
+          <Translated as="p" class="case-highlight__text" k="ceapp_hl3_text" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Public sites -->
+  <section class="case-section">
+    <Translated as="p" class="case-label" k="ceapp_label_public" />
+    <Translated as="h2" class="case-section-title" k="ceapp_public_title" />
+    <Translated as="p" class="case-body case-body--wide" k="ceapp_public_body" />
+    <Gallery>
+      <GalleryItem src="CEA-5/home.png" alt="Captura de ceabragado.com">
+        <a href="https://ceabragado.com" target="_blank">ceabragado.com ↗</a>
+      </GalleryItem>
+      <GalleryItem src="CEA-19/home.png" alt="Captura de ceadiecinueve.com">
+        <a href="https://ceadiecinueve.com" target="_blank">ceadiecinueve.com ↗</a>
+      </GalleryItem>
+      <GalleryItem src="CEA-5/courses.png" alt="Listado de capacitaciones">
+        <Translated as="span" k="ceapp_cap_courses" />
+      </GalleryItem>
+      <GalleryItem src="CEA-5/course-details.png" alt="Detalles de una capacitación">
+        <Translated as="span" k="ceapp_cap_course_detail" />
+      </GalleryItem>
+      <GalleryItem src="CEA-5/create-profile.png" alt="Creación de perfil">
+        <Translated as="span" k="ceapp_cap_create_profile" />
+      </GalleryItem>
+      <GalleryItem src="CEA-5/user-profile.png" alt="Perfil de usuario">
+        <Translated as="span" k="ceapp_cap_user_profile" />
+      </GalleryItem>
+    </Gallery>
+  </section>
+
+  <!-- Lifecycle states -->
+  <section class="case-section">
+    <Translated as="p" class="case-label" k="ceapp_label_design" />
+    <Translated as="h2" class="case-section-title" k="ceapp_lifecycle_title" />
+    <Translated as="p" class="case-body case-body--wide" k="ceapp_lifecycle_body" />
+    <Gallery compact>
+      <GalleryItem src="CEA-5/states/prox.png" alt="Inscripción aún no disponible">
+        <Translated as="span" k="ceapp_state_prox" />
+      </GalleryItem>
+      <GalleryItem src="CEA-5/states/open.png" alt="Inscripción disponible">
+        <Translated as="span" k="ceapp_state_open" />
+      </GalleryItem>
+      <GalleryItem src="CEA-5/states/soon.png" alt="Comenzará a dictarse">
+        <Translated as="span" k="ceapp_state_soon" />
+      </GalleryItem>
+      <GalleryItem src="CEA-5/states/going.png" alt="Comenzó a dictarse">
+        <Translated as="span" k="ceapp_state_going" />
+      </GalleryItem>
+      <GalleryItem src="CEA-5/states/ended.png" alt="Finalizó el dictado">
+        <Translated as="span" k="ceapp_state_ended" />
+      </GalleryItem>
+    </Gallery>
+  </section>
+
+  <!-- Admin panel -->
+  <section class="case-section">
+    <p class="case-label">Backoffice</p>
+    <Translated as="h2" class="case-section-title" k="ceapp_admin_title" />
+    <Translated as="p" class="case-body case-body--wide" k="ceapp_admin_body" />
+    <Gallery>
+      <GalleryItem src="CEApp/0.png" alt="Página de inicio de red-cea.web.app" wide>
+        <a href="https://red-cea.web.app" target="_blank">red-cea.web.app ↗</a>
+        · Página de inicio
+      </GalleryItem>
+      <GalleryItem src="CEApp/1.png" alt="Captura de red-cea.web.app">
+        <Translated as="span" k="ceapp_cap_main_hub" />
+      </GalleryItem>
+      <GalleryItem src="CEApp/2.png" alt="Administración de capacitaciones">
+        <Translated as="span" k="ceapp_cap_admin_trainings" />
+      </GalleryItem>
+      <GalleryItem src="CEApp/3.png" alt="Administración de usuarios">
+        <Translated as="span" k="ceapp_cap_admin_users" />
+      </GalleryItem>
+      <GalleryItem src="CEApp/4.png" alt="Administración de imágenes">
+        <Translated as="span" k="ceapp_cap_admin_images" />
+      </GalleryItem>
+      <GalleryItem src="CEApp/5.png" alt="Creación de capacitaciones">
+        <Translated as="span" k="ceapp_cap_create_trainings" />
+      </GalleryItem>
+      <GalleryItem src="CEApp/6.png" alt="Perfiles de usuario">
+        <Translated as="span" k="ceapp_cap_user_profiles" />
+      </GalleryItem>
+      <GalleryItem src="CEApp/7.png" alt="Estadísticas de uso">
+        <Translated as="span" k="ceapp_cap_stats" />
+      </GalleryItem>
+    </Gallery>
+  </section>
+
+  <!-- New features: Certificates, Forms, Exports -->
+  <section class="case-section">
+    <Translated as="p" class="case-label" k="ceapp_label_features" />
+    <Translated as="h2" class="case-section-title" k="ceapp_features_title" />
+    <Translated as="p" class="case-body case-body--wide" k="ceapp_features_body" />
+    <div class="case-features-grid">
+      {
+        features.map(({ icon, titleKey, textKey }) => (
+          <div class="case-feature">
+            <span class="case-feature__icon">{icon}</span>
+            <Translated as="h3" class="case-feature__title" k={titleKey} />
+            <Translated as="p" class="case-feature__text" k={textKey} />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Institutions -->
+  <section class="case-section">
+    <Translated as="p" class="case-label" k="ceapp_label_network" />
+    <Translated as="h2" class="case-section-title" k="ceapp_network_title" />
+    <Translated as="p" class="case-body case-body--wide" k="ceapp_network_body" />
+    <div class="case-institutions">
+      {
+        institutions.map(({ number, city, site }) => (
+          <div class="case-institution">
+            <div class="case-institution__logo-placeholder">CEA {number}</div>
+            <div class="case-institution__info">
+              <p class="case-institution__id">CEA N°{number}</p>
+              <p class="case-institution__city">{city}</p>
+              <a href={`https://${site}`} target="_blank" class="case-institution__link">
+                {site} ↗
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</CaseStudyLayout>
+
+<style>
+  /* ─── Stats ─── */
+  .case-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .case-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 20px;
+    background-color: var(--item-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .case-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow-color) 5%, transparent);
+  }
+
+  .case-stat__value {
+    font-family: "Geist", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.8rem, 4vw, 4rem);
+    letter-spacing: -0.04em;
+    color: var(--link-color);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .case-stat__label {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  /* ─── Features Grid ─── */
+  .case-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .case-feature {
+    padding: 26px;
+    background-color: var(--item-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .case-feature:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow-color) 5%, transparent);
+  }
+
+  .case-feature__icon {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .case-feature__title {
+    font-family: "Geist", sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+
+  .case-feature__text {
+    font-size: 1.45rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  /* ─── Institutions Grid ─── */
+  .case-institutions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .case-institution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    padding: 28px 20px;
+    background-color: var(--item-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .case-institution:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--shadow-color) 5%, transparent);
+  }
+
+  .case-institution__logo-placeholder {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background-color: var(--item-hover-color);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+  }
+
+  .case-institution__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .case-institution__id {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--link-color);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .case-institution__city {
+    font-family: "Geist", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .case-institution__link {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .case-institution__link:hover {
+    color: var(--link-color);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 700px) {
+    .case-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .case-institutions {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

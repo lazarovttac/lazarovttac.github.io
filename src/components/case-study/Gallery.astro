@@ -1,0 +1,33 @@
+---
+interface Props {
+  /** Smaller tiles, for galleries of many narrow screenshots. */
+  compact?: boolean;
+}
+---
+
+<div class:list={["case-gallery", { "case-gallery--compact": Astro.props.compact }]}>
+  <slot />
+</div>
+
+<style>
+  .case-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .case-gallery--compact {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  @media (max-width: 700px) {
+    .case-gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .case-gallery--compact {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

@@ -1,0 +1,98 @@
+---
+import type { TranslationKey } from "../i18n/translations";
+import Translated from "./Translated.astro";
+
+interface Props {
+  href: string;
+  /** `linkedin` is a secondary button that hovers in LinkedIn blue. */
+  variant: "primary" | "secondary" | "linkedin";
+  /** Translated label; without it the slot is the (untranslated) label. */
+  k?: TranslationKey;
+}
+
+const { href, variant, k } = Astro.props;
+const isExternal = href.startsWith("http");
+// In-page anchors point down to where they scroll; everything else points out.
+const arrow = href.startsWith("#") ? "down" : "out";
+const className = `btn btn--${variant} btn--${arrow}`;
+const target = isExternal ? "_blank" : undefined;
+---
+
+{
+  k ? (
+    <Translated as="a" href={href} target={target} class={className} k={k} />
+  ) : (
+    <a href={href} target={target} class={className}>
+      <slot />
+    </a>
+  )
+}
+
+<style>
+  .btn {
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .btn::after {
+    font-size: 1.8rem;
+    line-height: 1;
+    opacity: 0;
+    width: 0;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    gap: 8px;
+  }
+
+  .btn:hover::after {
+    opacity: 1;
+    width: 14px;
+  }
+
+  .btn--down::after {
+    content: "↓";
+  }
+
+  .btn--out::after {
+    content: "↗";
+  }
+
+  .btn--primary {
+    background-color: var(--text-primary);
+    color: var(--background-color);
+    border: 1px solid var(--text-primary);
+  }
+
+  .btn--primary:hover {
+    background-color: transparent;
+    color: var(--text-primary);
+  }
+
+  .btn--secondary,
+  .btn--linkedin {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+  }
+
+  .btn--secondary:hover {
+    background-color: var(--text-primary);
+    color: var(--background-color);
+    border-color: var(--text-primary);
+  }
+
+  .btn--linkedin:hover {
+    background-color: var(--linkedin-color);
+    color: var(--on-accent);
+    border-color: var(--linkedin-color);
+  }
+</style>
