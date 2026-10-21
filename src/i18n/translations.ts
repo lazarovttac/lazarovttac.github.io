@@ -11,9 +11,9 @@ const en = {
   nav_cta: "Let's talk",
 
   /* ── Hero ── */
-  hero_title: "Systems Engineer · \nAI & Web Developer",
+  hero_title: "Systems Engineer · \nAI & Full-Stack Developer",
   hero_subtitle:
-    "Building production-grade web products and machine learning systems. Currently leading AI at TradeSpark, an Argentine capital-markets fintech.",
+    "I build AI-powered software, machine learning systems and full-stack web applications. I'm the main engineer in TradeSpark's AI Division, building tools that solve real problems for traders and financial analysts.",
   hero_btn_projects: "View Projects",
 
   /* ── Hero floating tags ── */
@@ -330,9 +330,9 @@ const es: Record<TranslationKey, string> = {
   nav_cta: "Hablemos",
 
   /* ── Hero ── */
-  hero_title: "Ingeniero en Sistemas · \nDesarrollador Web y de IA",
+  hero_title: "Ingeniero en Sistemas · \nDesarrollador de IA y Full Stack",
   hero_subtitle:
-    "Construyo productos web y sistemas de machine learning para producción. Actualmente lidero el área de IA en TradeSpark, una fintech argentina de mercados de capitales.",
+    "Desarrollo software basado en IA, sistemas de machine learning y aplicaciones web full stack. Soy el ingeniero principal del área de IA de TradeSpark, donde construyo herramientas que resuelven problemas reales de traders y analistas financieros.",
   hero_btn_projects: "Ver Proyectos",
 
   /* ── Hero floating tags ── */
