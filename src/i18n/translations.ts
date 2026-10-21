@@ -11,7 +11,7 @@ const en = {
   nav_cta: "Let's talk",
 
   /* ── Hero ── */
-  hero_title: "Systems Engineer · \nAI & Software Developer",
+  hero_title: "Systems Engineer · \nSoftware & AI Developer",
   hero_subtitle:
     "I build AI-powered software, machine learning systems and web applications. Currently the main engineer in TradeSpark's AI Division.",
   hero_btn_projects: "View Projects",
@@ -330,7 +330,7 @@ const es: Record<TranslationKey, string> = {
   nav_cta: "Hablemos",
 
   /* ── Hero ── */
-  hero_title: "Ingeniero en Sistemas · \nDesarrollador de IA y Software",
+  hero_title: "Ingeniero en Sistemas · \nDesarrollador de Software e IA",
   hero_subtitle:
     "Desarrollo software basado en IA, sistemas de machine learning y aplicaciones web. Actualmente, ingeniero principal del área de IA en TradeSpark.",
   hero_btn_projects: "Ver Proyectos",
