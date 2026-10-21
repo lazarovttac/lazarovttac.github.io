@@ -332,7 +332,7 @@ const es: Record<TranslationKey, string> = {
   /* ── Hero ── */
   hero_title: "Ingeniero en Sistemas · \nDesarrollador de Software e IA",
   hero_subtitle:
-    "Desarrollo software basado en IA, sistemas de machine learning y aplicaciones web. Actualmente, ingeniero principal del área de IA en TradeSpark.",
+    "Desarrollo software basado en IA, sistemas de machine learning y aplicaciones web. Actualmente soy el ingeniero principal del área de IA de TradeSpark.",
   hero_btn_projects: "Ver Proyectos",
 
   /* ── Hero floating tags ── */
