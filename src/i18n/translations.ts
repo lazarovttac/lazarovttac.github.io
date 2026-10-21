@@ -11,7 +11,7 @@ const en = {
   nav_cta: "Let's talk",
 
   /* ── Hero ── */
-  hero_title: "Systems Engineer · \nSoftware & AI Developer",
+  hero_title: "Systems Engineer · \nAI & Software Developer",
   hero_subtitle:
     "I build AI-powered software, machine learning systems and web applications. Currently the main engineer in TradeSpark's AI Division.",
   hero_btn_projects: "View Projects",
