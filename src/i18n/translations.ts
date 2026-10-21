@@ -13,7 +13,7 @@ const en = {
   /* ── Hero ── */
   hero_title: "Systems Engineer · \nAI & Full-Stack Developer",
   hero_subtitle:
-    "I build AI-powered software, machine learning systems and full-stack web applications. I'm the main engineer in TradeSpark's AI Division, building tools that solve real problems for traders and financial analysts.",
+    "I build AI-powered software, machine learning systems and full-stack web applications. Currently the main engineer in TradeSpark's AI Division.",
   hero_btn_projects: "View Projects",
 
   /* ── Hero floating tags ── */
@@ -332,7 +332,7 @@ const es: Record<TranslationKey, string> = {
   /* ── Hero ── */
   hero_title: "Ingeniero en Sistemas · \nDesarrollador de IA y Full Stack",
   hero_subtitle:
-    "Desarrollo software basado en IA, sistemas de machine learning y aplicaciones web full stack. Soy el ingeniero principal del área de IA de TradeSpark, donde construyo herramientas que resuelven problemas reales de traders y analistas financieros.",
+    "Desarrollo software basado en IA, sistemas de machine learning y aplicaciones web full stack. Actualmente, ingeniero principal del área de IA en TradeSpark.",
   hero_btn_projects: "Ver Proyectos",
 
   /* ── Hero floating tags ── */
