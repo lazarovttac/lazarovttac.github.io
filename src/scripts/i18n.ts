@@ -1,4 +1,5 @@
 import {
+  splitLinks,
   splitParagraphs,
   translations,
   type Language,
@@ -7,11 +8,22 @@ import {
 
 const STORAGE_KEY = "portfolio_lang";
 
+function renderLinks(paragraph: string): (string | Node)[] {
+  return splitLinks(paragraph).map((segment) => {
+    if (typeof segment === "string") return segment;
+    const link = document.createElement("a");
+    link.href = segment.href;
+    link.target = "_blank";
+    link.textContent = segment.text;
+    return link;
+  });
+}
+
 function renderTranslation(element: HTMLElement, value: string) {
   const nodes = splitParagraphs(value).flatMap((paragraph, index) =>
     index === 0
-      ? [paragraph]
-      : [document.createElement("br"), document.createElement("br"), paragraph],
+      ? renderLinks(paragraph)
+      : [document.createElement("br"), document.createElement("br"), ...renderLinks(paragraph)],
   );
   element.replaceChildren(...nodes);
 }

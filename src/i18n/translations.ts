@@ -13,7 +13,7 @@ const en = {
   /* ── Hero ── */
   hero_title: "Systems Engineer · \nAI & Software Developer",
   hero_subtitle:
-    "I build AI-powered software, machine learning systems and web applications. I currently lead TradeSpark's AI Division.",
+    "I build AI-powered software, machine learning systems and web applications. I currently lead [TradeSpark](https://tradespark.la)'s AI Division.",
   hero_btn_projects: "View Projects",
 
   /* ── Hero floating tags ── */
@@ -332,7 +332,7 @@ const es: Record<TranslationKey, string> = {
   /* ── Hero ── */
   hero_title: "Ingeniero en Sistemas · \nDesarrollador de Software e IA",
   hero_subtitle:
-    "Desarrollo software basado en IA, sistemas de machine learning y aplicaciones web. Actualmente lidero el área de IA de TradeSpark.",
+    "Desarrollo software basado en IA, sistemas de machine learning y aplicaciones web. Actualmente lidero el área de IA de [TradeSpark](https://tradespark.la).",
   hero_btn_projects: "Ver Proyectos",
 
   /* ── Hero floating tags ── */
@@ -647,4 +647,17 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
 /** Values use a blank line ("\n\n") to mark a paragraph break. */
 export function splitParagraphs(value: string): string[] {
   return value.split("\n\n").map((paragraph) => paragraph.trim());
+}
+
+export type Segment = string | { text: string; href: string };
+
+/** Values mark a link as "[text](url)"; it opens in a new tab. */
+export function splitLinks(paragraph: string): Segment[] {
+  return paragraph
+    .split(/(\[[^\]]+\]\([^)]+\))/)
+    .filter(Boolean)
+    .map((part) => {
+      const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      return link ? { text: link[1], href: link[2] } : part;
+    });
 }

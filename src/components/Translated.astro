@@ -1,6 +1,7 @@
 ---
 import type { HTMLTag, Polymorphic } from "astro/types";
 import {
+  splitLinks,
   splitParagraphs,
   translations,
   type TranslationKey,
@@ -25,7 +26,15 @@ const paragraphs = splitParagraphs(translations.en[k]);
             <br />
           </>
         )}
-        {paragraph}
+        {splitLinks(paragraph).map((segment) =>
+          typeof segment === "string" ? (
+            segment
+          ) : (
+            <a href={segment.href} target="_blank">
+              {segment.text}
+            </a>
+          ),
+        )}
       </>
     ))
   }</Tag
